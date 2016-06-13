@@ -10,12 +10,17 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link href="../../assets/css/bootstrap.min.css" rel="stylesheet"/>
+        <!-- Latest compiled and minified CSS -->
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">       
         <!--<link href="css/configuracoes4.css" rel="stylesheet" />   retirei por confiurar a nav-brand---> 
         <link href="../../assets/css/cadastrar-missoes.css" rel="stylesheet"/>
 
         <script src="../../assets/js/jquery.min.js"></script> 
-        <script src="../../assets/js/bootstrap.min.js"></script> 
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         <script src="../../assets/js/views/cadastrarMissoes.js"></script> 
 
         <!-- COMEÇA AQUI  A TABELA NO HEAD-->
@@ -35,9 +40,9 @@ and open the template in the editor.
 
         <!--script para adicionar uma linha-->
         <script>
-            (function ($) {
+            (function($) {
 
-                AddTableRow = function () {
+                AddTableRow = function() {
                     var newRow = $("<div class='panel-footer'>");
                     var cols = "";
                     cols += '<div class="panel-footer">&nbsp </div>';
@@ -54,9 +59,7 @@ and open the template in the editor.
     <body>
         <form method="post" action="http://localhost:9090/gaming/index.php/missoes/createMissoes">  
             <!--antepenultimo passo-->
-            <?php
-            print_r($missoes);
-            ?>
+
             <!--antepenultimo passo para mostrar na tela se funciona-->
 
             <!--cabeçãlho-->
@@ -101,7 +104,7 @@ and open the template in the editor.
                                 <div class="form-group">
                                     <label for="inputEmail" class="col-md-2 control-label">Missão</label>
                                     <div class="col-md-8 pull-right">
-                                        <input type="text" id="missao" name="missao" class="form-control "  placeholder="">
+                                        <input type="text" id="missao" name="missao" class="form-control"  placeholder="">
                                         <br/>
                                     </div>
                                 </div>
@@ -120,44 +123,39 @@ and open the template in the editor.
 
                         <!--Linha da Agência -->
                         <div class="col-md-12">
-                            <div class="col-sm-6 col-lg-10">
-                                <div class="form-group">
-                                    <label for="inputEmail" class="col-md-2 control-label">Vigência</label>
-                                    <div class="col-md-3">
-                                        <input type="date" id="datainicio" name="datainicio"   value=" " class= "textbox70"/>
-                                        <div class="col-md-1 textpos">
-                                            <p>a</p>
-                                        </div>
-                                    </div>
+                            <div class="col-md-12" >
 
-                                    <div class="col-md-3 ">
-                                        <input type="date"  id="datatermino"  name="datatermino" value=" " class= "textbox70"/>
-                                        <div class="col-md-1 textpos">
-                                            <p>das</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-2 ">
-                                        <input type="text" id="horainicio" name="horainicio" class="form-control " placeholder="00:00">
-                                        <div class="col-md-4 textpos1">
-                                            <p>ás</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-2 mudar">
-                                        <input type="text" id="horatermino" name="horatermino" class="form-control " placeholder="00:00"> 
-                                    </div>
-
+                                <label for="inputEmail" class="col-md-2 control-label" >Vigência</label>
+                                <div class="col-md-3" >
+                                    <input type="date" id="datainicio" name="datainicio" class="form-control col-md-10 pull-left" />
+                                    <label for="datainicio" class="col-md-1">a</label>
                                 </div>
+
+                                <div class="col-md-3 ">
+                                    <input type="date"  id="datatermino"  name="datatermino" value=" " class="col-md-10 form-control"/>
+                                    <label for="datainicio" class="col-md-1">das</label>
+                                </div>
+
+                                <div class="col-md-2" >
+                                    <input type="text" id="horainicio" name="horainicio" class="form-controls col-md-8" placeholder="00:00">
+                                    <label for="datainicio" class="col-md-1">às</label>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <input type="text" id="horatermino" name="horatermino" class="form-controls col-md-10" placeholder="00:00"> 
+                                </div>
+
+
                             </div>
                         </div>
-                        <!--FIM Linha da Agência -->
 
+                        <!--FIM Linha da Agência -->
+                        <br/><br/>
                         <div class="col-md-12" >
                             <div class="col-sm-6 col-lg-10" >
                                 <div class="form-group">
                                     <label for="inputEmail" class="col-md-2 control1-labe">Etapas</label>
-                                    <div class="col-md-9 pull- ">
+                                    <div class="col-md-9 ">
 
                                         <!--aqui começa o paineeeeeeeeeeeeeeeeeeeeeel -->
                                         <div id="playlistTable" class="panel panel-default">
@@ -179,82 +177,82 @@ and open the template in the editor.
                                                                 </thead>
                                                                 <tbody>
 
-                                                                <!--penultimo passo, para exexutar tudo com o Foreach-->
-                                                                          
-                                                                        <tr>
-                                                                            <td style="border-width: thin; border-style: solid; border-color: black;"><br/></td>
-                                                                            <td style="border-width: thin; border-style: solid; border-color: black;"></td>
-                                                                            <td style="border-width: thin; border-style: solid; border-color: black;"><center></center></td>
-                                                                    </tr>
-                                                                 <!penultimo passo>
+                                                                    <!--penultimo passo, para exexutar tudo com o Foreach-->
+
+                                                                    <tr>
+                                                                        <td style="border-width: thin; border-style: solid; border-color: black;"><br/></td>
+                                                                        <td style="border-width: thin; border-style: solid; border-color: black;"></td>
+                                                                        <td style="border-width: thin; border-style: solid; border-color: black;"><center></center></td>
+                                                                </tr>
+                                                                <!penultimo passo>
                                                                 </tbody>  
                                                             </table>
                                                         </div>
                                                     </div>				<!--Aqui termina a tabela dentro da Panel-->
 
                                                     <div class="col-md-12">
-                                                        <div class="col-sm-6 col-lg-9" >
-                                                            <div class="form-group">
-                                                                <label for="inputEmail" class="col-md-3 control-label">Dica de tela</label>
-                                                                <div class="col-md-9 pull-right">
-                                                                    <input type="email" class="form-control " id="inputEmail" placeholder="">
-                                                                </div>
+
+                                                        <div class="form-group">
+                                                            <label for="inputEmail" class="col-md-5 control-label">Dica de tela</label>
+                                                            <div class="col-md-7 pull-right">
+                                                                <input type="email" class="form-control col-md-12" id="inputEmail" placeholder="">
                                                             </div>
                                                         </div>
+
                                                     </div>
 
-                                                    <div class="col-md-12" >
-                                                        <div class="col-sm-6 col-lg-9 ">
-                                                            <div class="form-group">
-                                                                <label for="inputEmail" class="col-md-3 control-label">Imagem</label>
-                                                                <div class="col-md-7 ">
-                                                                    <a href="#" class="ico-search">clique aqui para importar outra imagem</a>
-                                                                </div>
+                                                    <div class="col-md-12">
+
+                                                        <div class="form-group">
+                                                            <label for="inputEmail" class="col-md-5 control-label">Imagem</label>
+                                                            <div class="col-md-7 ">
+                                                                <a href="#" class="ico-search"><small>clique aqui para importar outra imagem</small></a>
                                                             </div>
                                                         </div>
+
                                                     </div> 
                                                     <!--Linha da data limite-->
 
                                                     <div class="col-md-12" >
-                                                        <div class="col-sm-6 col-lg-9 ">
-                                                            <div class="form-group">
-                                                                <label for="inputEmail" class="col-md-3 control-label">Data limite</label>
 
-                                                                <div class="col-md-4 ">
-                                                                    <input name="nascimento" type="date"  id="month" value=" " class= "textbox70"/> 
-                                                                </div>
-                                                                <div class="col-md-1 datatext">
-                                                                    <p>ás</p>
-                                                                </div>
-                                                                <div class="col-md-2 ">
-                                                                    <input type="email" class="form-control " id="inputEmail" placeholder="00:00">
-                                                                </div>
+                                                        <div class="form-group">
+                                                            <label for="inputEmail" class="col-md-4 control-label">Data limite</label>
+
+                                                            <div class="col-md-2 ">
+                                                                <input name="nascimento" type="date"  id="month" value=" " class= "form-control textbox70"/> 
+                                                            </div>
+                                                            <div class="col-md-1 datatext">
 
                                                             </div>
+                                                            <div class="col-md-1 ">
+                                                                <input type="email" class="form-control col-md-4" id="inputEmail" placeholder="00:00">
+                                                            </div>
+
+
                                                         </div>
                                                     </div> 
 
 
                                                     <div class="col-md-12">
-                                                        <div class="col-sm-6 col-lg-9" >
+                                                     
                                                             <div class="form-group">
-                                                                <label for="inputEmail" class="col-md-3 control-label">Mensagem Parabéns</label>
-                                                                <div class="col-md-9 pull-right">
+                                                                <label for="inputEmail" class="col-md-4 control-label">Mensagem Parabéns</label>
+                                                                <div class="col-md-8 pull-right">
                                                                     <input type="email" class="form-control " id="inputEmail" placeholder="">
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        
                                                     </div>
 
                                                     <div class="col-md-12" >
-                                                        <div class="col-sm-6 col-lg-9 ">
+                                                      
                                                             <div class="form-group">
-                                                                <label for="inputEmail" class="col-md-3 control-label">Conteúdo destravado</label>
+                                                                <label for="inputEmail" class="col-md-4 control-label">Conteúdo destravado</label>
                                                                 <div class="col-md-7 ">
                                                                     <a href="#" class="ico-search">Clique aquí para importar conteúdo</a>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                       
                                                     </div> 
 
                                                 </div>
@@ -309,17 +307,17 @@ and open the template in the editor.
                                         </thead>
                                         <tbody>
 
-                                           
+
                                             <!--penultimo passo, para exexutar tudo com o Foreach-->
 
-                                                <tr>
-                                                    <td style="border-width: thin; border-style: solid; border-color: black;"><br/></td>
-                                                    <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html"checked /> </center></td>
-                                            </tr>
-                                  
-                                            <!penultimo passo>
+                                            <tr>
+                                                <td style="border-width: thin; border-style: solid; border-color: black;"><br/></td>
+                                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html"checked /> </center></td>
+                                        </tr>
 
-                                            
+                                        <!penultimo passo>
+
+
                                         </tbody>  
                                     </table>
                                 </div>
@@ -375,18 +373,39 @@ and open the template in the editor.
 
                     </div>
                 </div> <!--FIM margem branca-->
-                 <input type="hidden" name="status" id="status"/>
-                
-                   <!-- rodape -->
-            <div>
-                <button type="submit" class="btn btn-primary pull-right btnazul">Salvar e criar Reconhecimento</button>
-                <button class="btn btn-primary pull-right btnazul">Salvar</button>
-                <button class="btn btn-deafult pull-right">Cancelar</button>
-            </div> 
-                   
+                <input type="hidden" name="status" id="status"/>
+
+                <!-- rodape -->
+                <div>
+                    <button type="submit" class="btn btn-primary pull-right btnazul">Salvar e criar Reconhecimento</button>
+                    <button class="btn btn-primary pull-right btnazul">Salvar</button>
+                    <button class="btn btn-deafult pull-right">Cancelar</button>
+                </div> 
+
             </div>
         </form>
     </body>
 </html>
+
+<div class="col-md-12">
+    <div class="col-md-12">
+        <div class="col-md-2">
+            Dica de Tela
+        </div>
+        <div class="col-md-10">
+            <input type="text" class="col-md-12 form-controls" />
+        </div>
+    </div>
+  <br/><br/>
+      <div class="col-md-12">
+        <div class="col-md-2">
+            Imagem
+        </div>
+        <div class="col-md-10">
+           clique aqui para importar outra imagem
+        </div>
+    </div>
+    
+</div>
 
 <!--FIM container-->

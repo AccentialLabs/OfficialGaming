@@ -15,8 +15,8 @@ class Missoes extends CI_Controller {
         $this->load->model('missoes_model');
         $this->load->helper('url_helper');
     }
-    /*Fim do construct*/
     
+    /*Fim do construct*/
     public function cadastrarMissoes(){
  
         $data['missoes'] = $this->missoes_model->get_missoes();
