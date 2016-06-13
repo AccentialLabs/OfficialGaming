@@ -36,7 +36,7 @@ and open the template in the editor.
         <!-- TERMINA AQUI  A TABELA NO HEAD-->
 
     </head>
-    <body>
+    <body> 
           <!--antepenultimo passo para mostrar na tela se funciona-->
         <form  method="post" action="http://localhost:9090/gaming/index.php/acoes/createAcoes" >
         
