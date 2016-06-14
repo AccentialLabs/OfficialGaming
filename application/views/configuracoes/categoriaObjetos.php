@@ -8,6 +8,12 @@ and open the template in the editor.
 
 <html>
     <head>
+          <!-- Ativo para o botão+ add as tabelas-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+       
+        <!-- Ativo para o botão+ add as tabelas-->
+
+
         <!-- link da rede social-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <!-- FIM link da rede social-->
@@ -19,6 +25,7 @@ and open the template in the editor.
         <link href="../../assets/css/bootstrap.min.css" rel="stylesheet"/>
         <!--<link href="css/configuracoes4.css" rel="stylesheet" />   retirei por confiurar a nav-brand---> 
         <link href="../../assets/css/configuracoes5.css" rel="stylesheet"/>
+        <script src="../../assets/js/configuracoes5.js"></script> 
 
         <script src="../../assets/js/jquery.min.js"></script> 
         <script src="../../assets/js/bootstrap.min.js"></script> 
@@ -33,18 +40,16 @@ and open the template in the editor.
 
         <!-- jQuery e Tablesorter -->
         <script src="../../assets/js/jquery-latest.js"></script>
-        <script src="js/jquery.tablesorter.min.js"></script>
+        <script src="../../assets/js/jquery.tablesorter.min.js"></script>
 
         <!-- Meu script -->
         <script src="../../assets/js/scripts.js"></script>
+        <script src="../../assets/js/views/ajax/configsCategoriaobjetosAjax.js"></script>
         <!-- TERMINA AQUI  A TABELA NO HEAD-->
 
     </head>
     <body>
-        
-        <?php  
-          print_r($objetos);
-       ?> 
+
         <!--cabeçãlho-->
         <div class="col-md-12 header-style">
             <nav class="navbar navbar-default nab-branco">
@@ -92,13 +97,13 @@ and open the template in the editor.
         </div>
         <!--FIM menu-->   
 
-        <!--container-->
-        <div class="col-md-10  container-style">
+        <!--container--> 
+        <div class="col-md-10  container-style" id="elemento1">
             <div id="page-content" class="margembranca"> 
 
 
                 <div id="elemento1" class="col-md-12 pull-left">
-                    <div class="col-md-12">
+                    <div class="col-md-12" id="elemento1" >
                         <ol class="breadcrumb">
                             <li><a href="#">Home</a> </li>
                             <li><a href="#">Products </a> </li>
@@ -108,7 +113,7 @@ and open the template in the editor.
                     </div>
                 </div>
 
-                <div  class="col-md-12">															
+                <div  class="col-md-12" id="elemento1">															
                     <div class="tabbable tabs-left"> 
                         <div class="col-md-3">      									<!--Aqui começa a tab do lado esquerdo com tabela-->
                             <ul class ="nav nav-tabs nav-stacked">	
@@ -129,14 +134,16 @@ and open the template in the editor.
                             <div class="tab-pane active" id="tab6">
 
                                 <!maregem a esquerda>
-                                <div class="col-md-9  container-style">
+                                <div class="col-md-9  container-style" id="elemento1">
                                     <div id="page-content" class="margembranca"> 
 
-                                      
+                                        <!--Aqui estou chamando o script da tabela que add linha-->
+                                        <div class="AddTableRow"></div>
+                                        <!--fim da chamada do script da tabela que add linha-->
 
-                                        <div class="col-md-11">
-                                            <div class="table-responsive" >
-                                                <table class="tablesorter">
+                                        <div class="col-md-11" id="elemento1">
+                                            <div id="table-responsive"  class="col-md-12">
+                                                <table id="imbatman" class="tablesorter">
                                                     <thead>
                                                         <tr>
                                                             <th style="border-width: thin; border-style: solid; border-color: black;">Categoria</th>
@@ -145,31 +152,60 @@ and open the template in the editor.
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                        
-                                                        <?php foreach ($objetos as $objetos) {     
-                                                          ?>
-                                                        
-                                                        <tr>
-                                                            <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $premio['categorias'];?></td>
-                                                            <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html"/> </center></td>
-                                                            <td style="border-width: thin; border-style: solid; border-color: black;"><center><span  class = "glyphicon glyphicon-ban-circle" = oculto-ária "true" ></center></span> </td>
-                                                         </tr>
-                                                         
-                                                         <?php }?>
+
+                                                        <?php foreach ($categoriatb as $categoriatb) {
+                                                            ?>
+
+                                                            <tr>
+                                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $categoriatb['categoriaobjetos']; ?></td>
+                                                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html" id="<?php echo $categoriatb['id']; ?>" value="<?php echo $categoriatb['status']; ?>" <?php if($categoriatb['status'] == 1){echo "checked";} ?>/>  </center></td>
+                                                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><span  class = "glyphicon glyphicon-ban-circle excluirCategoriatb" id="<?php echo $categoriatb['id']; ?>"></span> </center> </td>
+                                                        </tr>
+
+                                                    <?php } ?>
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
 
+
+                                        <!-- Esse é o botão + que adiciona linha na tabela -->
+                                       <div class="btnclicks pull-right plus">
+                                            <button onclick="AddTableRow()" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                                        </div>
+                                        
+                                        <!-- Fim é o FIM do botão + que adiciona linha na tabela -->
+
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="myModal" role="dialog">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h4 class="modal-title"> <center>ATENÇÃO!</center></h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>Esta Categoria está sendo usada em<br/>Ações e Programas!<br/>
+                                                            Confirme se deseja mesmo excluí-la.</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Sim</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--Fim do modal-->
+
                                     </div>
+                                    <!--colocando os botóes do final da página dentro da ta´-pane-->
+                                    <div>
+                                        <button type="button" class="btn btn-primary pull-right btnazul" data-toggle="modal" data-target="#myModal">Salvar</button>
+                                        <button class="btn btn-deafult pull-right">Cancelar</button> 
+                                    </div> 
+                                    <!--Tremina aqui os botóes do final da página dentro da ta´-pane-->
                                 </div>
-
-                                <!--colocando os botóes do final da página dentro da ta´-pane-->
-                                <div>
-                                    <button type="button" class="btn btn-primary pull-right btnazul" >Adicionar Conteúdo</button>
-                                </div>
-                                <!--Tremina aqui os botóes do final da página dentro da ta´-pane-->
-
                             </div> <!-- aqui fecha a tab-pane -->
 
 

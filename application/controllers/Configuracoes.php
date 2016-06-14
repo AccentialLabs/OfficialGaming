@@ -15,6 +15,8 @@ class Configuracoes extends CI_Controller {
 
         parent::__construct();
         $this->load->model('premio_model');
+        $this->load->model('categoriatb_model');
+        $this->load->model('reconhecimentotb_model');
         /* $this->load->model('usuario_model'); */ /* Ao retirar essa linha de código, a tela configuracoes/cadastrar premio funciona */
         $this->load->model('conteudo_model');
         $this->load->model('objetos_model');
@@ -83,18 +85,18 @@ class Configuracoes extends CI_Controller {
 
     public function categoriaObjetos() {
 
-        $data['objetos'] = $this->objetos_model->get_objetos();
+        $data['categoriatb'] = $this->categoriatb_model->get_categoriatb();
 
         $this->load->view('templates/header');
         $this->load->view('configuracoes/categoriaObjetos', $data);
     }
 
-    public function reconhecimentos() {
+    public function reconhecimento() {
 
-        $data['reconhecimentos'] = $this->tiporeconhecimento_model->get_tiporeconhecimento();
+        $data['reconhecimento'] = $this->reconhecimentotb_model->get_reconhecimentotb();
 
         $this->load->view('templates/header');
-        $this->load->view('configuracoes/reconhecimentos', $data);
+        $this->load->view('configuracoes/reconhecimento', $data);
     }
 
     public function premios() {
@@ -276,4 +278,116 @@ class Configuracoes extends CI_Controller {
         return "sucesso";
     }
     
+    
+      /*     * STATUS:
+     * 0 - INATIVO
+     * 1 - ATIVO
+     * 2 - EXCLUIDO
+     */
+
+    public function mudaStatusReconhecimentotb() {
+
+        $statusAtual = $this->input->post('statusAtual');
+
+        $data = '';
+        if ($statusAtual == 0) {
+            $data['status'] = 1;
+        } else {
+            $data['status'] = 0;
+        }
+
+        $this->db->where('id', $this->input->post('id'));
+
+        if ($this->db->update('reconhecimentotb', $data)) {
+            echo "sucesso";
+        } else {
+            echo "error";
+        }
+    }
+
+    /**
+     * STATUS:
+     * 0 - INATIVO
+     * 1 - ATIVO
+     * 2 - EXCLUIDO
+     */
+    public function deleteReconhecimentotb() {
+
+        $data['status'] = 2;
+
+        $this->db->where('id', $this->input->post('id'));
+
+        if ($this->db->update('reconhecimentotb', $data)) {
+            echo "sucesso";
+        } else {
+            echo "error";
+        }
+    }
+
+    /**
+     * INSERINDO RECONHECIMENTOTB
+     */
+    public function insertReconhecimentotb() {
+
+        $this->reconhecimentotb_model->insert_reconhecimentotb();
+        return "sucesso";
+    }
+    
+    /**
+     * CATEGORIA OBJETOS
+     */
+
+    /*     * STATUS:
+     * 0 - INATIVO
+     * 1 - ATIVO
+     * 2 - EXCLUIDO
+     */
+
+    public function mudaStatusCategoriatb() {
+
+        $statusAtual = $this->input->post('statusAtual');
+
+        $data = '';
+        if ($statusAtual == 0) {
+            $data['status'] = 1;
+        } else {
+            $data['status'] = 0;
+        }
+
+        $this->db->where('id', $this->input->post('id'));
+
+        if ($this->db->update('categoriatb', $data)) {
+            echo "sucesso";
+        } else {
+            echo "error";
+        }
+    }
+
+    /**
+     * STATUS:
+     * 0 - INATIVO
+     * 1 - ATIVO
+     * 2 - EXCLUIDO
+     */
+    public function deleteCategoriatb() {
+
+        $data['status'] = 2;
+
+        $this->db->where('id', $this->input->post('id'));
+
+        if ($this->db->update('categoriatb', $data)) {
+            echo "sucesso";
+        } else {
+            echo "error";
+        }
+    }
+
+    /**
+     * INSERINDO RECONHECIMENTOTB
+     */
+    public function insertCategoriatb() {
+
+        $this->categoriatb_model->insert_categoriatb();
+        return "sucesso";
+    }
 }

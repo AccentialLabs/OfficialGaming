@@ -42,6 +42,7 @@ and open the template in the editor.
 
         <!-- Meu script -->
         <script src="../../assets/js/scripts.js"></script>
+        <script src="../../assets/js/views/ajax/configsReconhecimentoAjax.js"></script>
         <!-- TERMINA AQUI  A TABELA NO HEAD-->
 
     </head>
@@ -62,13 +63,13 @@ and open the template in the editor.
                     <div class= 'col-md-5 pull-right'>
                         <a class= "navbar-brand" href ="#"><strong>Configurações</strong></a>
                     </div>
-                </div>
+                </div> 
             </nav>
         </div>
         <!--Fim cabeçãlho-->
 
         <!--Menu-->
-        <div class="col-md-2 pull-left div-vermelha menu-style ">
+        <div class="col-md-2 pull-left div-vermelha menu-style">
 
             <ul class="nav nav-pills nav-stacked">
                 <li role="presentation"><a href="#">Inicial</a></li>
@@ -111,7 +112,7 @@ and open the template in the editor.
 
                 <div  class="col-md-12">															
                     <div class="tabbable tabs-left"> 
-                        <div class="col-md-3">      									<!--Aqui começa a tab do lado esquerdo com tabela-->
+                        <div class="col-md-3">      				<!--Aqui começa a tab do lado esquerdo com tabela-->
                             <ul class ="nav nav-tabs nav-stacked">	
 
                                 <li><a href="#tab1" data-toggle="tab">Dados da Empresa</a></li>
@@ -149,16 +150,14 @@ and open the template in the editor.
                                                     </thead>
                                                     <tbody>
                                                         
-                                                       <?php foreach ($reconhecimentos as $reconhecimento) {     
-                                                          ?>
-                                                        
-                                                        <tr>
-                                                            <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $reconhecimento['reconhecimento'];?>)</td>
-                                                            <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html"/> </center></td>
-                                                            <td style="border-width: thin; border-style: solid; border-color: black;"><center><span  class = "glyphicon glyphicon-ban-circle"  = oculto-ária "true" ></center></span> </td>
+                                                        <?php foreach ($reconhecimento as $reconhecimentotb) {
+                                                            ?>
+                                                            <tr>
+                                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $reconhecimentotb['descricao']; ?></td>
+                                                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" class="statusCheckbox" id="<?php echo $reconhecimentotb['id']; ?>" value="<?php echo $reconhecimentotb['status']; ?>" <?php if($reconhecimentotb['status'] == 1){echo "checked";} ?>/> </center></td>
+                                                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><span  class = "glyphicon glyphicon-ban-circle excluirReconhecimentotb" id="<?php echo $reconhecimentotb['id']; ?>"></span> </center></td>
                                                         </tr>
-
-                                                       <?php }?>
+                                                    <?php } ?>
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -169,7 +168,6 @@ and open the template in the editor.
                                             <button onclick="AddTableRow()" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
                                         </div>
                                         <!-- Fim é o FIM do botão + que adiciona linha na tabela -->
-
 
                                         <!-- Modal -->
                                         <div class="modal fade" id="myModal" role="dialog">

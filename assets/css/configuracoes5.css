@@ -1,6 +1,11 @@
 .margembranca{
     padding: 15px;
 }
+
+#elemento1{
+    padding: 0px;
+}
+
     /*Aqui começa as configuraç~ões de cor tamanho do HEADER-MENU-CONTAINER*/
     .header-style{
         border: 1px solid #DCDCDC;
@@ -28,11 +33,7 @@
     .breadcrumb{
         background: #FFFFFF;
     }
-    /* configurações da tabela */
-    .tablesorter{
-        height: 15%; 
-    }
-   /* configurações da tabela */
+    
 
 .col-xs-3{
     height: 5%;
@@ -44,11 +45,12 @@
     }
 
     /*configurações do botão +*/
-    .btn-plus{
-          margin-top: 7em;
-          padding-right: 2em;
-    } 
-    /* FIm configurações do botão +*/
+   .plus{
+ margin-top: -2.5em;
+ margin-right: 2.2em;
+}
+
+    /*FIm configurações do botão +*/
     
     
        /*configigurações do (BTN voltar e o NAVBAR-CABEÇALHO)*/ 
