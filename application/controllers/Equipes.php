@@ -24,17 +24,27 @@ class Equipes extends CI_Controller {
     
     public function cadastrarEquipes(){
         
+        /*tela padrão cabeçalho e rodapé*/
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresaLogada');
+        /*tela padrão cabeçalho e rodapé*/
+        
         $data['equipes'] = $this->equipes_model->get_equipes();  //codigo dos dados da tela
        
-         $this->load->view('templates/header');
+         $this->load->view('templates/gaming_default');
         $this->load->view('equipes/cadastrarEquipes',$data);
     } 
     
      public function listaEquipes(){
+     /*tela padrão cabeçalho e rodapé*/
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresaLogada');
+        /*tela padrão cabeçalho e rodapé*/
+        
      $data['equipes'] = $this->equipes_model->get_equipes(); /*como segunda coisa a se fazer nessa tela se acrenta nessa linha mudando o nome *equipes**/
      $data['equipestab'] = $this->equipestab_model->get_equipestab(); 
       
-         $this->load->view('templates/header');
+        $this->load->view('templates/gaming_default');
         $this->load->view('equipes/listaEquipes',$data); /*fazendo a parte final desta pagina acrescentamos o ,$data*/
     }  
     

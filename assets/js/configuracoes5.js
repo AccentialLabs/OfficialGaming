@@ -1,12 +1,10 @@
-$.confirm({
-    animation: 'zoom',
-    closeAnimation: 'scale'
-});
-// Available animations:
-// right, left, bottom, top, rotate, none, opacity, scale, zoom,
-// scaleY, scaleX, rotateY, rotateYR (reverse), rotateX, rotateXR (reverse)
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
-            (function($) {
+ (function($) {
 			
                 AddTableRow = function() {
                     var newRow = $("<tr class='listas'>");

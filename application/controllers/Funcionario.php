@@ -28,32 +28,42 @@ class Funcionario extends CI_Controller {
   
   
    public function cadastrarFuncionario() {
-       
+       /*tela padrão cabeçalho e rodapé*/
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresaLogada');
+        /*tela padrão cabeçalho e rodapé*/
+        
         $data['funcionario'] = $this->funcionario_model->get_funcionario(); //codigo da tela
         $data['realizacoestab'] = $this->realizacoestab_model->get_realizacoestab(); //codigo para a tabela
 
-        $this->load->view('templates/header');
+        $this->load->view('templates/gaming_default');//(gaming_default) tela padrão cabeçãlho e rodapé
         $this->load->view('funcionario/cadastrarFuncionario',$data);
    }
    
    public function importarFuncionario(){
+       /*tel padrão cabeçalho e rodapé*/
+       $this->load->library('session');
+       $data['empresa'] = $this->session->userdata('empresalogada');
+       /*tela padrão cabeçalho e rodapé*/
        
     $data['importarfuncionarios'] = $this->importarfuncionarios_model->get_importarfuncionarios(); 
        
-        $this->load->view('templates/header');
+        $this->load->view('templates/gaming_default'); //(gaming_default) tela padrão cabeçalho rodapé
         $this->load->view('funcionario/importarFuncionario');
    } 
    
    public function enviarEmailConvite() {
-//NA HORA DE FAZER ESSA TELA PUXAREI SOMENTE DOIS DADOS DA DA TELA DO HTML/PHP (DESTINATÁRIO E CORPO) O RESTO DOS DADOS CRIAREI AQUI!
+       /* tela padrão,cabeçãlhoe e rodapé*/
+       $this->load->library('session');
+       $data['empresa'] = $this->session->userdata('empresalogada');
+       /*tela padrão cabeçãlho e rodapé*/
        
        $data['equipestab'] = $this->equipestab_model->get_equipestab();   //faz parte da tabela
        $data['email'] = $this->email_model->get_email();         //faz parte da tela
        
-       $this->load->view('templates/header');
+       $this->load->view('templates/gaming_default'); //(gaming_default) tela padrão cabeçãlho e rodapé
        $this->load->view('funcionario/enviarEmailConvite',$data);   
-       
-       
+
       //fazer a data de gravação do emails
       //como fazer a data de gravação (do email) na controller do php
 }

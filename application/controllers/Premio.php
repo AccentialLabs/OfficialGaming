@@ -18,16 +18,27 @@ class Premio extends CI_Controller {
     // creio que os dadoa que estão inseridos na tabela são o formulário que prencho nas tels com as mesmas tabemas
 
     public function ganharPremio(){
+        
+        /*tela padrão cabeçalho e rodapé*/
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresaLogada');
+        /*tela padrão cabeçalho e rodapé*/
+        
     $data['premio'] = $this->premio_model->get_premio();  //linha de código da tabela
     $data['ganharpremio'] = $this->ganharpremio_model->get_ganharpremio();  //linha de código da do premio
         
-        $this->load->view('templates/header');
+        $this->load->view('templates/gaming_default');
         $this->load->view('premio/ganharPremio',$data);
     }
     
      public function cadastrarPremio(){
   
-        $this->load->view('templates/header');
+         /*tela padrão cabeçalho e rodapé*/
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresaLogada');
+        /*tela padrão cabeçalho e rodapé*/
+         
+        $this->load->view('templates/gaming_default');
         $this->load->view('premio/cadastrarPremio');
     }
     

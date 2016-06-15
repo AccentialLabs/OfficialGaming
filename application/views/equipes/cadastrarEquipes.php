@@ -5,8 +5,6 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 
-<html>
-    <head>
 
         <!--configurações do Gantt-->
         <link href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css" rel="stylesheet" type="text/css">
@@ -22,73 +20,11 @@ and open the template in the editor.
 
         <!--fim das configurações do Gantt-->
 
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <link href="../../assets/css/bootstrap.min.css" rel="stylesheet"/>
-        <!--<link href="css/configuracoes4.css" rel="stylesheet" />   retirei por confiurar a nav-brand---> 
-        <link href="http://localhost:9090/game/css/cadastrar-equipes.css" rel="stylesheet"/>
+        <link href="../../assets/css/cadastrar-equipes.css" rel="stylesheet"/>
         <script src="../../assets/js/cadastrar-equipes2.js"></script> 
 
-        <script src="../../assets/js/jquery.min.js"></script> 
-        <script src="../../assets/js/bootstrap.min.js"></script> 
-
-        <!-- COMEÇA AQUI  A TABELA NO HEAD-->
-        <meta charset="UTF-8">
-        <title>Tablesorter - Tutsup</title>
-
-        <!-- Estilos necessários para o tema do tablesorter -->
-        <link rel="stylesheet" href="../../assets/css/blue/style.css">
-
-        <!-- jQuery e Tablesorter -->
-        <script src="../../assets/js/jquery-latest.js"></script>
-        <script src="../../assets/js/jquery.tablesorter.min.js"></script>
-
-        <!-- Meu script -->
-        <script src="../../assets/js/scripts.js"></script>
-        <!-- TERMINA AQUI  A TABELA NO HEAD-->
-
-    </head>
     <body>
-        
-         <?php 
-        print_r($equipes);
-        ?>
-        
-        <!--cabeçãlho-->
-
-        <div class="col-md-12 header-style">
-            <nav class="navbar navbar-default nab-branco">
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="#"><strong>Game APP |</strong>Company Console</a>
-                    </div>
-
-                    <div class= 'col-md-2 pull-right'>
-                        <a class= "navbar-brand" href ="#"><small><small>Nome da Empresa</small></small><br/><small><small>Nome do Administrador</small></small></a>
-                    </div>
-
-                    <div class= 'col-md-5 pull-right'>
-                        <a class= "navbar-brand" href ="#"><strong>Cadastrar Equipes</strong></a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-
-        <!-- FIM cabeçãlho-->
-
-        <!--Menu-->
-        <div class="col-md-2 pull-left div-vermelha menu-style ">
-
-            <ul class="nav nav-pills nav-stacked">
-                <button type= "button" class= "btn btn-default btn-lg btn-block" > Voltar </button>
-            </ul>
-
-        </div>
-        <!--FIM menu-->
-
+     
         <!--container-->
         <div class="col-md-10  container-style">
             <div id="page-content" class="margembranca"> 
@@ -141,7 +77,7 @@ and open the template in the editor.
                             </label>
                         </div>
                     </div>
-                    <!--Fim doorimeiro radiobox-->
+                    <!--Fim doo primeiro radiobox-->
 
                     <div class="col-md-12" >
                         <div class="col-sm-1 col-lg-5"  >
@@ -246,7 +182,7 @@ and open the template in the editor.
                         </div>							<!--Aqui termina a tab do lado esquerdo com tabela-->
                     </div>
 
-                    <div class="gantt"></div>
+     <!--DIV QUE CHAMA O GANTT => -->    <!--<div class="gantt"></div>-->
 
                     <div class="col-md-12">
                         <div class="col-sm-6 col-lg-6" >
@@ -277,8 +213,6 @@ and open the template in the editor.
             </div>
         </div>
 
-    </body>
-</html>
 
 <!--FIM container-->
 

@@ -15,13 +15,26 @@ class Jogadores extends CI_Controller {
         $this->load->model('usuariotb_model'); //codigo para mostrar os dados na tabela
         $this->load->helper('url_helper');
     }
-
+    
+ /* Fim do construct */
+    
     public function index() {
+        
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresaLogada');
+        
         $data['usuariotb'] = $this->usuariotb_model->get_usuariotb(); //codigo para mostrar os dados na tabela
 
-        $this->load->view('templates/header');
+        $this->load->view('templates/gaming_default'); //mudei
+        
         $this->load->view('jogadores/jogadores', $data);
     }
+    
+    
+    
+    
+    
+    
 
     /**
      * Status:

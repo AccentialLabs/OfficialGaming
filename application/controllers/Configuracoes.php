@@ -41,31 +41,55 @@ class Configuracoes extends CI_Controller {
 
     public function dadosEmpresa() {
 
+         /*tela padrão cabeçalho e rodapé*/
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresaLogada');
+        /*tela padrão cabeçalho e rodapé*/
+        
         $data['empresa'] = $this->empresa_model->get_empresa();
 
-        $this->load->view('templates/header');
+        $this->load->view('templates/gaming_default');
         $this->load->view('configuracoes/dadosEmpresa');
     }
 
     public function cadastrarRedesociais() {
+        
+         /*tela padrão cabeçalho e rodapé*/
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresaLogada');
+        /*tela padrão cabeçalho e rodapé*/
+        
+        
         $data['facebookempresa'] = $this->facebookempresa_model->get_facebookempresa();
 
-        $this->load->view('templates/header');
+        $this->load->view('templates/gaming_default');
         $this->load->view('configuracoes/cadastrarRedesociais');
     }
 
     public function jogo() {
+        
+         /*tela padrão cabeçalho e rodapé*/
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresaLogada');
+        /*tela padrão cabeçalho e rodapé*/
+        
 
-        $this->load->view('templates/header');
+        $this->load->view('templates/gaming_default');
         $this->load->view('configuracoes/jogo');
     }
 
     public function usuariosGestores() {
+        
+         /*tela padrão cabeçalho e rodapé*/
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresaLogada');
+        /*tela padrão cabeçalho e rodapé*/
+        
 
         $data['usuarios'] = $this->usuariotb_model->get_usuariotb(); /* retirar o comentario da construct */
         //$data['tes'] = $this->usuariogestor_model->insert_usuariogestor(7);
 
-        $this->load->view('templates/header');
+        $this->load->view('templates/gaming_default');
         $this->load->view('configuracoes/usuariosGestores', $data);
     }
     
@@ -76,42 +100,69 @@ class Configuracoes extends CI_Controller {
     }
 
     public function conteudo() {
+        
+         /*tela padrão cabeçalho e rodapé*/
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresaLogada');
+        /*tela padrão cabeçalho e rodapé*/
+        
 
         $data['conteudos'] = $this->conteudo_model->get_conteudo();
 
-        $this->load->view('templates/header');
+        $this->load->view('templates/gaming_default');
         $this->load->view('configuracoes/conteudo', $data);
     }
 
     public function categoriaObjetos() {
+        
+         /*tela padrão cabeçalho e rodapé*/
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresaLogada');
+        /*tela padrão cabeçalho e rodapé*/
+        
 
         $data['categoriatb'] = $this->categoriatb_model->get_categoriatb();
 
-        $this->load->view('templates/header');
+        $this->load->view('templates/gaming_default');
         $this->load->view('configuracoes/categoriaObjetos', $data);
     }
 
     public function reconhecimento() {
-
+        
+         /*tela padrão cabeçalho e rodapé*/
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresaLogada');
+        /*tela padrão cabeçalho e rodapé*/
+  
         $data['reconhecimento'] = $this->reconhecimentotb_model->get_reconhecimentotb();
 
-        $this->load->view('templates/header');
+        $this->load->view('templates/gaming_default');
         $this->load->view('configuracoes/reconhecimento', $data);
     }
 
     public function premios() {
+        
+         /*tela padrão cabeçalho e rodapé*/
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresaLogada');
+        /*tela padrão cabeçalho e rodapé*/
 
         $data['premios'] = $this->tipopremio_model->get_tipopremio();
 
-        $this->load->view('templates/header');
+        $this->load->view('templates/gaming_default');
         $this->load->view('configuracoes/premios', $data);
     }
 
     public function usuariosFacilitadores() {
+        
+         /*tela padrão cabeçalho e rodapé*/
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresaLogada');
+        /*tela padrão cabeçalho e rodapé*/
 
         $data['facilitadores'] = $this->facilitadores_model->get_facilitadores();
 
-        $this->load->view('templates/header');
+        $this->load->view('templates/gaming_default');
         $this->load->view('configuracoes/usuariosFacilitadores', $data);
     }
 
@@ -213,8 +264,7 @@ class Configuracoes extends CI_Controller {
         }
     }
     
-    
-    
+ 
      /**
      * Status:
      * 0 - INATIVO
@@ -383,7 +433,7 @@ class Configuracoes extends CI_Controller {
     }
 
     /**
-     * INSERINDO RECONHECIMENTOTB
+     * INSERINDO CATEGORIAOBJETOS
      */
     public function insertCategoriatb() {
 
