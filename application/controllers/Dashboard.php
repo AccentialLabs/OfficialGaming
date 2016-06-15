@@ -18,6 +18,7 @@ class Dashboard extends CI_Controller {
     /* acrescentamos o construct como primero passo */
     public function __construct() {
         parent::__construct();
+        
         $this->load->model('jogador_model');
         $this->load->helper('url_helper');
     }
@@ -41,9 +42,10 @@ class Dashboard extends CI_Controller {
     public function testeLayout() {
         $this->load->library('session');
         $data['empresa'] = $this->session->userdata('empresaLogada');
+      
         $this->load->view('templates/gaming_default');
         
-        //$this->load->view('dashboard/teste_layout', $data);
+        $this->load->view('dashboard/teste_layout', $data);
     }
 
 }
