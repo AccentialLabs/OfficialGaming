@@ -12,91 +12,17 @@ and open the template in the editor.
         <script src="craftpip-jquery-confirm-524c959/dist/jquery-confirm.min.js"></script>
         <!-- Ativo para o botão+ add as tabelas-->
 
-        <!-- link da rede social-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <!-- FIM link da rede social-->
 
-        <title> TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="http://localhost:9090/game/css/bootstrap.min.css" rel="stylesheet"/> <!--responsável por não deixara ocabeçãllho solto-->
 
-        <link href="http://localhost:9090/game/css/bootstrap.min.css" rel="stylesheet"/>
-        <!--<link href="css/configuracoes4.css" rel="stylesheet" />   retirei por confiurar a nav-brand---> 
-        <link href="http://localhost:9090/game/css/tela1.css" rel="stylesheet"/> 
-        <script src="http://localhost:9090/game/js/tela1.js"></script> 
-
-        <script src="http://localhost:9090/game/js/jquery.min.js"></script> 
-        <script src="http://localhost:9090/game/js/bootstrap.min.js"></script> 
+        <link href="../../assets/css/tela1.css" rel="stylesheet"/> 
+        <script src="../../assets/js/tela1.js"></script> 
 
 
-        <!-- COMEÇA AQUI  A TABELA NO HEAD-->
-        <meta charset="UTF-8">
-        <title>Tablesorter - Tutsup</title>
+    
 
-        <!-- Estilos necessários para o tema do tablesorter -->
-        <link rel="stylesheet" href="http://localhost:9090/game/css/blue/style.css">
-
-        <!-- jQuery e Tablesorter -->
-        <script src="http://localhost:9090/game/js/jquery-latest.js"></script>
-        <script src="http://localhost:9090/game/js/jquery.tablesorter.min.js"></script>
-
-        <!-- Meu script -->
-        <script src="http://localhost:9090/game/js/scripts.js"></script>
-        <!-- TERMINA AQUI  A TABELA NO HEAD-->
-
-    </head>
     <body>
-        
-          <!--antepenultimo passo-->
-        <?php 
-        print_r($jogador);
-        ?>
-         <!--antepenultimo passo para mostrar na tela se funciona-->
-         
-        <!--cabeçãlho-->
-        <div class="col-md-12 header-style">
-            <nav class="navbar navbar-default nab-branco">
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class=" col-md4 pull-left">
-                        <a class="navbar-brand" href="#"><strong>Game APP |</strong>Company Console</a>
-                    </div>
-
-                    <div class= 'col-md-2 pull-right'>
-                        <a class= "navbar-brand" href ="#"><small><small>Nome da Empresa</small></small><br/><small><small>Nome do Administrador</small></small></a>
-                    </div>
-
-                </div>
-            </nav>
-        </div>
-        <!--Fim cabeçãlho-->
-        
-<!--container-->
-
-        <!--Menu-->
-        <div class="col-md-2 pull-left div-vermelha menu-style ">
-            <ul class="nav nav-pills nav-stacked">
-                <li role="presentation" class="active"><a href="#">Inicial</a></li>
-                <li role="presentation" ><a href="#">Objetos</a></li>
-                <li role="presentation"><a href="#">Ações</a></li>
-                <li role="presentation"><a href="#">Reconhecimento</a></li>
-                <li role="presentation"><a href="#">Missões</a></li>
-                <li role="presentation"><a href="#">Programas</a></li>
-                <li role="presentation"><a href="#">Desafios</a></li>
-                <li class="divider-style"></li>
-                <li role="presentation"><a href="#">MOD/Packs</a></li>
-                <li class="divider-style"></li>
-                <li role="presentation"><a href="#">Cadastro</a></li>
-                <li role="presentation"><a href="#">Joagadores</a></li>
-                <li role="presentation"><a href="#">-Equipes</a></li>
-                <li role="presentation"><a href="#">-Prêmios</a></li>
-                <li class="divider-style"></li>
-                <li role="presentation"><a href="#">Configurações</a></li>
-                <li role="presentation"><a href="#">Sair</a></li>
-            </ul>
-        </div>
-        <!--FIM menu-->   
-
+    
         <!--container-->
         <div class="col-md-10  container-style">
             <div id="page-content" class="margembranca"> 
@@ -338,6 +264,6 @@ and open the template in the editor.
         </div>
 
     </body>
-</html>
+
 
 <!--FIM container-->

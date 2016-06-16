@@ -81,7 +81,7 @@ and open the template in the editor.
                 <!-- rodape -->
                 <div>
                     <!-- Trigger the modal with a button -->
-                    <button type="button" class="btn btn-info pull-right btnazul" data-toggle="modal" data-target="#myModal">Criar/Adicionar Equipes</button>      
+                    <a href="../equipes/cadastrarEquipes"> <button type="button" class="btn btn-info pull-right btnazul" data-toggle="modal" data-target="#myModal">Criar/Adicionar Equipes</button> </a>  
                 </div> 
 
             </div>

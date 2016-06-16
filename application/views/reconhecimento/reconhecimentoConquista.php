@@ -89,7 +89,7 @@ and open the template in the editor.
                 </div>
                 <!-- rodape -->
                 <div>
-                    <button type="submit" class="btn btn-primary pull-right">Adicionar Reconhecimento</button>
+                    <a href="../reconhecimento/cadastrarConquista">    <button type="button" class="btn btn-primary pull-right">Adicionar Reconhecimento</button> </a>
                 </div> 
 
             </div>

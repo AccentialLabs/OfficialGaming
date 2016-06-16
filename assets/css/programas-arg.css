@@ -4,8 +4,9 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 .margembranca{
-    padding: 15px;
+    padding: 1em;
 }
+
     /*Aqui começa as configuraç~ões de cor tamanho do HEADER-MENU-CONTAINER*/
     .header-style{
         border: 1px solid #DCDCDC;
@@ -20,6 +21,8 @@ and open the template in the editor.
         height: 100%;  
     }
     /*FIM das configuraç~ões de cor tamanho do HEADER-MENU-CONTAINER*/
+    
+   
     
     /* configurações da navbar*/
     .navbar.navbar-default.nab-branco{

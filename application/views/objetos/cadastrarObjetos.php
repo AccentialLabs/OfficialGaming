@@ -7,7 +7,6 @@ and open the template in the editor.
 
 <!--Inserçãode dados com as telas (cadastraobjetos_model;cadastraobjetoEntity,Controller Objetos)-->
 
-
     <head>
 
         <link href="../../assets/css/cadastrar-objetos.css" rel="stylesheet"/>
@@ -105,9 +104,6 @@ and open the template in the editor.
                                 </div>
                             </div>
                         </div>
-
-
-
 
                         <div class="col-sm-6 col-lg-8" id="elemento1">
                             <div class="col-md-2">

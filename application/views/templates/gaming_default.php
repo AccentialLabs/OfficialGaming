@@ -13,8 +13,8 @@
 <script src="../../assets/js/jquery-latest.js"></script>
 <script src="../../assets/js/jquery.tablesorter.min.js"></script>
 <!-- Meu script -->
-<script src="../../assets/js/scripts.js"></script>
-
+<script src="../../assets/js/scripts.js"></script> 
+<link href="../../assets/css/gaming_defaultdivider.css" rel="stylesheet"/>
 
 <!--cabeçalho-->
 <div class="col-md-12 header-style">
@@ -45,27 +45,23 @@
 <div class="col-md-2 pull-left div-vermelha menu-style ">
 
     <ul class="nav nav-pills nav-stacked">
-        <li role="presentation"><a href="#">Inicial</a></li>
-        <li role="presentation"><a href="#">Objetos</a></li>
-        <li role="presentation" class="active"><a href="#">Ações</a></li>
-        <li role="presentation"><a href="#">Reconhecimento</a></li>
-        <li role="presentation"><a href="#">Missões</a></li>
-        <li role="presentation"><a href="#">Programas</a></li>
-        <li role="presentation"><a href="#">Desafios</a></li>
+        <li role="presentation"><a href="../dashboard/principal">Inicial</a></li>
+        <li role="presentation"><a href="../objetos/listaObjetos">Objetos</a></li>
+        <li role="presentation"><a href="../Acoes/listaAcoes">Ações</a></li>
+        <li role="presentation"><a href="../reconhecimento/reconhecimentoConquista">Reconhecimento</a></li>
+        <li role="presentation"><a href="../missoes/listaMissoes">Missões</a></li>
+        <li role="presentation"><a href="../programas/argProgramas">Programas</a></li>
+        <li role="presentation"><a href="../programas/cadastrarDesafio">Desafios</a></li>
         <li class="divider-style"></li>
         <li role="presentation"><a href="#">MOD/Packs</a></li>
         <li class="divider-style"></li>
         <li role="presentation"><a href="#">Cadastro</a></li>
-        <li role="presentation"><a href="#">Joagadores</a></li>
-        <li role="presentation"><a href="#">-Equipes</a></li>
-        <li role="presentation"><a href="#">-Prêmios</a></li>
-        <li class="divider-style"></li>
-        <li role="presentation"><a href="#">Configurações</a></li>
+        <li role="presentation"><a href="../jogadores/index">Jogadores</a></li>
+        <li role="presentation" ><a href="../equipes/listaEquipes">-Equipes</a></li>
+        <li role="presentation"><a href="../premio/ganharpremio">-Prêmios</a></li>
+         <li class="divider-style"></li>
+        <li role="presentation"><a href="../configuracoes/dadosEmpresa">Configurações</a></li>
         <li role="presentation"><a href="#">Sair</a></li>
     </ul>
 </div>
 <!--FIM menu--> 
-
-
-
-

@@ -3,8 +3,8 @@
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
--->
-        <link href="../../assets/css/missoes.css" rel="stylesheet"/>
+-->    <link href="http://localhost:9090/game/css/bootstrap.min.css" rel="stylesheet"/> 
+        <link href="../../assets/css/programas-arg.css" rel="stylesheet"/>
         <script src="../../assets/js/views/ajax/programasAjax.js"></script>
 
     <body>
@@ -70,9 +70,9 @@ and open the template in the editor.
                 </div>
                 <!-- rodape -->
                 <div>
-                    <button type="button" class="btn btn-primary pull-right">Adicionar programa</button>
-                    <button class="btn btn-deafult pull-right btnazul">Clonar Programa</button>
-                    <button class="btn btn-deafult pull-right btnazul">Enviar e-mail/convite</button>
+                    <a href="../missoes/cadastrarMissoes"> <button type="button" class="btn btn-primary pull-right">Adicionar programa</button> </a>
+                    <button class="btn btn-deafult pull-right btnazul">Clonar Programa</button> 
+                    <a href="../funcionario/enviarEmailConvite"> <button class="btn btn-deafult pull-right btnazul">Enviar e-mail/convite</button> </a>
                 </div> 
 
             </div>

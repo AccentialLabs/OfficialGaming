@@ -105,7 +105,7 @@ and open the template in the editor.
                 
                 <!-- Trigger the modal with a button -->
                 <div>
-                    <button type="button" class="btn btn-primary pull-right btnazul" data-toggle="modal" data-target="#myModal">Adicionar Objeto</button>
+                    <a href="../objetos/cadastrarObjetos">   <button type="button" class="btn btn-primary pull-right btnazul" data-toggle="modal" data-target="#myModal">Adicionar Objeto</button> </a>
                     <button type="submit" class="btn btn-deafult pull-right">Importar Planilha de Objetos</button> 
                 </div> 
 

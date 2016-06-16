@@ -74,7 +74,7 @@ and open the template in the editor.
                                                 <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $premio['nome']; ?></td>
                                                 <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $premio['tipopremio_id']; ?></td>
                                                 <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $premio['quantidadepremios']; ?></td>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $premio['quantidadeatualpremios']; ?></td>
+                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $premio['atualqtd']; ?></td>
                                                 <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox"  name="opcoes" id="<?php echo $premio['id']; ?>" value="<?php echo $premio['status']; ?>" <?php
                                                                                                                                          if ($premio['status'] == 1) {
                                                                                                                                              echo "checked";
@@ -94,7 +94,7 @@ and open the template in the editor.
                     <!-- rodape -->
                     <div>
                         <!-- Trigger the modal with a button -->
-                        <button type="submit" class="btn btn-info pull-right">Adicionar Prêmios</button>      
+                          <a href="../premio/cadastrarpremio"> <button type="button" class="btn btn-info pull-right btnazul" data-toggle="modal" data-target="#myModal">Adicionar Prêmio</button> </a>   
                     </div> 
 
                 </div>

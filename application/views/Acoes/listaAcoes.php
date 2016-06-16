@@ -84,33 +84,35 @@ and open the template in the editor.
 
 
         <div class="container">
-            <!-- Modal -->
-            <div class="modal fade" id="myModalDeleteAcao" role="dialog">     <!--.fade = desvanecer o modal de dentro pra fora-->
-                <div class="modal-dialog modal-sm"><!--diálogo-.modal=define a largura adequada e margem do modal"tamanho".modal-lg-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title"><center>ATENÇÃO!</center></h4>
-                        </div>
-                        <div class="modal-body">
-                            <p>Este Ação está sendo usada em </br>Reconhecimento e Programas!</br>
-                                Confirme se deseja mesmo excluí-la.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal" id="confirmExcluirAcao">Sim</button>
+             <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title"><center> ATENÇÃO!</center></h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Esta Equipe está sendo usada em </br>Ações e Programas!</br>
+                                    Confirme se deseja mesmo excluí-la.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Sim</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                <!--FIM MODAL--> 
         </div>
         <button type="button" data-toggle="modal" data-target="#myModalDeleteAcao" id="openModalDelete">Open Modal</button>
         <!-- rodape -->
 
         <!-- Trigger the modal with a button -->
         <div>
-            <button type="button" class="btn btn-primary pull-right btnazul" data-toggle="modal" data-target="#myModal">Adicionar Ação</button>
-            <button type="submit" class="btn btn-deafult pull-right">Clonar Ação</button> 
+            <a href="../equipes/cadastrarEquipes"> <button type="button" class="btn btn-primary pull-right btnazul" >Adicionar Ação</button> </a>
+            <button type="button" class="btn btn-deafult pull-right" data-toggle="modal" data-target="#myModal">Clonar Ação</button> 
+            
         </div> 
     </div>
 </form>
