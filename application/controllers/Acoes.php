@@ -39,12 +39,15 @@ class Acoes extends CI_Controller {
     }
 
     public function cadastrarAcoes() {
+        
+        $this->load->library('session');
+         $data['empresa'] = $this->session->userdata('empresaLogada');
 
         $data['objetos'] = $this->objetos_model->get_objetos();
         $data['equipes'] = $this->equipes_model->get_equipes();
         $data['acoes'] = $this->acoes_model->get_acoes();
 
-        $this->load->view('templates/header');
+        $this->load->view('templates/gaming_default');
         $this->load->view('acoes/cadastrarAcoes', $data);
     }
 

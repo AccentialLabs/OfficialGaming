@@ -23,18 +23,29 @@ class Reconhecimento extends CI_Controller {
     /*Fim do construct*/
     
     public function cadastrarConquista(){
+        
+   /*tela padrão cabeçalho e rodapé*/
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresalogada');
+        /*tela padrão cabeçalho e rodapé*/
     
          $data['tiporeconhecimento'] = $this->tiporeconhecimento_model->get_tiporeconhecimento();
         
-         $this->load->view('templates/header'); 
+         $this->load->view('templates/gaming_default'); 
          $this->load->view('reconhecimento/cadastrarConquista',$data);
     }  
    
      public function reconhecimentoConquista(){
+         
+         /*tela padrão cabeçalho e rodapé*/
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresalogada');
+        /*tela padrão cabeçalho e rodapé*/
+         
      //nesse codigo só precisei colocar a (model do reconhecimento) para mostrar a tabela ma tela.
         $data['reconhecimento'] = $this->reconhecimento_model->get_reconhecimento();
          
-        $this->load->view('templates/header');
+        $this->load->view('templates/gaming_default');
         $this->load->view('reconhecimento/reconhecimentoConquista',$data);
     } 
 

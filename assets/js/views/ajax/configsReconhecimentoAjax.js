@@ -10,7 +10,7 @@ $(function() {
     //muda status
     $(".statusCheckbox").click(function(){
         
-        var statusAtual = $(this) .attr("value");
+         var statusAtual = $(this).attr("value");
         var id = $(this).attr("id");
         
         $.ajax({
@@ -21,7 +21,7 @@ $(function() {
                 statusAtual: statusAtual
             },
            success: function(msg){
-               
+                alert(msg);
            }
         });
     });
@@ -34,7 +34,7 @@ $(function() {
         var id = $(this).attr("id");
 
         $.ajax({
-            url: '../Configuracoes/deleteReconhecimentotb',
+            url: '../Configuracoes/deleteReconhecimento',
             type: 'POST',
             data: {
                 id: id

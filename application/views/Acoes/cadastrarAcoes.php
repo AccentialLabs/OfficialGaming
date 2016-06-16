@@ -4,75 +4,14 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
-    <head>
-
-        <title>cadastrar acoes 123</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <link href="../../assets/css/bootstrap.min.css" rel="stylesheet"/>
-        <!--<link href="css/configuracoes4.css" rel="stylesheet" />   retirei por confiurar a nav-brand---> 
         <link href="../../assets/css/cadastrar-acoes.css" rel="stylesheet"/>
-        
-       
-        <script src="../../assets/js/jquery.min.js"></script> 
-        <script src="../../assets/js/bootstrap.min.js"></script> 
+
         <script src="../../assets/js/views/cadastrarAcoes.js"></script> 
 
-        <!-- COMEÇA AQUI  A TABELA NO HEAD-->
-        <meta charset="UTF-8">
-        <title>Tablesorter - Tutsup</title>
-
-        <!-- Estilos necessários para o tema do tablesorter -->
-        <link rel="stylesheet" href="../../assets/css/blue/style.css">
-
-        <!-- jQuery e Tablesorter -->
-        <script src="../../assets/js/jquery-latest.js"></script>
-        <script src="../../assets/js/jquery.tablesorter.min.js"></script>
-
-        <!-- Meu script -->
-        <script src="../../assets/js/scripts.js"></script>
-        <!-- TERMINA AQUI  A TABELA NO HEAD-->
-
-    </head>
     <body> 
           <!--antepenultimo passo para mostrar na tela se funciona-->
         <form  method="post" action="http://localhost:9090/gaming/index.php/acoes/createAcoes" >
         
-         
-        <!--cabeçãlho-->
-
-        <div class="col-md-12 header-style">
-            <nav class="navbar navbar-default nab-branco">
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header ">
-                        <a class="navbar-brand" href="#"><strong>Game APP |</strong>Company Console</a>
-                    </div>
-
-                    <div class= 'col-md-2 pull-right'>
-                        <a class= "navbar-brand" href ="#"><small><small>Nome da Empresa</small></small><br/><small><small>Nome do Administrador</small></small></a>
-                    </div>
-
-                    <div class= 'col-md-5 pull-right'>
-                        <a class= "navbar-brand" href ="#"><strong>Cadastrar Ações</strong></a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-
-        <!-- FIM cabeçãlho-->
-
-        <!--Menu-->
-        <div class="col-md-2 pull-left div-vermelha menu-style ">
-
-            <ul class="nav nav-pills nav-stacked">
-                <button type= "button" class= "btn btn-default btn-lg btn-block" > Voltar </button>
-
-        </div>
-        <!--FIM menu-->
-
         <!--container-->
         <div class="col-md-10  container-style ">
             <div id="page-content" class="margembranca "> 
@@ -290,7 +229,7 @@ and open the template in the editor.
                                 <tbody>
                                     
                                     <?php foreach ($equipes as $equipe) {     
-                 ?> <!--penultimo passo, para exexutar tudo com o Foreach-->
+                                              ?> <!--penultimo passo, para exexutar tudo com o Foreach-->
                                     <tr>
                                         <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipe['descricao'];?></td>
                                         <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html"/checked> </center></td>
@@ -371,6 +310,6 @@ and open the template in the editor.
  
     </form>
 </body>
-</html>
+
 
 <!--FIM container-->

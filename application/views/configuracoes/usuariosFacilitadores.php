@@ -77,7 +77,8 @@ and open the template in the editor.
                                                     </thead>
                                                     <tbody>
                                                         
-                                                    <?php foreach ($facilitadores as $facilitador) {     
+                                                    <?php foreach ($facilitadores as $facilitador) {  
+                                                         if ($facilitador['status'] != 2){
                                                       ?> 
                                                         <tr>
                                                             <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $facilitador['nome'];?></td>
@@ -86,8 +87,8 @@ and open the template in the editor.
                                                             <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" class="statusCheckbox" id="<?php echo $facilitador['id']; ?>" value="<?php echo $facilitador['status']; ?>" <?php if($facilitador['status'] == 1){echo "checked";} ?>/> </center></td>
                                                             <td style="border-width: thin; border-style: solid; border-color: black;"><center><span  class = "glyphicon glyphicon-ban-circle excluirUsuarioFacilitador" id="<?php echo $facilitador['id']; ?>" ></span></center> </td>
                                                     </tr>
-                                                    
-                                                    <?php }?>
+                                                        <?php }
+                                                         } ?>
                                
                                                     </tbody>
                                                 </table>

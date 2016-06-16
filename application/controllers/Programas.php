@@ -21,28 +21,44 @@ class Programas extends CI_Controller {
     /*Fim do construct*/
     
     public function argProgramas(){
+        
+        /*tela padrão cabeçalho e rodapé*/
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresalogada');
+        /*tela padrão cabeçalho e rodapé*/
     
         $data['programas'] = $this->programas_model->get_programas();
         
-        $this->load->view('templates/header');
+        $this->load->view('templates/gaming_default');
         $this->load->view('programas/argProgramas',$data);
     }
     
      public function cadastrarDesafio(){
+         
+         /*tela padrão cabeçalho e rodapé*/
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresalogada');
+        /*tela padrão cabeçalho e rodapé*/
+        
         $data['desafio'] = $this->desafio_model->get_desafio(); //tela
         $data['equipes'] = $this->equipes_model->get_equipes(); //tabelas
         $data['objetos'] = $this->objetos_model->get_objetos(); //tabelas
         
-        $this->load->view('templates/header');
+        $this->load->view('templates/gaming_default');
         $this->load->view('programas/cadastrarDesafio',$data);
     }  
     
      public function cadastrarProgramas(){
          
+         /*tela padrão cabeçalho e rodapé*/
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresalogada');
+        /*tela padrão cabeçalho e rodapé*/
+         
      $data['objetos'] = $this->objetos_model->get_objetos();
      $data['programas'] = $this->programas_model->get_programas();
      
-        $this->load->view('templates/header');
+        $this->load->view('templates/gaming_default');
         $this->load->view('programas/cadastrarProgramas',$data);
     }
     

@@ -70,7 +70,8 @@ and open the template in the editor.
                                                     </thead>
                                                     <tbody>
                                                         
-                                                        <?php foreach ($conteudos as $conteudo) {     
+                                                        <?php foreach ($conteudos as $conteudo) {
+                                                             if ($conteudo['status'] != 2){
                                                                 ?>
                                                         
                                                         <tr>
@@ -80,7 +81,8 @@ and open the template in the editor.
                                                             <td style="border-width: thin; border-style: solid; border-color: black;"><center><span  class = "glyphicon glyphicon-ban-circle excluirConteudo" id="<?php echo $conteudo['id'];?>"></span></center></td>
                                                          </tr>
                                                          
-                                                         <?php }?>
+                                                         <?php }
+                                                         } ?>
                                                     </tbody>
                                                 </table>
                                             </div>

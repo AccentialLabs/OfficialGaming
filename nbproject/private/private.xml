@@ -2,6 +2,15 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/xampp/htdocs/OfficialGaming/application/views/configuracoes/conteudo.php</file>
+            <file>file:/C:/xampp/htdocs/OfficialGaming/application/controllers/Equipes.php</file>
+            <file>file:/C:/xampp/htdocs/OfficialGaming/application/views/configuracoes/categoriaObjetos.php</file>
+            <file>file:/C:/xampp/htdocs/OfficialGaming/application/views/configuracoes/usuariosFacilitadores.php</file>
+            <file>file:/C:/xampp/htdocs/OfficialGaming/application/controllers/Dashboard.php</file>
+            <file>file:/C:/xampp/htdocs/OfficialGaming/application/views/configuracoes/reconhecimento.php</file>
+            <file>file:/C:/xampp/htdocs/OfficialGaming/application/views/configuracoes/usuariosGestores.php</file>
+            <file>file:/C:/xampp/htdocs/OfficialGaming/application/views/configuracoes/premios.php</file>
+        </group>
     </open-files>
 </project-private>

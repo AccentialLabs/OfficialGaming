@@ -76,13 +76,15 @@ and open the template in the editor.
                                                     <tbody>
 
                                                         <?php foreach ($premios as $premio) {
+                                                            if ($premio['status'] !=2) {
                                                             ?> 
                                                             <tr>
                                                                 <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $premio['descricao']; ?></td>
                                                                 <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" class="statusCheckbox" id="<?php echo $premio['id']; ?>" value="<?php echo $premio['status']; ?>" <?php if($premio['status'] == 1){echo "checked";} ?>/> </center></td>
                                                         <td style="border-width: thin; border-style: solid; border-color: black;"><center><span  class = "glyphicon glyphicon-ban-circle excluirTipoPremio" id="<?php echo $premio['id']; ?>"  ></span> </center></td>
                                                         </tr>
-                                                    <?php } ?>
+                                                   <?php }
+                                                         } ?>
 
                                                     </tbody>
                                                 </table>
