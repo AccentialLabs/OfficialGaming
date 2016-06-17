@@ -8,6 +8,9 @@ and open the template in the editor.
 <!-- TERMINA AQUI  A TABELA NO HEAD-->
 
 <form  method="post" action="http://localhost:9090/gaming/index.php/acoes/createAcoes" >
+    <link href="../../assets/css/Acoes.css" rel="stylesheet"/>
+    <script src="../../assets/js/views/ajax/AcaoAjax.js"></script>
+  
     <!--container-->
     <div class="col-md-10  container-style">
         <div id="page-content" class="margembranca"> 
@@ -71,10 +74,7 @@ and open the template in the editor.
                                 ?> /> </center></td>
                             <td style="border-width: thin; border-style: solid; border-color: black;"><center><span class = "glyphicon glyphicon-ban-circle excluirAcao" id="<?php echo $acao['id']; ?>"></span></center> </td>
                             </tr>
-                        <?php
-                        }
-                    }
-                    ?> <!penultimo passo>
+                        <?php }  } ?>
 
                     </tbody>
                 </table>
@@ -83,34 +83,33 @@ and open the template in the editor.
         </div>
 
 
-        <div class="container">
-             <!-- Modal -->
-                <div class="modal fade" id="myModal" role="dialog">
-                    <div class="modal-dialog modal-sm">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title"><center> ATENÇÃO!</center></h4>
-                            </div>
-                            <div class="modal-body">
-                                <p>Esta Equipe está sendo usada em </br>Ações e Programas!</br>
-                                    Confirme se deseja mesmo excluí-la.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Sim</button>
+      <div class="container">
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModalDeleteAcao" role="dialog">     <!--.fade = desvanecer o modal de dentro pra fora-->
+                        <div class="modal-dialog modal-sm"><!--diálogo-.modal=define a largura adequada e margem do modal"tamanho".modal-lg-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title"><center>ATENÇÃO!</center></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Este Ação está sendo usada em </br>Reconhecimento e Programas!</br>
+                                        Confirme se deseja mesmo excluí-la.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal" id="confirmExcluirAcao">Sim</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--FIM MODAL--> 
-        </div>
         <button type="button" data-toggle="modal" data-target="#myModalDeleteAcao" id="openModalDelete">Open Modal</button>
         <!-- rodape -->
 
         <!-- Trigger the modal with a button -->
         <div>
-            <a href="../equipes/cadastrarEquipes"> <button type="button" class="btn btn-primary pull-right btnazul" >Adicionar Ação</button> </a>
+            <a href="../Acoes/cadastrarAcoes"> <button type="button" class="btn btn-primary pull-right btnazul" >Adicionar Ação</button> </a>
             <button type="button" class="btn btn-deafult pull-right" data-toggle="modal" data-target="#myModal">Clonar Ação</button> 
             
         </div> 

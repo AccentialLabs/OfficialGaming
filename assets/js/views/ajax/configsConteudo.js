@@ -5,24 +5,60 @@
  */
 $(function(){
    
-    //exclui usuario
-    $(".excluirConteudo").click(function() {
+   $("#openModalDelete").fadeOut(0);
+    var acaoParaExcluir = '';
+    var handle = '';
 
-        var handle = $(this);
+    //muda status
+    $(".statusCheckbox").click(function() {
+        
+        alert(id);
+        var statusAtual = $(this).attr("value");
         var id = $(this).attr("id");
 
         $.ajax({
-            url: '../Configuracoes/deleteConteudo',
+            url: '../Configuracoes/mudaStatusConteudo',
             type: 'POST',
             data: {
-                id: id
+                id: id,
+                statusAtual: statusAtual
+            },
+            success: function(msg) {
+                alert(sucesso);
+            }
+        });
+
+    });
+   
+    //exclui usuario
+    $(".excluirConteudo").click(function() {
+
+        handle = $(this);
+        acaoParaExcluir = $(this).attr("id");
+
+        $("#openModalDelete").click();
+
+    });
+    
+     $("#confirmaExcluirAcao").click(function() {
+
+        $.ajax({
+            url: '../Configuracoes/deleteConteudos',
+            type: 'POST',
+            data: {
+                id: acaoParaExcluir
             },
             success: function(msg) {
 
-                var tr = $(handle).closest('tr');
+              var tr = $(handle).closest('tr');
                 tr.fadeOut(600, function() {
                     tr.remove();
                 });
+
+            $('#myModalDeleteAcao').modal('toggle');
+            $('#myModalDeleteAcao').modal('hide');
+
+              
 
             }
         });
