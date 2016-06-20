@@ -473,6 +473,7 @@ class Configuracoes extends CI_Controller {
 
         $this->db->where('id', $this->input->post('id'));
 
+<<<<<<< HEAD
         if ($this->db->update('categoriatb', $data)) {
             echo "sucesso";
         } else {
@@ -493,6 +494,9 @@ class Configuracoes extends CI_Controller {
         $this->db->where('id', $this->input->post('id'));
 
         if ($this->db->update('categoriatb', $data)) {
+=======
+        if ($this->db->update('premio', $data)) {
+>>>>>>> origin/master
             echo "sucesso";
         } else {
             echo "error";

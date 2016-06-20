@@ -15,8 +15,6 @@
 <!-- Meu script -->
 <script src="../../assets/js/scripts.js"></script> 
 <link href="../../assets/css/gaming_defaultdivider.css" rel="stylesheet"/>
-
-<!--cabeçalho-->
 <div class="col-md-12 header-style">
     <nav class="navbar navbar-default nab-branco">
         <div class="container-fluid">
@@ -64,4 +62,4 @@
         <li role="presentation"><a href="#">Sair</a></li>
     </ul>
 </div>
-<!--FIM menu--> 
+k
