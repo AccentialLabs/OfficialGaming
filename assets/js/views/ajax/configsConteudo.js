@@ -17,7 +17,7 @@ $(function(){
         var id = $(this).attr("id");
 
         $.ajax({
-            url: '../Configuracoes/mudaStatusConteudo',
+            url: '../Conteudos/mudaStatusConteudo',
             type: 'POST',
             data: {
                 id: id,
@@ -43,7 +43,7 @@ $(function(){
      $("#confirmaExcluirAcao").click(function() {
 
         $.ajax({
-            url: '../Configuracoes/deleteConteudos',
+            url: '../Conteudos/deleteConteudo',
             type: 'POST',
             data: {
                 id: acaoParaExcluir
@@ -58,12 +58,9 @@ $(function(){
             $('#myModalDeleteAcao').modal('toggle');
             $('#myModalDeleteAcao').modal('hide');
 
-              
-
             }
         });
 
     });
     
 });
-

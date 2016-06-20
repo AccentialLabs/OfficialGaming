@@ -198,6 +198,25 @@ class Configuracoes extends CI_Controller {
         echo"sucesso";
     }
 
+    public function mudaStatusConteudo() {
+
+    $statusAtual = $this->input->post('statusAtual');
+
+    $data = '';
+    if ($statusAtual == 0) {
+        $data['status'] = 1;
+    } else {
+        $data['status'] = 0;
+    }
+
+    $this->db->where('id', $this->input->post('id'));
+
+    if ($this->db->update('conteudo', $data)) {
+        echo "sucesso";
+    } else {
+        echo "error";
+    }
+}
     
        /**
      * Status:

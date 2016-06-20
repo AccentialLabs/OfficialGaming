@@ -4,9 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/OfficialGaming/application/views/templates/gaming_default.php</file>
-            <file>file:/C:/xampp/htdocs/OfficialGaming/application/controllers/Acoes.php</file>
-            <file>file:/C:/xampp/htdocs/OfficialGaming/assets/js/views/ajax/AcaoAjax.js</file>
-            <file>file:/C:/xampp/htdocs/OfficialGaming/application/views/Acoes/listaAcoes.php</file>
+            <file>file:/C:/xampp/htdocs/OfficialGaming/application/views/configuracoes/conteudo.php</file>
+            <file>file:/C:/xampp/htdocs/OfficialGaming/application/controllers/Configuracoes.php</file>
+            <file>file:/C:/xampp/htdocs/OfficialGaming/assets/js/views/ajax/configsConteudo.js</file>
         </group>
     </open-files>
 </project-private>
