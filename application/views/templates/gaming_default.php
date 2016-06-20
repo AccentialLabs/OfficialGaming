@@ -56,7 +56,7 @@
         <li role="presentation"><a href="#">MOD/Packs</a></li>
         <li class="divider-style"></li>
         <li role="presentation"><a href="#">Cadastro</a></li>
-        <li role="presentation"><a href="#">Joagadores</a></li>
+        <li role="presentation"><a href="../Jogadores/index">Jogadores</a></li>
         <li role="presentation"><a href="#">-Equipes</a></li>
         <li role="presentation"><a href="#">-Prêmios</a></li>
         <li class="divider-style"></li>
