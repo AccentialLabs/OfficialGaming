@@ -33,6 +33,8 @@ class Equipes extends CI_Controller {
        
          $this->load->view('templates/gaming_default');
         $this->load->view('equipes/cadastrarEquipes',$data);
+        
+        //Comentario
     } 
     
      public function listaEquipes(){
