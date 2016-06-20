@@ -412,7 +412,7 @@ class Configuracoes extends CI_Controller {
      * 2 - EXCLUIDO
      */
 
-    public function mudaStatusCategoriatb() {
+    public function mudaStatusCategoria() {
 
         $statusAtual = $this->input->post('statusAtual');
 
@@ -438,55 +438,6 @@ class Configuracoes extends CI_Controller {
      * 1 - ATIVO
      * 2 - EXCLUIDO
      */
-    public function deleteCategoriatb() {
-
-        $data['status'] = 2;
-
-        $this->db->where('id', $this->input->post('id'));
-
-        if ($this->db->update('categoriatb', $data)) {
-            echo "sucesso";
-        } else {
-            echo "error";
-        }
-    }
-
-    /**
-     * INSERINDO CATEGORIAOBJETOS
-     */
-    public function insertCategoriatb() {
-
-        $this->categoriatb_model->insert_categoriatb();
-        return "sucesso";
-    }
-    
-      public function mudaStatusCategoria() {
-
-        $statusAtual = $this->input->post('statusAtual');
-
-        $data = '';
-        if ($statusAtual == 0) {
-            $data['status'] = 1;
-        } else {
-            $data['status'] = 0;
-        }
-
-        $this->db->where('id', $this->input->post('id'));
-
-<<<<<<< HEAD
-        if ($this->db->update('categoriatb', $data)) {
-            echo "sucesso";
-        } else {
-            echo "error";
-        }
-    }
-    
-     /**
-     * Status:
-     * 0 - INATIVO
-     * 1 - ATIVO
-     * 2 - EXCLUIDO
-     */
     public function deleteCategoria() {
 
         $data['status'] = 2;
@@ -494,13 +445,10 @@ class Configuracoes extends CI_Controller {
         $this->db->where('id', $this->input->post('id'));
 
         if ($this->db->update('categoriatb', $data)) {
-=======
-        if ($this->db->update('premio', $data)) {
->>>>>>> origin/master
             echo "sucesso";
         } else {
             echo "error";
         }
     }
-    
-}
+
+     }

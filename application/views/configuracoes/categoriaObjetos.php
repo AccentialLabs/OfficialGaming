@@ -8,23 +8,23 @@ and open the template in the editor.
 
 <html>
     <head>
-          <!-- Ativo para o botão+ add as tabelas-->
+        <!-- Ativo para o botão+ add as tabelas-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-       
+
         <!-- Ativo para o botão+ add as tabelas-->
 
 
- 
+
         <link href="../../assets/css/configuracoes5.css" rel="stylesheet"/>
         <script src="../../assets/js/configuracoes5.js"></script> 
 
-
+        
 
 
         <script src="../../assets/js/views/ajax/configsCategoriaobjetosAjax.js"></script>
-      
 
-  
+
+
     <body>
 
 
@@ -83,23 +83,23 @@ and open the template in the editor.
                                                     </tr>
                                                     </thead>
                                                     <tbody>
+                                                        <?php
+                                                        foreach ($categoriatb as $categoriatb) {
+                                                            if ($categoriatb['status'] != 2) {
+                                                                ?>
 
-                                                        <?php foreach ($categoriatb as $categoriatb) {
-                                                            if ($categoriatb['status'] != 2){
-                                                            ?>
-
-                                                            <tr class="listas">
-                                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $categoriatb['categoriaobjetos']; ?></td>
-                                                                 <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox"  name="status" class="statusCheckbox" id="<?php echo $categoriatb['id']; ?>" value="<?php echo $categoriatb['status']; ?>" <?php
-                                                    if ($categoriatb['status'] == 1) {
-                                                        echo "checked";
-                                                    }
-                                                    ?> /> </center></td>
-                                                               <td style="border-width: thin; border-style: solid; border-color: black;"><center><span class = "glyphicon glyphicon-ban-circle excluirCategoria" id="<?php echo $categoriatb['id']; ?>"></span></center> </td>
-                                                          </tr>
+                                                                <tr class="listas">
+                                                                    <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $categoriatb['categoriaobjetos']; ?></td>
+                                                                    <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox"  name="status" class="statusCheckbox" id="<?php echo $categoriatb['id']; ?>" value="<?php echo $categoriatb['status']; ?>" <?php
+                                                                if ($categoriatb['status'] == 1) {
+                                                                    echo "checked";
+                                                                }
+                                                                ?> /> </center></td>
+                                                            <td style="border-width: thin; border-style: solid; border-color: black;"><center><span class = "glyphicon glyphicon-ban-circle excluirCategoria" id="<?php echo $categoriatb['id']; ?>"></span></center> </td>
+                                                            </tr>
 
                                                         <?php }
-                                                         } ?>
+                                                    } ?>
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -107,33 +107,37 @@ and open the template in the editor.
 
 
                                         <!-- Esse é o botão + que adiciona linha na tabela -->
-                                       <div class="btnclicks pull-right plus">
+                                        <div class="btnclicks pull-right plus">
                                             <button onclick="AddTableRow()" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
                                         </div>
-                                        
+
                                         <!-- Fim é o FIM do botão + que adiciona linha na tabela -->
 
 
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="myModal" role="dialog">
-                                            <div class="modal-dialog modal-sm">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                        <h4 class="modal-title"> <center>ATENÇÃO!</center></h4>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <p>Esta Categoria está sendo usada em<br/>Ações e Programas!<br/>
-                                                            Confirme se deseja mesmo excluí-la.</p>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Sim</button>
+
+                                        <div class="container">
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="myModalDeleteAcao" role="dialog">     <!--.fade = desvanecer o modal de dentro pra fora-->
+                                                <div class="modal-dialog modal-sm"><!--diálogo-.modal=define a largura adequada e margem do modal"tamanho".modal-lg-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title"><center>ATENÇÃO!</center></h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>Este Ação está sendo usada em </br>Reconhecimento e Programas!</br>
+                                                                Confirme se deseja mesmo excluí-la.</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal" id="confirmExcluirAcao">Sim</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <!--Fim do modal-->
+                                        <button type="button" data-toggle="modal" data-target="#myModalDeleteAcao" id="openModalDelete">Open Modal</button>
+                                        <!-- rodape -->
 
                                     </div>
                                     <!--colocando os botóes do final da página dentro da ta´-pane-->
