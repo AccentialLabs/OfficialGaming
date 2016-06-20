@@ -21,9 +21,12 @@ class Missoes extends CI_Controller {
 
     public function cadastrarMissoes() {
 
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresaLogada');
+        
         $data['missoes'] = $this->missoes_model->get_missoes();
 
-        $this->load->view('templates/header');
+        $this->load->view('templates/gaming_default');
         $this->load->view('missoes/cadastrarMissoes', $data);
     }
 

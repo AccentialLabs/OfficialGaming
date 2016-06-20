@@ -74,33 +74,55 @@ and open the template in the editor.
                                                 <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $premio['nome']; ?></td>
                                                 <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $premio['tipopremio_id']; ?></td>
                                                 <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $premio['quantidadepremios']; ?></td>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $premio['quantidadeatualpremios']; ?></td>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox"  name="opcoes" id="<?php echo $premio['id']; ?>" value="<?php echo $premio['status']; ?>" <?php
-                                                                                                                                         if ($premio['status'] == 1) {
-                                                                                                                                             echo "checked";
-                                                                                                                                         }
-                                                                                                                                         ?>   class="statusCheckbox" /> </center></td>
-                                        <td style="border-width: thin; border-style: solid; border-color: black;"><center><span  class = "glyphicon glyphicon-ban-circle excluirPremios" id="<?php echo $premio['id']; ?>"></span></center> </td>
+                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $premio['atualqtd']; ?></td>
+                                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox"  name="status" class="statusCheckbox" id="<?php echo $premio['id']; ?>" value="<?php echo $premio['status']; ?>" <?php
+                                                    if ($premio['status'] == 1) {
+                                                        echo "checked";
+                                                    }
+                                                    ?> /> </center></td>
+                                         <td style="border-width: thin; border-style: solid; border-color: black;"><center><span class = "glyphicon glyphicon-ban-circle excluirPremios" id="<?php echo $premio['id']; ?>"></span></center> </td>
                                         </tr>
-    <?php }
-} ?>
+                                       <?php }  } ?>
 
                                 </tbody>
                             </table>
                         </div>
 
                     </div>
-
-                    <!-- rodape -->
+                    
+                    <div class="container">
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModalDeleteAcao" role="dialog">     <!--.fade = desvanecer o modal de dentro pra fora-->
+                        <div class="modal-dialog modal-sm"><!--diálogo-.modal=define a largura adequada e margem do modal"tamanho".modal-lg-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title"><center>ATENÇÃO!</center></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Este Ação está sendo usada em </br>Reconhecimento e Programas!</br>
+                                        Confirme se deseja mesmo excluí-la.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal" id="confirmExcluirAcao">Sim</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <button type="button" data-toggle="modal" data-target="#myModalDeleteAcao" id="openModalDelete">Open Modal</button>
+        <!-- rodape -->
+                        
+                    <!-- Trigger the modal with a button -->
                     <div>
-                        <!-- Trigger the modal with a button -->
-                        <button type="submit" class="btn btn-info pull-right">Adicionar Prêmios</button>      
+                          <a href="../premio/cadastrarpremio"> <button type="button" class="btn btn-info pull-right btnazul" data-toggle="modal" data-target="#myModal">Adicionar Prêmio</button> </a>   
                     </div> 
 
                 </div>
             </div>
         </form>
     </body>
-</html>
+
 
 <!--FIM container-->

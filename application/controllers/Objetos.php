@@ -20,18 +20,29 @@ class Objetos extends CI_Controller {
     /*Fim do construct*/
     
     public function listaObjetos(){
+        
+        /*tela padrão cabeçalho e rodapé*/
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresalogada');
+        /*tela padrão cabeçalho e rodapé*/
  
         $data['objetos'] = $this->objetos_model->get_objetos();  //codigo para a tabela da tela (listaObjetos)
         $data['cadastraobjetos'] = $this->cadastraobjetos_model->get_cadastraobjetos();  //codigo para a tela (listaobjetos)
         
-        $this->load->view('templates/header');
+        $this->load->view('templates/gaming_default');
         $this->load->view('objetos/listaObjetos',$data);
     }
     
      public function cadastrarObjetos(){
+         
+          /*tela padrão cabeçalho e rodapé*/
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresaLogada');
+        /*tela padrão cabeçalho e rodapé*/
+         
         $data['cadastraobjetos'] = $this->cadastraobjetos_model->get_cadastraobjetos();
          
-        $this->load->view('templates/header');
+        $this->load->view('templates/gaming_default');
         $this->load->view('objetos/cadastrarObjetos',$data);
     }
     

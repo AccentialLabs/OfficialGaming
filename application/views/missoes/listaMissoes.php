@@ -54,7 +54,7 @@
         </div>
         <!-- rodape -->
         <div>
-            <button type="button" class="btn btn-primary pull-right">Adicionar Missão</button>
+            <a href="../missoes/cadastrarMissoes"> <button type="button" class="btn btn-primary pull-right">Adicionar Missão</button> </a>
             <button class="btn btn-deafult pull-right btnazul">Clonar Missão</button>
         </div> 
 

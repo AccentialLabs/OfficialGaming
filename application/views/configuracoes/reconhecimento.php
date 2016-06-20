@@ -78,13 +78,15 @@ and open the template in the editor.
                                                     <tbody>
                                                         
                                                         <?php foreach ($reconhecimento as $reconhecimentotb) {
+                                                            if($reconhecimentotb['status'] != 2) {
                                                             ?>
                                                             <tr>
                                                                 <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $reconhecimentotb['descricao']; ?></td>
                                                                 <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" class="statusCheckbox" id="<?php echo $reconhecimentotb['id']; ?>" value="<?php echo $reconhecimentotb['status']; ?>" <?php if($reconhecimentotb['status'] == 1){echo "checked";} ?>/> </center></td>
                                                                 <td style="border-width: thin; border-style: solid; border-color: black;"><center><span  class = "glyphicon glyphicon-ban-circle excluirReconhecimentotb" id="<?php echo $reconhecimentotb['id']; ?>"></span> </center></td>
                                                         </tr>
-                                                    <?php } ?>
+                                                         <?php }
+                                                       } ?>
                                                     </tbody>
                                                 </table>
                                             </div>

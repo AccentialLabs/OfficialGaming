@@ -198,6 +198,25 @@ class Configuracoes extends CI_Controller {
         echo"sucesso";
     }
 
+    public function mudaStatusConteudo() {
+
+    $statusAtual = $this->input->post('statusAtual');
+
+    $data = '';
+    if ($statusAtual == 0) {
+        $data['status'] = 1;
+    } else {
+        $data['status'] = 0;
+    }
+
+    $this->db->where('id', $this->input->post('id'));
+
+    if ($this->db->update('conteudo', $data)) {
+        echo "sucesso";
+    } else {
+        echo "error";
+    }
+}
     
        /**
      * Status:
@@ -361,7 +380,7 @@ class Configuracoes extends CI_Controller {
      * 1 - ATIVO
      * 2 - EXCLUIDO
      */
-    public function deleteReconhecimentotb() {
+    public function deleteReconhecimento() {
 
         $data['status'] = 2;
 
@@ -440,4 +459,25 @@ class Configuracoes extends CI_Controller {
         $this->categoriatb_model->insert_categoriatb();
         return "sucesso";
     }
+    
+      public function mudaStatusCategoria() {
+
+        $statusAtual = $this->input->post('statusAtual');
+
+        $data = '';
+        if ($statusAtual == 0) {
+            $data['status'] = 1;
+        } else {
+            $data['status'] = 0;
+        }
+
+        $this->db->where('id', $this->input->post('id'));
+
+        if ($this->db->update('premio', $data)) {
+            echo "sucesso";
+        } else {
+            echo "error";
+        }
+    }
+    
 }

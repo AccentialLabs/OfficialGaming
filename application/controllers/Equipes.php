@@ -48,31 +48,31 @@ class Equipes extends CI_Controller {
         $this->load->view('equipes/listaEquipes',$data); /*fazendo a parte final desta pagina acrescentamos o ,$data*/
     }  
     
-     /**
-     * Status:
-     * 0 - INATIVO
-     * 1 - ATIVO
-     * 2 - EXCLUIDO
-     */
-    public function mudaStatusEquipes() {
+ /**
+ * Status:
+ * 0 - INATIVO
+ * 1 - ATIVO
+ * 2 - EXCLUIDO
+ */
+public function mudaStatusEquipes() {
 
-        $statusAtual = $this->input->post('statusAtual');
+    $statusAtual = $this->input->post('statusAtual');
 
-        $data = '';
-        if ($statusAtual == 0) {
-            $data['status'] = 1;
-        } else {
-            $data['status'] = 0;
-        }
-
-        $this->db->where('id', $this->input->post('id'));
-
-        if ($this->db->update('equipestab', $data)) {
-            echo "sucesso";
-        } else {
-            echo "error";
-        }
+    $data = '';
+    if ($statusAtual == 0) {
+        $data['status'] = 1;
+    } else {
+        $data['status'] = 0;
     }
+
+    $this->db->where('id', $this->input->post('id'));
+
+    if ($this->db->update('equipestab', $data)) {
+        echo "sucesso";
+    } else {
+        echo "error";
+    }
+}
 
     /**
      * Status:

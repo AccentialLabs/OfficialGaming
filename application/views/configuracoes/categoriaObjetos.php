@@ -85,6 +85,7 @@ and open the template in the editor.
                                                     <tbody>
 
                                                         <?php foreach ($categoriatb as $categoriatb) {
+                                                            if ($categoriatb['status'] != 2){
                                                             ?>
 
                                                             <tr>
@@ -93,7 +94,8 @@ and open the template in the editor.
                                                                 <td style="border-width: thin; border-style: solid; border-color: black;"><center><span  class = "glyphicon glyphicon-ban-circle excluirCategoriatb" id="<?php echo $categoriatb['id']; ?>"></span> </center> </td>
                                                         </tr>
 
-                                                    <?php } ?>
+                                                        <?php }
+                                                         } ?>
                                                     </tbody>
                                                 </table>
                                             </div>

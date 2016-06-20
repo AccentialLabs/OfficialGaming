@@ -34,8 +34,12 @@ class Dashboard extends CI_Controller {
     }
 
     public function principal() {
+        
+           $this->load->library('session');
+         $data['empresa'] = $this->session->userdata('empresaLogada');
+        
         $data['jogador'] = $this->jogador_model->get_jogador();
-        $this->load->view('templates/header');
+        $this->load->view('templates/gaming_default');
         $this->load->view('dashboard/principal', $data);
     }
 

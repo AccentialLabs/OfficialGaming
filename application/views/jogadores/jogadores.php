@@ -101,9 +101,9 @@ and open the template in the editor.
                 <!-- rodape -->
                 <div>
                     <!-- Trigger the modal with a button -->
-                    <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#myModal">Adicionar Funcionário</button>
-                    <button class="btn btn-deafult pull-right btncinza1">Importar planilha</button>
-                    <button class="btn btn-deafult pull-right btncinza2">Enviar e-mail/convite</button>
+                   <a href="../funcionario/cadastrarFuncionario">  <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#myModal">Adicionar Funcionário</button> </a>
+                   <a href="../funcionario/importarFuncionario">   <button class="btn btn-deafult pull-right btncinza1">Importar planilha</button> </a>
+                   <a href="../funcionario/enviarEmailConvite">   <button class="btn btn-deafult pull-right btncinza2">Enviar e-mail/convite</button> </a>
 
                 </div> 
 

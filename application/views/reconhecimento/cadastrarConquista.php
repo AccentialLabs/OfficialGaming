@@ -4,75 +4,14 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
-    <head>
-
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <link href="../../assets/css/bootstrap.min.css" rel="stylesheet"/>
-        <!--<link href="css/configuracoes4.css" rel="stylesheet" />   retirei por confiurar a nav-brand---> 
+ 
         <link href="../../assets/css/cadastrar-reconhecimento-conquistas.css" rel="stylesheet"/>
 
-        <script src="../../assets/js/jquery.min.js"></script> 
-        <script src="../../assets/js/bootstrap.min.js"></script> 
         <script src="../../assets/js/views/cadastrarConquista.js"></script> 
         
-        <!-- COMEÇA AQUI  A TABELA NO HEAD-->
-        <meta charset="UTF-8">
-        <title>Tablesorter - Tutsup</title>
-
-        <!-- Estilos necessários para o tema do tablesorter -->
-        <link rel="stylesheet" href="../../assets/css/blue/style.css">
-
-        <!-- jQuery e Tablesorter -->
-        <script src="../../assets/js/jquery-latest.js"></script>
-        <script src="../../assets/js/jquery.tablesorter.min.js"></script>
-
-        <!-- Meu script -->
-        <script src="../../assets/js/scripts.js"></script>
-        
-        <!-- TERMINA AQUI  A TABELA NO HEAD-->
-    </head>
     <body>
         
-        <?php 
-         print_r($tiporeconhecimento);
-        ?>
-              
 <form method="post" action="http://localhost:9090/gaming/index.php/reconhecimento/createConquista">      
-  
-        <!--cabeçãlho-->
-        <div class="col-md-12 header-style">
-            <nav class="navbar navbar-default nab-branco">
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header ">
-                        <a class="navbar-brand" href="#"><strong>Game APP |</strong>Company Console</a>
-                    </div>
-
-                    <div class= 'col-md-2 pull-right'>
-                        <a class= "navbar-brand" href ="#"><small><small>Nome da Empresa</small></small><br/><small><small>Nome do Administrador</small></small></a>
-                    </div>
-
-                    <div class= 'col-md-5 pull-right'>
-                        <a class= "navbar-brand" href ="#"><strong>Cadastrar Reconhecimentos/Conquista</strong></a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-        <!-- FIM cabeçãlho-->
-
-        <!--Menu-->
-        <div class="col-md-2 pull-left div-vermelha menu-style ">
-
-            <ul class="nav nav-pills nav-stacked">
-                <button type= "button" class= "btn btn-default btn-lg btn-block" > Voltar </button>
-            </ul>
-
-        </div>
-        <!--FIM menu-->
 
         <!--container-->
         <div class="col-md-10  container-style ">
@@ -363,6 +302,4 @@ and open the template in the editor.
         
 </form>
 </body>
-</html>
-
 <!--FIM container-->

@@ -5,12 +5,17 @@
  */
 $(function(){
     
+     $("#openModalDelete").fadeOut(0);
+    var acaoParaExcluir = '';
+    var handle = '';
+
     //muda status
     $(".statusCheckbox").click(function() {
-
+        
+        alert(id);
         var statusAtual = $(this).attr("value");
         var id = $(this).attr("id");
-        
+
         $.ajax({
             url: '../Equipes/mudaStatusEquipes',
             type: 'POST',
@@ -19,36 +24,48 @@ $(function(){
                 statusAtual: statusAtual
             },
             success: function(msg) {
-                alert(msg);
-
+                alert(sucesso);
             }
-        }); 
+        });
 
     });
-
+    
     //exclui usuario
     $(".excluirEquipes").click(function() {
+        
+        handle = $(this);
+        acaoParaExcluir = $(this).attr("id");
+        
+        $("#openModalDelete").click();
 
-        var handle = $(this);
-        var id = $(this).attr("id");
+    });
+    
+    
+    $("#confirmaExcluirAcao").click(function() {
 
         $.ajax({
             url: '../Equipes/deleteEquipes',
             type: 'POST',
             data: {
-                id: id
+                id: acaoParaExcluir
             },
             success: function(msg) {
 
-                var tr = $(handle).closest('tr');
+              var tr = $(handle).closest('tr');
                 tr.fadeOut(600, function() {
                     tr.remove();
                 });
+
+            $('#myModalDeleteAcao').modal('toggle');
+            $('#myModalDeleteAcao').modal('hide');
+
+              
 
             }
         });
 
     });
+    
     
 });
 
