@@ -88,11 +88,15 @@ and open the template in the editor.
                                                             if ($categoriatb['status'] != 2){
                                                             ?>
 
-                                                            <tr>
+                                                            <tr class="listas">
                                                                 <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $categoriatb['categoriaobjetos']; ?></td>
-                                                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html" id="<?php echo $categoriatb['id']; ?>" value="<?php echo $categoriatb['status']; ?>" <?php if($categoriatb['status'] == 1){echo "checked";} ?>/>  </center></td>
-                                                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><span  class = "glyphicon glyphicon-ban-circle excluirCategoriatb" id="<?php echo $categoriatb['id']; ?>"></span> </center> </td>
-                                                        </tr>
+                                                                 <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox"  name="status" class="statusCheckbox" id="<?php echo $categoriatb['id']; ?>" value="<?php echo $categoriatb['status']; ?>" <?php
+                                                    if ($categoriatb['status'] == 1) {
+                                                        echo "checked";
+                                                    }
+                                                    ?> /> </center></td>
+                                                               <td style="border-width: thin; border-style: solid; border-color: black;"><center><span class = "glyphicon glyphicon-ban-circle excluirCategoria" id="<?php echo $categoriatb['id']; ?>"></span></center> </td>
+                                                          </tr>
 
                                                         <?php }
                                                          } ?>

@@ -6,45 +6,61 @@
 
 $(function() {
   
-    var contador = 0;
-    //muda status
-    $(".statusCheckbox").click(function(){
-        
-        var statusAtual = $(this) .attr("value");
+       $("#openModalDelete").fadeOut(0);
+     var acaoParaExcluir = '';
+     var handle = '';
+    
+     //muda status
+    $(".statusCheckbox").click(function() {
+
+        alert(id);
+        var statusAtual = $(this).attr("value");
         var id = $(this).attr("id");
         
         $.ajax({
-            url: '../Configuracoes/mudaStatusCategoriatb',
+            url: '../Categoria/mudaStatusCategoria',
             type: 'POST',
-            data:{
+            data: {
                 id: id,
                 statusAtual: statusAtual
             },
-           success: function(msg){
-               
-           }
-        });
+            success: function(msg) {
+                alert(sucesso);
+            }
+        }); 
     });
     
    
     //exclui usuario
-    $(".excluirCategoriatb").click(function() {
 
-        var handle = $(this);
-        var id = $(this).attr("id");
+    $(".excluirCategoria").click(function() {
+      
+        handle = $(this);
+        acaoParaExcluir = $(this).attr("id");
+
+        $("#openModalDelete").click();
+
+    });
+    
+  $("#confirmExcluirAcao").click(function() {
 
         $.ajax({
-            url: '../Configuracoes/deleteCategoriatb',
+            url: '../Categoria/deleteCategoria',
             type: 'POST',
             data: {
-                id: id
+                id: acaoParaExcluir
             },
             success: function(msg) {
 
-                var tr = $(handle).closest('tr');
+              var tr = $(handle).closest('tr');
                 tr.fadeOut(600, function() {
                     tr.remove();
                 });
+
+            $('#myModalDeleteAcao').modal('toggle');
+            $('#myModalDeleteAcao').modal('hide');
+
+              
 
             }
         });
