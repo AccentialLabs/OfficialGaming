@@ -5,6 +5,7 @@
  */
 
 $(function() {
+  var contador=0;
   
        $("#openModalDelete").fadeOut(0);
      var acaoParaExcluir = '';
@@ -18,9 +19,9 @@ $(function() {
         var id = $(this).attr("id");
         
         $.ajax({
-            url: '../Categoria/mudaStatusCategoria',
+            url: '../Configuracoes/mudaStatusCategoria',
             type: 'POST',
-            data: {
+            data: { 
                 id: id,
                 statusAtual: statusAtual
             },
@@ -30,8 +31,7 @@ $(function() {
         }); 
     });
     
-   
-    //exclui usuario
+    //exclui categoria
 
     $(".excluirCategoria").click(function() {
       
@@ -42,10 +42,10 @@ $(function() {
 
     });
     
-  $("#confirmExcluirAcao").click(function() {
+ $("#confirmExcluirAcao").click(function() {
 
-        $.ajax({
-            url: '../Categoria/deleteCategoria',
+        $.ajax({ 
+            url: '../Configuracoes/deleteCategoria',
             type: 'POST',
             data: {
                 id: acaoParaExcluir
@@ -60,7 +60,6 @@ $(function() {
             $('#myModalDeleteAcao').modal('toggle');
             $('#myModalDeleteAcao').modal('hide');
 
-              
 
             }
         });
