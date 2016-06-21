@@ -13,25 +13,25 @@ include("/../entities/funcionarioEntity.php");
  * @author Raphael Pizzo
  */
 class Funcionario_model extends CI_Model {
-    
-     public function __construct() {
+
+    public function __construct() {
         $this->load->database();
     }
-    
-     public function get_funcionario($slug = FALSE) {
+
+    public function get_funcionario($slug = FALSE) {
         if ($slug === FALSE) {
             $query = $this->db->get('funcionario');
             return $query->result_array();
         }
 
         $query = $this->db->get_where('funcionario', array('id' => $slug));
-        
-        
+
+
         $funcionarioEntity = new funcionarioEntity();
-        
+
         return $query->row_array();
     }
-    
+
     public function insert_funcionario() {
         $this->load->helper('url');
 
@@ -57,7 +57,7 @@ class Funcionario_model extends CI_Model {
         $funcionarioEntity->setSexo($this->input->post('sexo'));
         $funcionarioEntity->setUrlfoto($this->input->post('urlfoto'));
         $funcionarioEntity->setEmpresa_id($this->input->post('empresa_id'));
-        
+
         $slug = url_title($this->input->post('title'), 'dash', TRUE);
 
         $data = array(
@@ -81,10 +81,47 @@ class Funcionario_model extends CI_Model {
             'celular' => $this->input->post('celular'),
             'sexo' => $this->input->post('sexo'),
             'urlfoto' => $this->input->post('urlfoto'),
-            'empresa_id' => $this->input->post('empresa_id')   
+            'empresa_id' => $this->input->post('empresa_id')
         );
 
         return $this->db->insert('funcionario', $data);
     }
+
+    /**
+     * Edição de funcionario
+     * @return type
+     */
+    public function edit_funcionario() {
+
+        $data = array(
+            'email' => $this->input->post('email'),
+            'senha' => $this->input->post('senha'),
+            'nome' => $this->input->post('nome'),
+            'datanascimento' => $this->input->post('datanascimento'),
+            'datacadastro' => $this->input->post('datacadastro'),
+            'cargo_id' => $this->input->post('cargo_id'),
+            'departamento_id' => $this->input->post('departamento_id'),
+            'unidade_id' => $this->input->post('unidade_id'),
+            'endereco' => $this->input->post('endereco'),
+            'cidade' => $this->input->post('cidade'),
+            'perfil_id' => $this->input->post('perfil_id'),
+            'endereco' => $this->input->post('endereco'),
+            'pais' => $this->input->post('pais'),
+            'estado' => $this->input->post('estado'),
+            'status' => $this->input->post('status'),
+            'telefone' => $this->input->post('telefone'),
+            'ramal' => $this->input->post('ramal'),
+            'celular' => $this->input->post('celular'),
+            'sexo' => $this->input->post('sexo'),
+            'urlfoto' => $this->input->post('urlfoto'),
+            'empresa_id' => $this->input->post('empresa_id')
+        );
+        
+        $this->db->where('id', $this->input->post('id'));
+        
+
+        return $this->db->update('funcionario', $data); 
+    }
+
     //put your code here
 }

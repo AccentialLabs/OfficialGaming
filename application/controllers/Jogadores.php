@@ -13,28 +13,23 @@ class Jogadores extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('usuariotb_model'); //codigo para mostrar os dados na tabela
+        $this->load->model('funcionario_model'); //codigo para mostrar os dados na tabela
         $this->load->helper('url_helper');
     }
-    
- /* Fim do construct */
-    
+
+    /* Fim do construct */
+
     public function index() {
-        
+
         $this->load->library('session');
         $data['empresa'] = $this->session->userdata('empresaLogada');
-        
-        $data['usuariotb'] = $this->usuariotb_model->get_usuariotb(); //codigo para mostrar os dados na tabela
+
+        $data['usuariotb'] = $this->funcionario_model->get_funcionario(); //codigo para mostrar os dados na tabela
 
         $this->load->view('templates/gaming_default'); //mudei
-        
+
         $this->load->view('jogadores/jogadores', $data);
     }
-    
-    
-    
-    
-    
-    
 
     /**
      * Status:
@@ -55,7 +50,7 @@ class Jogadores extends CI_Controller {
 
         $this->db->where('id', $this->input->post('id'));
 
-        if ($this->db->update('usuariotb', $data)) {
+        if ($this->db->update('funcionario', $data)) {
             echo "sucesso";
         } else {
             echo "error";
@@ -69,15 +64,21 @@ class Jogadores extends CI_Controller {
      * 2 - EXCLUIDO
      */
     public function deleteUser() {
-
         $data['status'] = 2;
-
         $this->db->where('id', $this->input->post('id'));
 
-        if ($this->db->update('usuariotb', $data)) {
+        if ($this->db->update('funcionario', $data)) {
             echo "sucesso";
         } else {
             echo "error";
+        }
+    }
+
+    public function editarJogadorFuncionario($editJogador = null) {
+        if (!empty($editJogador)) {
+            $this->load->library('session');
+            $this->session->set_flashdata("editJogador", $editJogador);
+            redirect('Funcionario/cadastrarFuncionario', 'refresh');
         }
     }
 
