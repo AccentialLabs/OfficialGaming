@@ -12,28 +12,28 @@ $(function() {
      var handle = '';
     
      //muda status
-    $(".statusCheckbox").click(function() {
+   $(".statusCheckbox").click(function() {
 
         alert(id);
         var statusAtual = $(this).attr("value");
         var id = $(this).attr("id");
         
         $.ajax({
-            url: '../Configuracoes/mudaStatusCategoria',
+            url: '../Configuracoes/mudaStatusCategoriaObjetos',
             type: 'POST',
             data: { 
                 id: id,
                 statusAtual: statusAtual
             },
-            success: function(msg) {
+              sucesso: function(msg) {
                 alert(sucesso);
             }
         }); 
-    });
+    }); 
     
     //exclui categoria
 
-    $(".excluirCategoria").click(function() {
+    $(".excluirCategoriatb").click(function() {
       
         handle = $(this);
         acaoParaExcluir = $(this).attr("id");
@@ -42,10 +42,10 @@ $(function() {
 
     });
     
- $("#confirmExcluirAcao").click(function() {
+ $("#confirmaExcluirAcao").click(function() {
 
         $.ajax({ 
-            url: '../Configuracoes/deleteCategoria',
+            url: '../Configuracoes/deleteCategoriatb',
             type: 'POST',
             data: {
                 id: acaoParaExcluir
@@ -66,14 +66,14 @@ $(function() {
 
     });
     
-      AddTableRow = function(){ 
+        AddTableRow = function() {
         var newRow = $("<tr class='listas'>");
         var cols = "";
         
         if (contador == 0) {
             
             contador++;
-            cols += '<td style="border-width: thin; border-style: solid; border-color: black;"><input type="text" class="form-control" placeholder="Descrição" id="addNome' + contador + '"</td>';
+            cols += '<td style="border-width: thin; border-style: solid; border-color: black;"><input type="text" placeholder="Categoriaobjetos" class="form-control" id="addNome' + contador + '"/></td>';
             cols += '<td style="border-width: thin; border-style: solid; border-color: black;" class="text-center"><input type="checkbox" checked disabled="disabled"/></td>';
             cols += '<td style="border-width: thin; border-style: solid; border-color: black;">&nbsp;</td>';
             newRow.append(cols);
@@ -81,34 +81,35 @@ $(function() {
             return false;
         } else {
             
-            var addDescricao = $("#addNome" + contador).val();
+            var addCategoriaobjetos = $("#addNome" + contador).val();
             
-            addCategoriatb (addDescricao);
+            addCategoritb(addCategoriaobjetos);
             
             contador++;
-            cols += '<td style="border-width: thin; border-style: solid; border-color: black;"><input type="text" class="form-control" placeholder="Descrição" id="addNome' + contador + '"</td>';
+            cols += '<td style="border-width: thin; border-style: solid; border-color: black;"><input type="text" placeholder="Categoriaobjetos" class="form-control" id="addNome' + contador + '"/></td>';
             cols += '<td style="border-width: thin; border-style: solid; border-color: black;" class="text-center"><input type="checkbox" checked disabled="disabled"/></td>';
             cols += '<td style="border-width: thin; border-style: solid; border-color: black;">&nbsp;</td>';
             newRow.append(cols);
             $("#imbatman").append(newRow);
+            
             return false;
         }
     };
         
 });
 
-    function addCategoriatb(categoriaobjetos) {
+    function addCategoritb(categoriaobjetos) {
 
     $.ajax({
-        url: '../Configuracoes/insertCategoriatb',
-        type: 'POST',
-        data: {
-            categoriaobjetos: categoriaobjetos,
-            status: 1
-        },
-        success: function(msg) {
-            
-        }
-    });
+            url: '../Configuracoes/insertCategoriaObjetos',
+            type: 'POST',
+            data: {
+                categoriaobjetos: categoriaobjetos,
+                status: 1
+            },
+            success: function(msg) {
+                
+            }
+        });
 
 }

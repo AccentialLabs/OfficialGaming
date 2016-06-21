@@ -8,26 +8,13 @@ and open the template in the editor.
 
 <html>
     <head>
-        <!-- Ativo para o botão+ add as tabelas-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-        <!-- Ativo para o botão+ add as tabelas-->
-
-
-
+  
         <link href="../../assets/css/configuracoes5.css" rel="stylesheet"/>
         <script src="../../assets/js/configuracoes5.js"></script> 
 
-        
-
-
         <script src="../../assets/js/views/ajax/configsCategoriaobjetosAjax.js"></script>
-
-
-
+   
     <body>
-
-
         <!--container--> 
         <div class="col-md-10  container-style" id="elemento1">
             <div id="page-content" class="margembranca"> 
@@ -71,6 +58,12 @@ and open the template in the editor.
                                         <!--Aqui estou chamando o script da tabela que add linha-->
                                         <div class="AddTableRow"></div>
                                         <!--fim da chamada do script da tabela que add linha-->
+                                        
+                                        <!-- Esse é o botão + que adiciona linha na tabela -->
+                                        <div class="btnclicks btn-plus pull-right">
+                                            <button onclick="AddTableRow()" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                                        </div>
+                                        <!-- Fim é o FIM do botão + que adiciona linha na tabela -->
 
                                         <div class="col-md-11" id="elemento1">
                                             <div id="table-responsive"  class="col-md-12">
@@ -82,7 +75,9 @@ and open the template in the editor.
                                                             <th style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html"/> </center></th>
                                                     </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody ng-repeat="membro in membroSede">
+                                                        <!-- Data Show Row-->
+                                                        
                                                         <?php
                                                         foreach ($categoriatb as $categoriatb) {
                                                             if ($categoriatb['status'] != 2) {
@@ -95,49 +90,39 @@ and open the template in the editor.
                                                                     echo "checked";
                                                                 }
                                                                 ?> /> </center></td>
-                                                            <td style="border-width: thin; border-style: solid; border-color: black;"><center><span class = "glyphicon glyphicon-ban-circle excluirCategoria" id="<?php echo $categoriatb['id']; ?>"></span></center> </td>
+                                                            <td style="border-width: thin; border-style: solid; border-color: black;"><center><span class = "glyphicon glyphicon-ban-circle excluirCategoriatb" id="<?php echo $categoriatb['id']; ?>"></span></center> </td>
                                                             </tr>
 
-                                                        <?php }
-                                                    } ?>
+                                                        <?php }  } ?>
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
 
 
-                                        <!-- Esse é o botão + que adiciona linha na tabela -->
-                                        <div class="btnclicks pull-right plus">
-                                            <button onclick="AddTableRow()" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
-                                        </div>
-
-                                        <!-- Fim é o FIM do botão + que adiciona linha na tabela -->
-
-
-
                                         <div class="container">
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="myModalDeleteAcao" role="dialog">     <!--.fade = desvanecer o modal de dentro pra fora-->
-                                                <div class="modal-dialog modal-sm"><!--diálogo-.modal=define a largura adequada e margem do modal"tamanho".modal-lg-->
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                            <h4 class="modal-title"><center>ATENÇÃO!</center></h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <p>Este Ação está sendo usada em </br>Reconhecimento e Programas!</br>
-                                                                Confirme se deseja mesmo excluí-la.</p>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal" id="confirmExcluirAcao">Sim</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button type="button" data-toggle="modal" data-target="#myModalDeleteAcao" id="openModalDelete">Open Modal</button>
-                                        <!-- rodape -->
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModalDeleteAcao" role="dialog">     <!--.fade = desvanecer o modal de dentro pra fora-->
+                        <div class="modal-dialog modal-sm"><!--diálogo-.modal=define a largura adequada e margem do modal"tamanho".modal-lg-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title"><center>ATENÇÃO!</center></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Este Ação está sendo usada em </br>Reconhecimento e Programas!</br>
+                                        Confirme se deseja mesmo excluí-la.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal" id="confirmExcluirAcao">Sim</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <button type="button" data-toggle="modal" data-target="#myModalDeleteAcao" id="openModalDelete">Open Modal</button>
+        <!-- rodape -->
 
                                     </div>
                                     <!--colocando os botóes do final da página dentro da ta´-pane-->
@@ -171,5 +156,5 @@ and open the template in the editor.
 
     </body>
 </html>
-
+</form>
 <!--FIM container-->

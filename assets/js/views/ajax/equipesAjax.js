@@ -49,7 +49,7 @@ $(function(){
             data: {
                 id: acaoParaExcluir
             },
-            success: function(msg) {
+            sucesso: function(msg) {
 
               var tr = $(handle).closest('tr');
                 tr.fadeOut(600, function() {

@@ -41,11 +41,11 @@ class Configuracoes extends CI_Controller {
 
     public function dadosEmpresa() {
 
-         /*tela padrão cabeçalho e rodapé*/
+        /* tela padrão cabeçalho e rodapé */
         $this->load->library('session');
         $data['empresa'] = $this->session->userdata('empresaLogada');
-        /*tela padrão cabeçalho e rodapé*/
-        
+        /* tela padrão cabeçalho e rodapé */
+
         $data['empresa'] = $this->empresa_model->get_empresa();
 
         $this->load->view('templates/gaming_default');
@@ -53,13 +53,13 @@ class Configuracoes extends CI_Controller {
     }
 
     public function cadastrarRedesociais() {
-        
-         /*tela padrão cabeçalho e rodapé*/
+
+        /* tela padrão cabeçalho e rodapé */
         $this->load->library('session');
         $data['empresa'] = $this->session->userdata('empresaLogada');
-        /*tela padrão cabeçalho e rodapé*/
-        
-        
+        /* tela padrão cabeçalho e rodapé */
+
+
         $data['facebookempresa'] = $this->facebookempresa_model->get_facebookempresa();
 
         $this->load->view('templates/gaming_default');
@@ -67,24 +67,24 @@ class Configuracoes extends CI_Controller {
     }
 
     public function jogo() {
-        
-         /*tela padrão cabeçalho e rodapé*/
+
+        /* tela padrão cabeçalho e rodapé */
         $this->load->library('session');
         $data['empresa'] = $this->session->userdata('empresaLogada');
-        /*tela padrão cabeçalho e rodapé*/
-        
+        /* tela padrão cabeçalho e rodapé */
+
 
         $this->load->view('templates/gaming_default');
         $this->load->view('configuracoes/jogo');
     }
 
     public function usuariosGestores() {
-        
-         /*tela padrão cabeçalho e rodapé*/
+
+        /* tela padrão cabeçalho e rodapé */
         $this->load->library('session');
         $data['empresa'] = $this->session->userdata('empresaLogada');
-        /*tela padrão cabeçalho e rodapé*/
-        
+        /* tela padrão cabeçalho e rodapé */
+
 
         $data['usuarios'] = $this->usuariotb_model->get_usuariotb(); /* retirar o comentario da construct */
         //$data['tes'] = $this->usuariogestor_model->insert_usuariogestor(7);
@@ -92,20 +92,20 @@ class Configuracoes extends CI_Controller {
         $this->load->view('templates/gaming_default');
         $this->load->view('configuracoes/usuariosGestores', $data);
     }
-    
-    public function ativarOuInativarUsGestores(){
-        
+
+    public function ativarOuInativarUsGestores() {
+
         $id = $this->input->post('id');
         return $this->usuariogestor_model->insert_usuariogestor($id);
     }
 
     public function conteudo() {
-        
-         /*tela padrão cabeçalho e rodapé*/
+
+        /* tela padrão cabeçalho e rodapé */
         $this->load->library('session');
         $data['empresa'] = $this->session->userdata('empresaLogada');
-        /*tela padrão cabeçalho e rodapé*/
-        
+        /* tela padrão cabeçalho e rodapé */
+
 
         $data['conteudos'] = $this->conteudo_model->get_conteudo();
 
@@ -114,12 +114,12 @@ class Configuracoes extends CI_Controller {
     }
 
     public function categoriaObjetos() {
-        
-         /*tela padrão cabeçalho e rodapé*/
+
+        /* tela padrão cabeçalho e rodapé */
         $this->load->library('session');
         $data['empresa'] = $this->session->userdata('empresaLogada');
-        /*tela padrão cabeçalho e rodapé*/
-        
+        /* tela padrão cabeçalho e rodapé */
+
 
         $data['categoriatb'] = $this->categoriatb_model->get_categoriatb();
 
@@ -128,12 +128,12 @@ class Configuracoes extends CI_Controller {
     }
 
     public function reconhecimento() {
-        
-         /*tela padrão cabeçalho e rodapé*/
+
+        /* tela padrão cabeçalho e rodapé */
         $this->load->library('session');
         $data['empresa'] = $this->session->userdata('empresaLogada');
-        /*tela padrão cabeçalho e rodapé*/
-  
+        /* tela padrão cabeçalho e rodapé */
+
         $data['reconhecimento'] = $this->reconhecimentotb_model->get_reconhecimentotb();
 
         $this->load->view('templates/gaming_default');
@@ -141,11 +141,11 @@ class Configuracoes extends CI_Controller {
     }
 
     public function premios() {
-        
-         /*tela padrão cabeçalho e rodapé*/
+
+        /* tela padrão cabeçalho e rodapé */
         $this->load->library('session');
         $data['empresa'] = $this->session->userdata('empresaLogada');
-        /*tela padrão cabeçalho e rodapé*/
+        /* tela padrão cabeçalho e rodapé */
 
         $data['premios'] = $this->tipopremio_model->get_tipopremio();
 
@@ -154,11 +154,11 @@ class Configuracoes extends CI_Controller {
     }
 
     public function usuariosFacilitadores() {
-        
-         /*tela padrão cabeçalho e rodapé*/
+
+        /* tela padrão cabeçalho e rodapé */
         $this->load->library('session');
         $data['empresa'] = $this->session->userdata('empresaLogada');
-        /*tela padrão cabeçalho e rodapé*/
+        /* tela padrão cabeçalho e rodapé */
 
         $data['facilitadores'] = $this->facilitadores_model->get_facilitadores();
 
@@ -200,25 +200,25 @@ class Configuracoes extends CI_Controller {
 
     public function mudaStatusConteudo() {
 
-    $statusAtual = $this->input->post('statusAtual');
+        $statusAtual = $this->input->post('statusAtual');
 
-    $data = '';
-    if ($statusAtual == 0) {
-        $data['status'] = 1;
-    } else {
-        $data['status'] = 0;
+        $data = '';
+        if ($statusAtual == 0) {
+            $data['status'] = 1;
+        } else {
+            $data['status'] = 0;
+        }
+
+        $this->db->where('id', $this->input->post('id'));
+
+        if ($this->db->update('conteudo', $data)) {
+            echo "sucesso";
+        } else {
+            echo "error";
+        }
     }
 
-    $this->db->where('id', $this->input->post('id'));
-
-    if ($this->db->update('conteudo', $data)) {
-        echo "sucesso";
-    } else {
-        echo "error";
-    }
-}
-    
-       /**
+    /**
      * Status:
      * 0 - INATIVO
      * 1 - ATIVO
@@ -236,9 +236,8 @@ class Configuracoes extends CI_Controller {
             echo "error";
         }
     }
-    
-    
-     /**
+
+    /**
      * Status:
      * 0 - INATIVO
      * 1 - ATIVO
@@ -282,9 +281,8 @@ class Configuracoes extends CI_Controller {
             echo "error";
         }
     }
-    
- 
-     /**
+
+    /**
      * Status:
      * 0 - INATIVO
      * 1 - ATIVO
@@ -328,27 +326,26 @@ class Configuracoes extends CI_Controller {
             echo "error";
         }
     }
-    
+
     /**
      * INSERINDO USUÁRIOS FACILITADORES
      */
-    public function insertUsuarioFacilitador(){
-        
+    public function insertUsuarioFacilitador() {
+
         $this->facilitadores_model->insert_facilitadores();
         return "sucesso";
     }
-    
-      /**
+
+    /**
      * INSERINDO TIPO PRÊMIO
      */
-    public function insertTipoPremio(){
-        
+    public function insertTipoPremio() {
+
         $this->tipopremio_model->insert_tipopremio();
         return "sucesso";
     }
-    
-    
-      /*     * STATUS:
+
+    /*     * STATUS:
      * 0 - INATIVO
      * 1 - ATIVO
      * 2 - EXCLUIDO
@@ -401,18 +398,17 @@ class Configuracoes extends CI_Controller {
         $this->reconhecimentotb_model->insert_reconhecimentotb();
         return "sucesso";
     }
-    
+
     /**
      * CATEGORIA OBJETOS
      */
-
     /*     * STATUS:
      * 0 - INATIVO
      * 1 - ATIVO
      * 2 - EXCLUIDO
      */
 
-    public function mudaStatusCategoria() {
+    public function mudaStatusCategoriaObjetos() {
 
         $statusAtual = $this->input->post('statusAtual');
 
@@ -438,7 +434,7 @@ class Configuracoes extends CI_Controller {
      * 1 - ATIVO
      * 2 - EXCLUIDO
      */
-    public function deleteCategoria() {
+    public function DeleteCategoriatb() {
 
         $data['status'] = 2;
 
@@ -451,4 +447,13 @@ class Configuracoes extends CI_Controller {
         }
     }
 
-     }
+    /**
+     * INSERINDO RECONHECIMENTOTB
+     */
+    public function insertCategoriaObjetos() {
+
+        $this->categoriatb_model->insert_categoriatb();
+        return "sucesso";
+    }
+
+}
