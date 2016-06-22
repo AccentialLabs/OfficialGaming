@@ -7,7 +7,7 @@ and open the template in the editor.
 <link href="../../assets/css/cadastrar-f2.css" rel="stylesheet"/>
 <script src="../../assets/js/views/cadastrarFuncionario.js"></script>    
 
-<form  method="post" action="../funcionario/createFuncionario">
+<form  method="post" <?php  if (!empty($this->session->flashdata('editJogador'))) { echo 'action="../funcionario/editaFunctionario"'; }else{ echo 'action="../funcionario/createFuncionario"'; }?> >
 
     <div class="col-md-10  container-style" id="corpo-funcionario">
         <div id="page-content" class="margembranca pull-right"> 

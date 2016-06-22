@@ -32,6 +32,7 @@ class Funcionario extends CI_Controller {
         if (!empty($this->session->flashdata('editJogador'))) {
 
             $data['funcParaEdit'] = $this->funcionario_model->get_funcionario($this->session->flashdata('editJogador'));
+             $this->session->set_flashdata("paraEditar", true);
         }
 
         $data['empresa'] = $this->session->userdata('empresaLogada');
@@ -80,6 +81,11 @@ class Funcionario extends CI_Controller {
     }
     
     public function editaFunctionario(){
+        
+         $this->funcionario_model->edit_funcionario();
+        $this->load->library('session');
+        $this->session->set_flashdata("cadSucesso", "Editado com sucesso!!!");
+        redirect('Jogadores/index', 'refresh');
         
     }
 
