@@ -19,7 +19,7 @@ $(function() {
         var id = $(this).attr("id");
         
         $.ajax({
-            url: '../Configuracoes/mudaStatusCategoriaObjetos',
+            url: '../Configuracoes/mudaStatusCategoria',
             type: 'POST',
             data: { 
                 id: id,
@@ -34,7 +34,7 @@ $(function() {
     //exclui categoria
 
     $(".excluirCategoriatb").click(function() {
-      
+          //alert('dad');
         handle = $(this);
         acaoParaExcluir = $(this).attr("id");
 
@@ -42,10 +42,10 @@ $(function() {
 
     });
     
- $("#confirmaExcluirAcao").click(function() {
-
+ $("#confirmExcluirAcao").click(function() {
+ 
         $.ajax({ 
-            url: '../Configuracoes/deleteCategoriatb',
+            url: '../Configuracoes/deleteCategoria',
             type: 'POST',
             data: {
                 id: acaoParaExcluir

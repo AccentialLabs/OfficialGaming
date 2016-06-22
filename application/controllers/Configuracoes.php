@@ -243,7 +243,7 @@ class Configuracoes extends CI_Controller {
      * 1 - ATIVO
      * 2 - EXCLUIDO
      */
-    public function mudaStatusTipoPremio() {
+    public function mudaStatusPremios() {
 
         $statusAtual = $this->input->post('statusAtual');
 
@@ -256,7 +256,7 @@ class Configuracoes extends CI_Controller {
 
         $this->db->where('id', $this->input->post('id'));
 
-        if ($this->db->update('tipopremio', $data)) {
+        if ($this->db->update('premio', $data)) {
             echo "sucesso";
         } else {
             echo "error";
@@ -275,7 +275,7 @@ class Configuracoes extends CI_Controller {
 
         $this->db->where('id', $this->input->post('id'));
 
-        if ($this->db->update('tipopremio', $data)) {
+        if ($this->db->update('premio', $data)) {
             echo "sucesso";
         } else {
             echo "error";
@@ -351,7 +351,7 @@ class Configuracoes extends CI_Controller {
      * 2 - EXCLUIDO
      */
 
-    public function mudaStatusReconhecimentotb() {
+    public function mudaStatusReconhecimentotb() { //esse cógigo faz com que não salve a ação do checkbox
 
         $statusAtual = $this->input->post('statusAtual');
 
@@ -408,7 +408,7 @@ class Configuracoes extends CI_Controller {
      * 2 - EXCLUIDO
      */
 
-    public function mudaStatusCategoriaObjetos() {
+    public function mudaStatusCategoria() {
 
         $statusAtual = $this->input->post('statusAtual');
 
@@ -434,7 +434,7 @@ class Configuracoes extends CI_Controller {
      * 1 - ATIVO
      * 2 - EXCLUIDO
      */
-    public function DeleteCategoriatb() {
+    public function DeleteCategoria() {
 
         $data['status'] = 2;
 
@@ -446,14 +446,15 @@ class Configuracoes extends CI_Controller {
             echo "error";
         }
     }
+    
 
     /**
-     * INSERINDO RECONHECIMENTOTB
+     * INSERINDO CategoriaObjetos
      */
     public function insertCategoriaObjetos() {
 
         $this->categoriatb_model->insert_categoriatb();
         return "sucesso";
     }
-
+    
 }

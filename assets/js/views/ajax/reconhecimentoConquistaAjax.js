@@ -3,50 +3,66 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-$(function(){
-  
-     //muda status
-    $(".statusCheckbox").click(function() {
+$(function () {
 
+
+    $("#openModalDelete").fadeOut(0);
+    var acaoParaExcluir = '';
+    var handle = '';
+
+    //muda status
+    $(".statusCheckbox").click(function () {
+
+        alert(id);
         var statusAtual = $(this).attr("value");
         var id = $(this).attr("id");
-        
+
         $.ajax({
-            url: '../Reconhecimento/mudaStatusReconhecimento',
+            url: '../Configuracoes/mudaStatusReconhecimentotb',
             type: 'POST',
             data: {
                 id: id,
                 statusAtual: statusAtual
             },
-            success: function(msg) {
-                alert(msg);
-            }
-        }); 
-    });
-
-    //exclui premio
-    $(".excluirReconhecimento").click(function() {
-
-        var handle = $(this);
-        var id = $(this).attr("id");
-
-        $.ajax({
-            url: '../Reconhecimento/deleteReconhecimentos',
-            type: 'POST',
-            data: {
-                id: id
-            },
-            success: function(msg) {
-
-                var tr = $(handle).closest('tr');
-                tr.fadeOut(600, function() {
-                    tr.remove();
-                });
+            sucesso: function (msg) {
+                alert(sucesso);
             }
         });
 
     });
-     
-});
+
+    //exclui Reconhecimento
+    $(".excluirReconhecimentotb").click(function () {
+          //alert('dad');
+        handle = $(this);
+        acaoParaExcluir = $(this).attr("id");
+
+        $("#openModalDelete").click();
+
+    });
+
+    $("#confirmExcluirAcao").click(function () {
+
+        $.ajax({ 
+            url: '../Configuracoes/deleteReconhecimento',
+            type: 'POST',
+           data: {
+                id: acaoParaExcluir
+            },
+            success: function(msg) {
+
+              var tr = $(handle).closest('tr');
+                tr.fadeOut(600, function() {
+                    tr.remove();
+                });
+
+            $('#myModalDeleteAcao').modal('toggle');
+            $('#myModalDeleteAcao').modal('hide');
+
+            }
+        });
+
+    });
 
 
+}); 

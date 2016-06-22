@@ -95,12 +95,39 @@ and open the template in the editor.
                                                 
                                             </div>
                                         </div>
+                                        
+                                        <div class="container">
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="myModalDeleteAcao" role="dialog">     <!--.fade = desvanecer o modal de dentro pra fora-->
+                                                <div class="modal-dialog modal-sm"><!--diálogo-.modal=define a largura adequada e margem do modal"tamanho".modal-lg-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title"><center>ATENÇÃO!</center></h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>Este Ação está sendo usada em </br>Reconhecimento e Programas!</br>
+                                                                Confirme se deseja mesmo excluí-la.</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal" id="confirmExcluirAcao">Sim</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="button" data-toggle="modal" data-target="#myModalDeleteAcao" id="openModalDelete">Open Modal</button>
+                                        <!-- rodape -->
+                                        
 
                                         <!-- Esse é o botão + que adiciona linha na tabela -->
                                         <div class="btnclicks btn-plus pull-right">
                                             <button onclick="AddTableRow()" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
                                         </div>
                                         <!-- Fim é o FIM do botão + que adiciona linha na tabela -->
+                                        
+                                        
 
                                     </div>
                                 </div>

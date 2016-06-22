@@ -5,33 +5,33 @@
  */
 $(function(){
    
-     $("#openModalDelete").fadeOut(0);
+       $("#openModalDelete").fadeOut(0);
      var acaoParaExcluir = '';
      var handle = '';
     
      //muda status
-    $(".statusCheckbox").click(function() {
+   $(".statusCheckbox").click(function() {
 
         alert(id);
         var statusAtual = $(this).attr("value");
         var id = $(this).attr("id");
         
         $.ajax({
-            url: '../Premio/mudaStatusPremios',
+            url: '../Configuracoes/mudaStatusPremios',
             type: 'POST',
-            data: {
+            data: { 
                 id: id,
                 statusAtual: statusAtual
             },
-            success: function(msg) {
+              successo: function(msg) {
                 alert(sucesso);
             }
         }); 
     });
 
     //exclui premio
-    $(".excluirPremios").click(function() {
-      
+    $(".excluirTipoPremio").click(function() {
+      alert('dad');
         handle = $(this);
         acaoParaExcluir = $(this).attr("id");
 
@@ -42,7 +42,7 @@ $(function(){
   $("#confirmExcluirAcao").click(function() {
 
         $.ajax({
-            url: '../Premio/deletePremios',
+            url: '../Configuracoes/deleteTipoPremio',
             type: 'POST',
             data: {
                 id: acaoParaExcluir
@@ -56,8 +56,6 @@ $(function(){
 
             $('#myModalDeleteAcao').modal('toggle');
             $('#myModalDeleteAcao').modal('hide');
-
-              
 
             }
         });

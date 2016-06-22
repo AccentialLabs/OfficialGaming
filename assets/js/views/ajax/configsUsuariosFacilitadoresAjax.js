@@ -6,9 +6,14 @@
 $(function() {
 
     var contador = 0;
+    
+    $("#openModalDelete").fadeOut(0);
+     var acaoParaExcluir = '';
+     var handle = ''; 
+     
     //muda status
     $(".statusCheckbox").click(function() {
-
+         alert(id);
         var statusAtual = $(this).attr("value");
         var id = $(this).attr("id");
 
@@ -20,7 +25,7 @@ $(function() {
                 statusAtual: statusAtual
             },
             success: function(msg) {
-
+                alert(sucesso);
             }
         });
 
@@ -28,23 +33,31 @@ $(function() {
 
     //exclui usuario
     $(".excluirUsuarioFacilitador").click(function() {
+         //alert('dad');
+        handle = $(this);
+        acaoParaExcluir = $(this).attr("id");
 
-        var handle = $(this);
-        var id = $(this).attr("id");
+        $("#openModalDelete").click();
 
-        var tr = $(handle).closest('tr');
-        tr.fadeOut(600, function() {
-            tr.remove();
-        });
-
-        $.ajax({
+    });
+    
+    $("#confirmExcluirAcao").click(function() {
+ 
+        $.ajax({ 
             url: '../Configuracoes/deleteUsuarioFacilitador',
             type: 'POST',
             data: {
-                id: id
+                id: acaoParaExcluir
             },
             success: function(msg) {
 
+              var tr = $(handle).closest('tr');
+                tr.fadeOut(600, function() {
+                    tr.remove();
+                });
+
+            $('#myModalDeleteAcao').modal('toggle');
+            $('#myModalDeleteAcao').modal('hide');
 
 
             }

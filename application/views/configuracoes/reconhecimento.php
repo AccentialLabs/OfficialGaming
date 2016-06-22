@@ -6,20 +6,15 @@ and open the template in the editor.
 -->
 
 
-        <!-- Ativo para o botão+ add as tabelas-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="craftpip-jquery-confirm-524c959/dist/jquery-confirm.min.js"></script>
-        <!-- Ativo para o botão+ add as tabelas-->
+<html>
+    <head>
 
         <link href="../../assets/css/configuracoes6.css" rel="stylesheet"/>
         <script src="../../assets/js/configuracoes6.js"></script> 
 
-
         <script src="../../assets/js/views/ajax/configsReconhecimentoAjax.js"></script>
-       
-  
+
     <body>       
- 
 
         <!--container-->
         <div class="col-md-10  container-style">
@@ -72,54 +67,72 @@ and open the template in the editor.
                                                         <tr>
                                                             <th style="border-width: thin; border-style: solid; border-color: black;">Tipos de Reconhecimento</th>
                                                             <th style="border-width: thin; border-style: solid; border-color: black;"><center>Ativo</center></th>
-                                                            <th style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html"/> </center></th>
-                                                        </tr>
+                                                    <th style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html"/> </center></th>
+                                                    </tr>
                                                     </thead>
-                                                    <tbody>
-                                                        
-                                                        <?php foreach ($reconhecimento as $reconhecimentotb) {
-                                                            if($reconhecimentotb['status'] != 2) {
-                                                            ?>
-                                                            <tr>
-                                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $reconhecimentotb['descricao']; ?></td>
-                                                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" class="statusCheckbox" id="<?php echo $reconhecimentotb['id']; ?>" value="<?php echo $reconhecimentotb['status']; ?>" <?php if($reconhecimentotb['status'] == 1){echo "checked";} ?>/> </center></td>
-                                                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><span  class = "glyphicon glyphicon-ban-circle excluirReconhecimentotb" id="<?php echo $reconhecimentotb['id']; ?>"></span> </center></td>
-                                                        </tr>
-                                                         <?php }
-                                                       } ?>
+                                                    <tbody ng-repeat="membro in membroSede">
+                                                         <!-- Data Show Row-->
+                                                         
+                                                        <?php
+                                                        foreach ($reconhecimento as $reconhecimentotb) {
+                                                            if ($reconhecimentotb['status'] != 2) {
+                                                                ?>
+                                                                <tr class="listas">
+                                                                    <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $reconhecimentotb['descricao']; ?></td>
+                                                                    <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox"  name="status" class="statusCheckbox" id="<?php echo $reconhecimentotb['id']; ?>" value="<?php echo $reconhecimentotb['status']; ?>" <?php
+                                                                if ($reconhecimentotb['status'] == 1) {
+                                                                    echo "checked";
+                                                                }
+                                                                ?> /> </center></td>
+                                                            <td style="border-width: thin; border-style: solid; border-color: black;"><center><span class = "glyphicon glyphicon-ban-circle excluirReconhecimentotb " id="<?php echo $reconhecimentotb['id']; ?>"></span></center> </td>
+                                                            </tr>
+                                                        <?php
+                                                        }
+                                                    }
+                                                    ?>
                                                     </tbody>
                                                 </table>
                                             </div>
+                                            <!-- Esse é o botão + que adiciona linha na tabela -->
+                                            <div class="btnclicks btn-plus pull-right"> 
+                                                <button onclick="AddTableRow()" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                                            </div>
+                                            <!-- Fim é o FIM do botão + que adiciona linha na tabela -->
                                         </div>
 
-                                        <!-- Esse é o botão + que adiciona linha na tabela -->
-                                        <div class="btnclicks btn-plus pull-right">
-                                            <button onclick="AddTableRow()" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
-                                        </div>
-                                        <!-- Fim é o FIM do botão + que adiciona linha na tabela -->
-
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="myModal" role="dialog">
-                                            <div class="modal-dialog modal-sm">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                        <h4 class="modal-title"> <center>ATENÇÃO!</center></h4>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <p>Este tipo de Reconhecimento está </br>sendo usado em Ações e Programas!</br>
-                                                            Confirme se deseja mesmo excluí-lo.</p>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Sim</button>
+                                         <div class="container">
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="myModalDeleteAcao" role="dialog">     <!--.fade = desvanecer o modal de dentro pra fora-->
+                                                <div class="modal-dialog modal-sm"><!--diálogo-.modal=define a largura adequada e margem do modal"tamanho".modal-lg-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title"><center>ATENÇÃO!</center></h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>Este Ação está sendo usada em </br>Reconhecimento e Programas!</br>
+                                                                Confirme se deseja mesmo excluí-la.</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal" id="confirmExcluirAcao">Sim</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <button type="button" data-toggle="modal" data-target="#myModalDeleteAcao" id="openModalDelete">Open Modal</button>
+                                        <!-- rodape --> 
 
                                     </div>
-                                </div>
+                                    <!--colocando os botóes do final da página dentro da ta´-pane-->
+                                    <div>
+                                        <!-- Trigger the modal with a button -->
+                                        <button type="button" class="btn btn-primary pull-right btnazul" data-toggle="modal" data-target="#myModal">Salvar</button>
+                                        <button type="button" class="btn btn-deafult pull-right">Cancelar</button> 
+                                    </div> 
+                                    <!--Tremina aqui os botóes do final da página dentro da ta´-pane-->
+                                </div><!-- aqui fecha a tab-pane -->
 
                             </div> <!-- aqui fecha a tab-pane -->
 
@@ -141,18 +154,11 @@ and open the template in the editor.
 
                 <!-- rodape -->
 
-                <!--colocando os botóes do final da página dentro da ta´-pane-->
-                <div>
-                    <!-- Trigger the modal with a button -->
-                    <button type="button" class="btn btn-primary pull-right btnazul" data-toggle="modal" data-target="#myModal">Salvar</button>
-                    <button type="button" class="btn btn-deafult pull-right">Cancelar</button> 
-                </div> 
-                <!--Tremina aqui os botóes do final da página dentro da ta´-pane-->
 
             </div>
         </div>
 
     </body>
-
+</html>
 
 <!--FIM container-->
