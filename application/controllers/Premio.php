@@ -1,53 +1,64 @@
 <?php
 
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
 class Premio extends CI_Controller {
+
     //put your code here
-    
-        public function __construct() {
+
+    public function __construct() {
         parent::__construct();
         $this->load->model('premio_model');
+        $this->load->model('tipopremio_model');
         $this->load->model('ganharpremio_model');
         $this->load->helper('url_helper');
     }
+
     // creio que os dadoa que estão inseridos na tabela são o formulário que prencho nas tels com as mesmas tabemas
 
-    public function ganharPremio(){
-        
-        /*tela padrão cabeçalho e rodapé*/
+    public function ganharPremio() {
+
+        /* tela padrão cabeçalho e rodapé */
         $this->load->library('session');
         $data['empresa'] = $this->session->userdata('empresaLogada');
-        /*tela padrão cabeçalho e rodapé*/
-        
-    $data['premio'] = $this->premio_model->get_premio();  //linha de código da tabela
-    $data['ganharpremio'] = $this->ganharpremio_model->get_ganharpremio();  //linha de código da do premio
-        
+        /* tela padrão cabeçalho e rodapé */
+
+        $data['premio'] = $this->premio_model->get_premio();  //linha de código da tabela
+        $data['ganharpremio'] = $this->ganharpremio_model->get_ganharpremio();  //linha de código da do premio
+
         $this->load->view('templates/gaming_default');
-        $this->load->view('premio/ganharPremio',$data);
+        $this->load->view('premio/ganharPremio', $data);
     }
-    
-     public function cadastrarPremio(){
-  
-         /*tela padrão cabeçalho e rodapé*/
+
+    public function cadastrarPremio() {
+
+        /* tela padrão cabeçalho e rodapé */
+        $data['tipos'] = $this->tipopremio_model->get_tipopremio();
         $this->load->library('session');
         $data['empresa'] = $this->session->userdata('empresaLogada');
-        /*tela padrão cabeçalho e rodapé*/
-         
+        /* tela padrão cabeçalho e rodapé */
+
         $this->load->view('templates/gaming_default');
-        $this->load->view('premio/cadastrarPremio');
+        $this->load->view('premio/cadastrarPremio', $data);
     }
-    
-      public function createGanharpremio(){  //codigo que mostra a tala prêmio.
+
+    public function createPremio() {
+        $this->premio_model->insert_premio();
+        $this->load->library('session');
+        $this->session->set_flashdata("cadSucesso", "Cadastrado com sucesso!!!");
+        redirect('Premio/cadastrarPremio', 'refresh');
+    }
+
+    public function createGanharpremio() {  //codigo que mostra a tala prêmio.
         $this->ganharpremio_model->insert_ganharpremio();
-        echo"sucesso"; 
-      }
-      
-        /**
+        echo"sucesso";
+    }
+
+    /**
      * Status:
      * 0 - INATIVO
      * 1 - ATIVO
@@ -91,4 +102,5 @@ class Premio extends CI_Controller {
             echo "error";
         }
     }
+
 }

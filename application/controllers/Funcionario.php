@@ -79,7 +79,7 @@ class Funcionario extends CI_Controller {
         $this->session->set_flashdata("cadSucesso", "Cadastrado com sucesso!!!");
         redirect('Jogadores/index', 'refresh');
     }
-    
+        
     public function editaFunctionario(){
         
          $this->funcionario_model->edit_funcionario();

@@ -68,7 +68,7 @@ and open the template in the editor.
 
 .btnazul{
     margin-right: 5px;
-   margin-left: 1em;
+    margin-left: 1em;
 }
 
 /*Aqui começa as configuraç~ões de cor tamanho do HEADER-MENU-CONTAINER*/
@@ -110,7 +110,7 @@ and open the template in the editor.
 }
 
 .tamanho2{
-      width: 47em;
+    width: 47em;
 }
 /*FIM do tamanho da caixa do fomulário*/
 
@@ -123,9 +123,28 @@ and open the template in the editor.
 }
 
 
-      
-      .nab-branco{
-          margin-left: 0em;
-          margin-right: 1em;
-          margin-bottom: 0em;
-      }
+
+.nab-branco{
+    margin-left: 0em;
+    margin-right: 1em;
+    margin-bottom: 0em;
+}
+
+.numberfield{
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.espacoEntre{
+    margin-left: 5px;
+}

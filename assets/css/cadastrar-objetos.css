@@ -12,16 +12,7 @@ and open the template in the editor.
 body {
   font: "Myriad Pro", Frutiger, "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", Verdana, sans-serif;
 }
-table {
-  border-collapse: collapse;
-  width: 20em;
-  border: 1px solid #666;
-}
-thead {
-  background: #ccc url(http://www.devfuria.com.br/html-css/tabelas/bar.gif) repeat-x left center;
-  border-top: 1px solid #a5a5a5;
-  border-bottom: 1px solid #a5a5a5;
-}
+
 tr:hover {
   background-color:#3d80df;
   color: #fff;
@@ -135,3 +126,8 @@ th, td {
           margin-bottom: 0em;
       }
        /*FIM configigurações do botão voltar e a nav-bar*/
+       
+       .disabled-div{
+           pointer-events: none;
+           opacity: 0.5;
+       }

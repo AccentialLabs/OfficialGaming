@@ -60,7 +60,8 @@ class Premio_model extends CI_Model {
             'nome' => $this->input->post('nome'),
             'tipopremio_id' => $this->input->post('tipopremio_id'),
             'descricao' => $this->input->post('descricao'),
-            'fotourl' => $this->input->post('fotourl'),
+            //'fotourl' => $this->input->post('fotourl'),
+            'fotourl' => '',
             'site' => $this->input->post('site'),
             'linkadicional' => $this->input->post('linkadicional'),
             'informacoesadicionais' => $this->input->post('informacoesadicionais'),
@@ -70,11 +71,8 @@ class Premio_model extends CI_Model {
             'quantidadeatualpremios' => $this->input->post('quantidadeatualpremios'),
             'disponibilidade' => $this->input->post('disponibilidade'),
             'quantidadedisponibilizadade' => $this->input->post('quantidadedisponibilizadade'),
-            'datacadastro' => $this->input->post('datacadastro'),
-            'status' => $this->input->post('status'),
-            'status' => $this->input->post('status'),
-            'catalogopremio' => $this->input->post('catalogopremio'),
-            'tipofiltra' => $this->input->post('tipofiltra')
+            'datacadastro' => date('Y-m-d'),
+            'status' => $this->input->post('status')
         );
         
         return $this->db->insert('premio', $data);
