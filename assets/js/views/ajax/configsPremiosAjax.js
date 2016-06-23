@@ -6,21 +6,28 @@
 $(function() {
 
     var contador = 0;
-    //muda status
+    
+    
+    $("#openModalDelete").fadeOut(0);
+     var acaoParaExcluir = '';
+     var handle = '';
+     
+     //muda status
     $(".statusCheckbox").click(function() {
-
+        
+        alert(id);
         var statusAtual = $(this).attr("value");
         var id = $(this).attr("id");
 
         $.ajax({
-            url: '../Configuracoes/mudaStatusTipoPremio',
+            url: '../Configuracoes/mudaStatusPremios',
             type: 'POST',
             data: {
                 id: id,
                 statusAtual: statusAtual
             },
-            success: function(msg) {
-                //s]alert(msg);
+            sucesso: function(msg) {
+                alert(sucesso);
 
             }
         });
@@ -28,23 +35,33 @@ $(function() {
     });
 
     //exclui usuario
-    $(".excluirTipoPremio").click(function() {
+    $(".excluirPremio").click(function() {
+        //alert('dad');
+        handle = $(this);
+        acaoParaExcluir = $(this).attr("id");
 
-        var handle = $(this);
-        var id = $(this).attr("id");
+       $("#openModalDelete").click();
 
-        $.ajax({
+    });
+    
+     $("#confirmExcluirAcao").click(function() { //quando muda o "ExcluirAcao"ele não exclui.
+ 
+        $.ajax({ 
             url: '../Configuracoes/deleteTipoPremio',
             type: 'POST',
             data: {
-                id: id
+                id: acaoParaExcluir
             },
             success: function(msg) {
 
-                var tr = $(handle).closest('tr');
+              var tr = $(handle).closest('tr');
                 tr.fadeOut(600, function() {
                     tr.remove();
                 });
+
+            $('#myModalDeleteAcao').modal('toggle');
+            $('#myModalDeleteAcao').modal('hide');
+
 
             }
         });

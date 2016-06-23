@@ -68,14 +68,14 @@ and open the template in the editor.
                                                     <th style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html"/> </center></th>
                                             </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody ng-repeat="membro in membroSede">
 
                                                 <?php
                                                 foreach ($conteudos as $conteudo) {
                                                     if ($conteudo['status'] != 2) {
                                                         ?>
 
-                                                        <tr>
+                                                        <tr class="listas">
                                                             <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $conteudo['nome']; ?></td>
                                                             <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $conteudo['objeto']; ?></td>
                                                             <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $conteudo['tipo']; ?></td> 

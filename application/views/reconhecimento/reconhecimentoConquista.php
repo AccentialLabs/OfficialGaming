@@ -10,16 +10,16 @@ and open the template in the editor.
 -->
 
 
-        <link href="../../assets/css/reconhecimentos-conquistas.css" rel="stylesheet"/>
+<link href="../../assets/css/reconhecimentos-conquistas.css" rel="stylesheet"/>
 
-        <script src="../../assets/js/views/ajax/reconhecimentoConquistaAjax.js"></script>
+<script src="../../assets/js/views/ajax/reconhecimentoConquistaAjax.js"></script>
 
- 
-    <body>
-        
-            <!--estou criando essa linha de comandos agora para somente a parte da opção de filtragem-->
-            <form  method="post" action="http://localhost:9090/gaming/index.php/reconhecimento/createFiltrareconhecimmento">
-       
+
+<body>
+
+    <!--estou criando essa linha de comandos agora para somente a parte da opção de filtragem-->
+    <form  method="post" action="http://localhost:9090/gaming/index.php/reconhecimento/createFiltrareconhecimmento">
+
 
         <!--container-->
         <div class="col-md-10  container-style">
@@ -65,36 +65,63 @@ and open the template in the editor.
                             <tbody ng-repeat="membro in membroSede">
                                 <!-- Data Show Row-->
 
-                         <?php foreach ($reconhecimento as $reconhecimento) {
-                             if($reconhecimento['status'] != 2){?> <!--penultimo passo, para exexutar tudo com o Foreach-->
+                                <?php foreach ($reconhecimento as $reconhecimento) {
+                                    if ($reconhecimento['status'] != 2) {
+                                        ?> <!--penultimo passo, para exexutar tudo com o Foreach-->
 
-                            <tr class="listas">
+                                        <tr class="listas">
 
-                            <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $reconhecimento['selecioneacoes'];?></td>
-                            <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $reconhecimento['tipo'];?></td>
-                            <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $reconhecimento['modoafericao'];?></td>
-                            <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" class="statusCheckbox" name="opcoes" id="<?php echo $reconhecimento['id'];?>" value="<?php echo $reconhecimento['status'];?>" <?php
-                                                                                                                                     if ($reconhecimento['status'] == 1) {
-                                                                                                                                         echo "checked";
-                                                                                                                                     }
-                                                                                                                                     ?>/> </center></td>
-                            <td style="border-width: thin; border-style: solid; border-color: black;"><center><span  class = "glyphicon glyphicon-ban-circle excluirReconhecimento" id="<?php echo $reconhecimento['id'];?>" ></span></center> </td>
-                            </tr>
-                            
-                             <?php }}?> <!penultimo passo>
+                                            <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $reconhecimento['selecioneacoes']; ?></td>
+                                            <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $reconhecimento['tipo']; ?></td>
+                                            <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $reconhecimento['modoafericao']; ?></td>
+                                            <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" class="statusCheckbox" name="opcoes" id="<?php echo $reconhecimento['id']; ?>" value="<?php echo $reconhecimento['status']; ?>" <?php
+                                        if ($reconhecimento['status'] == 1) {
+                                            echo "checked";
+                                        }
+                                        ?>/> </center></td>
+                                    <td style="border-width: thin; border-style: solid; border-color: black;"><center><span  class = "glyphicon glyphicon-ban-circle excluirReconhecimento" id="<?php echo $reconhecimento['id']; ?>" ></span></center> </td>
+                                    </tr>
+
+                                 <?php }
+                                } ?> <!penultimo passo>
 
                             </tbody>
                         </table>
                     </div>
                 </div>
+
+
+                <div class="container">
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModalDeleteAcao" role="dialog">     <!--.fade = desvanecer o modal de dentro pra fora-->
+                        <div class="modal-dialog modal-sm"><!--diálogo-.modal=define a largura adequada e margem do modal"tamanho".modal-lg-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title"><center>ATENÇÃO!</center></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Este Ação está sendo usada em </br>Reconhecimento e Programas!</br>
+                                        Confirme se deseja mesmo excluí-la.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal" id="confirmExcluirAcao">Sim</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" data-toggle="modal" data-target="#myModalDeleteAcao" id="openModalDelete">Open Modal</button>
                 <!-- rodape -->
+
                 <div>
                     <a href="../reconhecimento/cadastrarConquista">    <button type="button" class="btn btn-primary pull-right">Adicionar Reconhecimento</button> </a>
                 </div> 
 
             </div>
         </div>
-      </form>
-    </body>
+    </form>
+</body>
 
 <!--FIM container-->

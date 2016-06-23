@@ -83,7 +83,7 @@ class Objetos extends CI_Controller {
      * 1 - ATIVO
      * 2 - EXCLUIDO
      */
-    public function deleteObjetos() {
+    public function deleteObjeto() {
 
         $data['status'] = 2;
 

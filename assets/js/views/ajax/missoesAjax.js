@@ -4,11 +4,16 @@
  * and open the template in the editor.
  */
 
-$(function() {
+$(function () {
 
+    $("#openModalDelete").fadeOut(0);
+    var acaoParaExcluir = '';
+    var handle = '';
+    
     //muda status
-    $(".statusCheckbox").click(function() {
-
+    $(".statusCheckbox").click(function () {
+        
+         alert(id);
         var statusAtual = $(this).attr("value");
         var id = $(this).attr("id");
 
@@ -19,30 +24,41 @@ $(function() {
                 id: id,
                 statusAtual: statusAtual
             },
-            success: function(msg) {
-                           }
+            success: function (msg) {
+                
+            }
         });
 
     });
 
-    //exclui usuario
-    $(".excluirMissao").click(function() {
+    //exclui misssão
+    $(".excluirMissao").click(function () {
 
-        var handle = $(this);
-        var id = $(this).attr("id");
+        handle = $(this);
+        caoParaExcluir = $(this).attr("id");
 
-        $.ajax({
+        $("#openModalDelete").click();
+
+    });
+    
+    $("#confirmExcluirAcao").click(function() {
+ 
+        $.ajax({ 
             url: '../Missoes/deleteMissoes',
             type: 'POST',
             data: {
-                id: id
+                id: acaoParaExcluir
             },
             success: function(msg) {
 
-                var tr = $(handle).closest('tr');
+              var tr = $(handle).closest('tr');
                 tr.fadeOut(600, function() {
                     tr.remove();
                 });
+
+            $('#myModalDeleteAcao').modal('toggle');
+            $('#myModalDeleteAcao').modal('hide');
+
 
             }
         });

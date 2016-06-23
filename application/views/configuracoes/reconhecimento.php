@@ -84,7 +84,7 @@ and open the template in the editor.
                                                                     echo "checked";
                                                                 }
                                                                 ?> /> </center></td>
-                                                            <td style="border-width: thin; border-style: solid; border-color: black;"><center><span class = "glyphicon glyphicon-ban-circle excluirReconhecimentotb " id="<?php echo $reconhecimentotb['id']; ?>"></span></center> </td>
+                                                            <td style="border-width: thin; border-style: solid; border-color: black;"><center><span class = "glyphicon glyphicon-ban-circle excluirReconhecimento " id="<?php echo $reconhecimentotb['id']; ?>"></span></center> </td>
                                                             </tr>
                                                         <?php
                                                         }

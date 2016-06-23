@@ -7,7 +7,7 @@
 $(function() {
   var contador=0;
   
-       $("#openModalDelete").fadeOut(0);
+      $("#openModalDelete").fadeOut(0);
      var acaoParaExcluir = '';
      var handle = '';
     
@@ -33,7 +33,7 @@ $(function() {
     
     //exclui categoria
 
-    $(".excluirCategoriatb").click(function() {
+    $(".excluirCategoriatb").click(function() { //nome da tabela
           //alert('dad');
         handle = $(this);
         acaoParaExcluir = $(this).attr("id");
@@ -42,7 +42,7 @@ $(function() {
 
     });
     
- $("#confirmExcluirAcao").click(function() {
+ $("#confirmExcluirAcao").click(function() { //quando muda o "ExcluirAcao"ele não exclui.
  
         $.ajax({ 
             url: '../Configuracoes/deleteCategoria',

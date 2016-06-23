@@ -6,9 +6,14 @@
 
 $(function() {
 
+    $("#openModalDelete").fadeOut(0);
+     var acaoParaExcluir = '';
+     var handle = '';
+     
     //muda status
     $(".statusCheckbox").click(function() {
-
+        
+        alert(id);
         var statusAtual = $(this).attr("value");
         var id = $(this).attr("id");
 
@@ -20,31 +25,41 @@ $(function() {
                 statusAtual: statusAtual
             },
             success: function(msg) {
-                //s]alert(msg);
+                //s]alert();
 
             }
         });
 
     });
 
-    //exclui usuario
+    //exclui programa
     $(".excluirPrograma").click(function() {
+        alert ('dad');
+        handle = $(this);
+        acaoParaExcluir = $(this).attr("id");
 
-        var handle = $(this);
-        var id = $(this).attr("id");
-
-        $.ajax({
-            url: '../Programas/deletePrograma',
+        $("#openModalDelete").click();
+    });
+    
+    
+    $("#confirmExcluirAcao").click(function() {
+  alert ('dad');
+        $.ajax({ 
+            url: '../Programas/deleteProgramas',
             type: 'POST',
             data: {
-                id: id
+                  id: acaoParaExcluir
             },
-            success: function(msg) {
+           success: function(msg) {
 
-                var tr = $(handle).closest('tr');
+              var tr = $(handle).closest('tr');
                 tr.fadeOut(600, function() {
                     tr.remove();
                 });
+
+            $('#myModalDeleteAcao').modal('toggle');
+            $('#myModalDeleteAcao').modal('hide');
+
 
             }
         });
@@ -52,3 +67,4 @@ $(function() {
     });
 
 });
+

@@ -105,11 +105,11 @@ class Programas extends CI_Controller {
      * 1 - ATIVO
      * 2 - EXCLUIDO
      */
-    public function deletePrograma() {
+    public function deleteProgramas() {
 
         $data['status'] = 2;
 
-        $this->db->where('id', $this->input->post('id'));
+        $this->db->where('id', $this->input->post('id')); 
 
         if ($this->db->update('programas', $data)) {
             echo "sucesso";

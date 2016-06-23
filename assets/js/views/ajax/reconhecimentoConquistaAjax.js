@@ -18,7 +18,7 @@ $(function () {
         var id = $(this).attr("id");
 
         $.ajax({
-            url: '../Configuracoes/mudaStatusReconhecimentotb',
+            url: '../Reconhecimento/mudaStatusReconhecimento',
             type: 'POST',
             data: {
                 id: id,
@@ -32,7 +32,7 @@ $(function () {
     });
 
     //exclui Reconhecimento
-    $(".excluirReconhecimentotb").click(function () {
+    $(".excluirReconhecimento").click(function () {
           //alert('dad');
         handle = $(this);
         acaoParaExcluir = $(this).attr("id");
@@ -44,7 +44,7 @@ $(function () {
     $("#confirmExcluirAcao").click(function () {
 
         $.ajax({ 
-            url: '../Configuracoes/deleteReconhecimento',
+            url: '../Reconhecimento/deleteReconhecimento',
             type: 'POST',
            data: {
                 id: acaoParaExcluir

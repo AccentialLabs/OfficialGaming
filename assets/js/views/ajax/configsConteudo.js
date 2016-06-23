@@ -5,9 +5,9 @@
  */
 $(function(){
    
-   $("#openModalDelete").fadeOut(0);
-    var acaoParaExcluir = '';
-    var handle = '';
+    $("#openModalDelete").fadeOut(0);
+     var acaoParaExcluir = '';
+     var handle = '';
 
     //muda status
     $(".statusCheckbox").click(function() {
@@ -17,13 +17,13 @@ $(function(){
         var id = $(this).attr("id");
 
         $.ajax({
-            url: '../Conteudos/mudaStatusConteudo',
+            url: '../Configuracoes/mudaStatusConteudo',
             type: 'POST',
-            data: {
+            data: { 
                 id: id,
                 statusAtual: statusAtual
             },
-            success: function(msg) {
+              sucesso: function(msg) {
                 alert(sucesso);
             }
         });
@@ -32,7 +32,7 @@ $(function(){
    
     //exclui usuario
     $(".excluirConteudo").click(function() {
-
+         //alert('dad');
         handle = $(this);
         acaoParaExcluir = $(this).attr("id");
 
@@ -43,7 +43,7 @@ $(function(){
      $("#confirmaExcluirAcao").click(function() {
 
         $.ajax({
-            url: '../Conteudos/deleteConteudo',
+            url: '../Configuracoes/deleteConteudos',
             type: 'POST',
             data: {
                 id: acaoParaExcluir

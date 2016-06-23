@@ -7,14 +7,19 @@
 $(function() {
   
     var contador = 0;
+    
+    $("#openModalDelete").fadeOut(0);
+     var acaoParaExcluir = '';
+     var handle = '';
+     
     //muda status
     $(".statusCheckbox").click(function(){
-        
-         var statusAtual = $(this).attr("value");
+        alert(id);
+        var statusAtual = $(this).attr("value");
         var id = $(this).attr("id");
         
         $.ajax({
-            url: '../Configuracoes/mudaStatusReconhecimentotb',
+            url: '../Configuracoes/mudaStatusReconhecimento',
             type: 'POST',
             data:{
                 id: id,
@@ -28,23 +33,33 @@ $(function() {
     
    
     //exclui usuario
-    $(".excluirReconhecimentotb").click(function() {
+    $(".excluirReconhecimento").click(function() {
+        //alert('dad');
+        handle = $(this);
+        acaoParaExcluir = $(this).attr("id");
 
-        var handle = $(this);
-        var id = $(this).attr("id");
+        $("#openModalDelete").click();
 
-        $.ajax({
+    });
+    
+     $("#confirmExcluirAcao").click(function() { //quando muda o "ExcluirAcao"ele não exclui.
+ 
+        $.ajax({ 
             url: '../Configuracoes/deleteReconhecimento',
             type: 'POST',
             data: {
-                id: id
+                id: acaoParaExcluir
             },
             success: function(msg) {
 
-                var tr = $(handle).closest('tr');
+              var tr = $(handle).closest('tr');
                 tr.fadeOut(600, function() {
                     tr.remove();
                 });
+
+            $('#myModalDeleteAcao').modal('toggle');
+            $('#myModalDeleteAcao').modal('hide');
+
 
             }
         });

@@ -224,7 +224,7 @@ class Configuracoes extends CI_Controller {
      * 1 - ATIVO
      * 2 - EXCLUIDO
      */
-    public function deleteConteudo() {
+    public function deleteConteudos() {
 
         $data['status'] = 2;
 
@@ -351,7 +351,7 @@ class Configuracoes extends CI_Controller {
      * 2 - EXCLUIDO
      */
 
-    public function mudaStatusReconhecimentotb() { //esse cógigo faz com que não salve a ação do checkbox
+    public function mudaStatusReconhecimento() { //esse cógigo faz com que não salve a ação do checkbox
 
         $statusAtual = $this->input->post('statusAtual');
 

@@ -91,7 +91,7 @@ class Reconhecimento extends CI_Controller {
      * 1 - ATIVO
      * 2 - EXCLUIDO
      */
-    public function deleteReconhecimentos() {
+    public function deleteReconhecimento() {
 
         $data['status'] = 2;
 

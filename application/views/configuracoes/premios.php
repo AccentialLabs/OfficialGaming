@@ -8,7 +8,7 @@ and open the template in the editor.
 
 <!-- Ativo para o botão+ add as tabelas-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="craftpip-jquery-confirm-524c959/dist/jquery-confirm.min.js"></script>
+
 <!-- Ativo para o botão+ add as tabelas-->
 
 <link href="../../assets/css/configuracoes7.css" rel="stylesheet"/>
@@ -82,16 +82,16 @@ and open the template in the editor.
 
                                                             <tr class="listas">
                                                                 <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $premio['descricao']; ?></td>
-                                                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" class="statusCheckbox" id="<?php echo $premio['id']; ?>" value="<?php echo $premio['status']; ?>" <?php
-                                                            if ($premio['status'] == 1) {
-                                                                echo "checked";
-                                                            }
-                                                            ?>/> </center></td>
+                                                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox"  name="status" class="statusCheckbox" id="<?php echo $premio['id']; ?>" value="<?php echo $premio['status']; ?>" <?php
+                                                                if ($premio['status'] == 1) {
+                                                                    echo "checked";
+                                                                }
+                                                                ?> /> </center></td>
                                                         <td style="border-width: thin; border-style: solid; border-color: black;"><center><span  class = "glyphicon glyphicon-ban-circle excluirPremio" id="<?php echo $premio['id']; ?>"  ></span> </center></td>
                                                         </tr>
                                                     <?php }
-                                                }
-                                                ?> 
+                                                    }
+                                                     ?> 
 
                                                 </tbody> 
                                             </table>
@@ -106,28 +106,28 @@ and open the template in the editor.
 
 
                                     <div class="container">
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="myModalDeleteAcao" role="dialog">     <!--.fade = desvanecer o modal de dentro pra fora-->
-                                            <div class="modal-dialog modal-sm"><!--diálogo-.modal=define a largura adequada e margem do modal"tamanho".modal-lg-->
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                        <h4 class="modal-title"><center>ATENÇÃO!</center></h4>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <p>Este Ação está sendo usada em </br>Reconhecimento e Programas!</br>
-                                                            Confirme se deseja mesmo excluí-la.</p>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal" id="confirmExcluirAcao">Sim</button>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="myModalDeleteAcao" role="dialog">     <!--.fade = desvanecer o modal de dentro pra fora-->
+                                                <div class="modal-dialog modal-sm"><!--diálogo-.modal=define a largura adequada e margem do modal"tamanho".modal-lg-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title"><center>ATENÇÃO!</center></h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>Este Ação está sendo usada em </br>Reconhecimento e Programas!</br>
+                                                                Confirme se deseja mesmo excluí-la.</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal" id="confirmExcluirAcao">Sim</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <button type="button" data-toggle="modal" data-target="#myModalDeleteAcao" id="openModalDelete">Open Modal</button>
-                                    <!-- rodape -->
+                                        <button type="button" data-toggle="modal" data-target="#myModalDeleteAcao" id="openModalDelete">Open Modal</button>
+                                        <!-- rodape -->
 
                                 </div>
                             </div>
