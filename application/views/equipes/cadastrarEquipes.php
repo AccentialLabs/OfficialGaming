@@ -22,7 +22,8 @@ and open the template in the editor.
 
         <link href="../../assets/css/cadastrar-equipes.css" rel="stylesheet"/>
         <script src="../../assets/js/cadastrar-equipes2.js"></script> 
-
+        
+        <form  method="post" action="../equipes/createEquipes" >
     <body>
      
         <!--container-->
@@ -82,23 +83,23 @@ and open the template in the editor.
                     <div class="col-md-12" >
                         <div class="col-sm-1 col-lg-5"  >
                             <div class="col-md-7">
-                                <form action="demo_form.asp">  Qtd.Equipes   
+                                  Qtd.Equipes   
                                     <input class="input-mini" type="text">
-                                </form>                          
+                                                      
                             </div>
                         </div>
 
                         <div class="col-sm-1 col-lg-7" >
                             <div class="col-md-7 " >
-                                <form action="demo_form.asp"> Nome das Equipes (prefixo)
+                                Nome das Equipes (prefixo)
                                     <input class="input-mini pull-right" type="text"style="border: 1px solid blue;">  
-                                </form> 
+                                
                             </div>
 
                             <div class="col-sm-5 col-lg-5 pull-right" >
                                 <div class="col-md-1 " >
-                                    <form action="demo_form.asp"> +Sequencial
-                                    </form> 
+                                     +Sequencial
+                                 
                                     <br/>
                                 </div>
                             </div>
@@ -150,13 +151,13 @@ and open the template in the editor.
                                               ?> 
                                                     
                                               <tr>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipe['Marcos Pereira'];?></td>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipe['Analista Financeiro'];?></td>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipe['Finaceiro'];?></td>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><?php echo $equipe['SP1'];?></center></td>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipe['São Paulo'];?></td>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipe['SP'];?></td>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipe['Brasil'];?></td>
+                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipes['Marcos Pereira'];?></td>
+                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipes['Analista Financeiro'];?></td>
+                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipes['Finaceiro'];?></td>
+                                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><?php echo $equipes['SP1'];?></center></td>
+                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipes['São Paulo'];?></td>
+                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipes['SP'];?></td>
+                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipes['Brasil'];?></td>
                                                 <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html"/></center></td>
                                               </tr>
                                              
@@ -170,9 +171,9 @@ and open the template in the editor.
                                     <!--ultima caixa-->
                                     <div class="col-sm-1 col-lg-9"  >
                                         <div class="col-md-7">
-                                            <form action="demo_form.asp">   Nome da Equipe  
+                                              Nome da Equipe  
                                                 <input class="input-mini" type="text">
-                                            </form>                          
+                                                                
                                         </div>
                                     </div>
                                     <!-- Fim da ultima caixa -->
@@ -206,13 +207,13 @@ and open the template in the editor.
                 </div>
                 <!-- rodape -->
                 <div>
-                    <button type="button" class="btn btn-primary pull-right btnazul">Criar Equipes</button>
+                    <button type="submit" class="btn btn-primary pull-right btnazul">Criar Equipes</button>
                     <button class="btn btn-deafult pull-right">Cancelar</button>
                 </div> 
 
             </div>
         </div>
-
+</form>
 
 <!--FIM container-->
 

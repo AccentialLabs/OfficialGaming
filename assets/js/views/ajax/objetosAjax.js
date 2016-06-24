@@ -4,27 +4,27 @@
  * and open the template in the editor.
  */
 
-$(function() {
+$(function () {
 
     $("#openModalDelete").fadeOut(0);
     var acaoParaExcluir = '';
     var handle = '';
 
     //muda status
-    $(".statusCheckbox").click(function() {
-        
+    $(".statusCheckbox").click(function () {
+
         alert(id);
         var statusAtual = $(this).attr("value");
         var id = $(this).attr("id");
-        
+
         $.ajax({
             url: '../Objetos/mudaStatusObjetos',
             type: 'POST',
-            data: { 
+            data: {
                 id: id,
                 statusAtual: statusAtual
             },
-              sucesso: function(msg) {
+            sucesso: function (msg) {
                 alert(sucesso);
 
             }
@@ -33,20 +33,20 @@ $(function() {
     });
 
     //exclui usuario
-   $(".excluirObjeto").click(function() {
-          //alert('dad');
+    $(".excluirObjeto").click(function () {
+        //alert('dad');
         handle = $(this);
         acaoParaExcluir = $(this).attr("id");
 
         $("#openModalDelete").click();
 
     });
-    
-    $("#confirmExcluirAcao").click(function() {
 
-        $.ajax({ 
-            url: '../Objetos/deleteObjeto',
-           type: 'POST',
+    $("#confirmExcluirAcao").click(function () {
+
+        $.ajax({
+            url: '../Objetos/deleteObjetos',
+            type: 'POST',
             data: {
                 id: acaoParaExcluir
             },
@@ -57,7 +57,7 @@ $(function() {
                     tr.remove();
                 });
 
-            $('myModalDeleteAcao').modal('toggle');
+            $('#myModalDeleteAcao').modal('toggle');
             $('#myModalDeleteAcao').modal('hide');
 
             }

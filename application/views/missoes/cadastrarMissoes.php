@@ -30,7 +30,7 @@ and open the template in the editor.
 
     </head>
     <body>
-        <form method="post" action="http://localhost:9090/gaming/index.php/missoes/createMissoes">  
+        <form method="post" action="../missoes/createMissoes">  
             <!--antepenultimo passo-->
 
             <!--antepenultimo passo para mostrar na tela se funciona-->
@@ -303,8 +303,8 @@ and open the template in the editor.
                                 <div class="form-group">
                                     <label for="inputEmail" class="col-md-2 control-label">Texto p/Log</label>
                                     <div class="col-md-3">
-                                        <form action="demo_form.asp">O usuário/jogador"Fulano"
-                                        </form>
+                                        O usuário/jogador"Fulano"
+                                        
                                     </div>
                                     <div class="col-md-4 verbocx">
                                         <input type="text" id="textlog" name="textlog" size="15" maxlength="8" placeholder="entre com um verbo"> a "Ação"
@@ -325,11 +325,9 @@ and open the template in the editor.
                 </div> 
 
             </div>
-        </form>
-    </body>
-</html>
+     
 
-<div class="col-md-12">
+   <div class="col-md-12">
     <div class="col-md-12">
         <div class="col-md-2">
             Dica de Tela
@@ -346,8 +344,11 @@ and open the template in the editor.
         <div class="col-md-10">
            clique aqui para importar outra imagem
         </div>
-    </div>
+       </div>
     
-</div>
+    </div>
+
+  </form>
+</body>
 
 <!--FIM container-->

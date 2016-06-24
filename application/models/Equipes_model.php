@@ -28,7 +28,7 @@ class Equipes_model extends CI_Model {
         $equipesEntity = new EquipesEntity();
         $equipesEntity->setCargo_id($this->input->post('cargo_id'));
         $equipesEntity->setDepartamento_id($this->input->post('departamento_id'));
-        $equipesEntity->setDepartamento_id($this->input->post('descricao_id'));
+        $equipesEntity->setDescricao_id($this->input->post('descricao_id'));
         $equipesEntity->setCidade_id($this->input->post('cidade_id'));
         $equipesEntity->setEstado_id($this->input->post('estado_id'));
         $equipesEntity->setPais_id($this->input->post('pais_id'));
@@ -55,7 +55,7 @@ class Equipes_model extends CI_Model {
                
         );
            
-        return $this->db->insert('equipes', $data);
+         return $this->db->insert('equipes', $data);
     }
     //put your code here
 }

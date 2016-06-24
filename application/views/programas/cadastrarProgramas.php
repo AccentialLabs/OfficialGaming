@@ -10,7 +10,7 @@ and open the template in the editor.
 
     <body>
  
-        <form  method="post" action="http://localhost:9090/gaming/index.php/programas/createPrograma">
+        <form  method="post" action="../programas/createPrograma">
         <!--container-->
         <div class="col-md-10  container-style ">
             <div id="page-content" class="margembranca "> 
@@ -19,13 +19,13 @@ and open the template in the editor.
 
                     <div class="col-md-12">
                         <div class="col-sm-6 col-lg-5" >
-                            <div class="form-group">
+                          
                                 <label for="inputEmail" class="col-md-2 control-label">Programa</label>
                                 <div class="col-md-8 pull-right">
                                     <input type="text" name="nome" id="nome" class="form-control "  placeholder="">
                                     <br/>
                                 </div>
-                            </div>
+                          
                         </div>
                     </div>
                     
@@ -42,7 +42,6 @@ and open the template in the editor.
                     <!--Linha da Agência -->
                     <div class="col-md-12">
                         <div class="col-sm-6 col-lg-10">
-                            <div class="form-group">
                                 
                                 <label for="inputEmail" class="col-md-2 control-label">Vigência</label>
                                 <div class="col-md-3">
@@ -71,32 +70,32 @@ and open the template in the editor.
                                     <input type="text" id="horatermino" name="horatermino" class="form-control " placeholder="00:00"> 
                                 </div>
 
-                            </div>
+                          
                         </div>
                     </div>
                     <!--FIM Linha da Agência -->
 
                     <div class="col-md-12">
                         <div class="col-sm-6 col-lg-5" >
-                            <div class="form-group">
+                      
                                 <label for="inputEmail" class="col-md-2 control-label">Objetivo</label>
                                 <div class="col-md-8 pull-right">
                                     <input type="text" id="objetivo" name="objetivo" class="form-control " placeholder="">
                                     <br/>
                                 </div>
-                            </div>
+                          
                         </div>
                     </div>
 
                     <div class="col-md-12">
                         <div class="col-sm-6 col-lg-5" >
-                            <div class="form-group">
+                           
                                 <label for="inputEmail" class="col-md-2 control-label">Local/Mapa</label>
                                 <div class="col-md-8 pull-right">
                                     <input type="text" id="localmapa" name="localmapa" class="form-control " placeholder="">
                                     <br/>
                                 </div>
-                            </div>
+                        
                         </div>
                     </div>
 
@@ -152,8 +151,8 @@ and open the template in the editor.
                                     <input type="text" name="qtd." size="4" maxlength="8" id="Qtd." placeholder=""> Jogadores por Time
                                     <div class="col-md-6 pull-right" >
                                         <div class="col-md-8 pull-left">
-                                            <form action="demo_form.asp"> Nome Times (prefixo)
-                                            </form>
+                                         Nome Times (prefixo)
+                                        
                                         </div>
                                             <div class="col-md-2 pull-eft">
                                             <input type="text" name="qtd." size="7" maxlength="8" id="Qtd." placeholder=""> </div>
@@ -218,8 +217,8 @@ and open the template in the editor.
                                 </div>
 
                                 <div class="col-md-1 ">
-                                    <form action="demo_form.asp"> a cada 
-                                    </form>
+                                     a cada 
+                               
                                 </div>
                                 
                                 <div class="col-md-4">  
@@ -323,7 +322,7 @@ and open the template in the editor.
 
                                             <div class="col-md-12">
                                                 <div class="col-sm-6 col-lg-9" >
-                                                    <div class="form-group">
+                                                  
                                                         <label for="inputEmail" class="col-md-3 control-label">Tempo</label>
                                                         <div class="col-md-9 pull-right">
                                                             <input type="text" name="qtd." size="5" maxlength="8" id="Qtd." placeholder=""> segundos (deixe em branco para indefinido)
@@ -393,12 +392,12 @@ and open the template in the editor.
 
                                                 <div class="col-md-12">
                                                     <div class="col-sm-6 col-lg-9" >
-                                                        <div class="form-group">
+                                                       
                                                             <label for="inputEmail" class="col-md-3 control-label">Mensagem Parabéns</label>
                                                             <div class="col-md-9 pull-right">
                                                                 <input type="email" class="form-control " id="inputEmail" placeholder="">
                                                             </div>
-                                                        </div>
+                                                 
                                                     </div>
                                                 </div>
 
@@ -414,14 +413,14 @@ and open the template in the editor.
                                     <!--aqui termina o paineeeeeeeeeeeeeeeeeeeeeel -->
 
                                 </div>
-                            </div>
+                           
                         </div>
                     </div>
                     <!--Aqui termina apret toda do paineeeeeeeel-->
 
                     <div class="col-md-10">
                         <div class="col-sm-6 col-lg-12">
-                            <div class="form-group">
+                          
                                 <label for="inputEmail" class="col-md-2"></label>
                                 <label for="inputEmail" class="col-md-1">Pontuação</label>
                                 <div class = "checbox checboxcontainer col-md-4">
@@ -430,19 +429,19 @@ and open the template in the editor.
                                 <div class = "checbox checboxcontainer col-md-5">
                                     <div class="col-md-12 pull-right score"> <input type="checkbox" id="scoregeral" name="scoregeral" value="0">Não somar pontos ao score geral da Empresa</div>
                                 </div> 
-                            </div> 
+                        
                         </div>
                     </div>
 
                     <div class="col-md-10">
                         <div class="col-sm-6 col-lg-12">
-                            <div class="form-group">
+                           
                                 <label for="inputEmail" class="col-md-2"></label>
                                 <label for="inputEmail" class="col-md-1"></label>
                                 <div class = "checbox checboxcontainer col-md-4">
                                     <div class="col-md-10 pull-right"> <input type="radio" id="pontuacao" name="pontuacao" value="1"> Zera a cada rodada</div>
                                 </div> 
-                            </div> 
+                        
                         </div>
                     </div>
                     
@@ -491,19 +490,19 @@ and open the template in the editor.
 
                     <div class="col-md-12"> <br/>
                         <div class="col-sm-6 col-lg-5" >
-                            <div class="form-group">
+                            
                                 <label for="inputEmail" class="col-md-2 control-label">Mensagem Parabéns</label>
                                 <div class="col-md-8 pull-right">
                                     <input type="text" class="form-control " id="mensagemparabens" name="mensagemparabens" placeholder="">
                                     <br/>
                                 </div>
-                            </div>
+                          
                         </div>
                     </div>
                     
                      <div class="col-md-12"> <br/>
                         <div class="col-sm-6 col-lg-10">
-                            <div class="form-group">
+                           
                                 <label for="inputEmail" class="col-md-2 control-label">Pontos extras</label>
                                 <div class="col-md-8 ">
                                      <input type="number" name="pontosextras" id="pontosextras"  size="10" maxlength="10" placeholder=" "> 
@@ -512,7 +511,7 @@ and open the template in the editor.
                                           <input type="checkbox" id="premiaequipes" name="premiaequipes" value="nome"> Premia as Equipes que o usuário/jogador faz parte
                                       </div> 
                                 </div>
-                            </div>
+                            
                         </div>
                     </div>
                     

@@ -50,6 +50,11 @@ class Equipes extends CI_Controller {
         $this->load->view('equipes/listaEquipes',$data); /*fazendo a parte final desta pagina acrescentamos o ,$data*/
     }  
     
+       public function createEquipes() {
+        $this->equipes_model->insert_equipes;
+        echo "sucesso";
+    }
+    
  /**
  * Status:
  * 0 - INATIVO

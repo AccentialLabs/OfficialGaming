@@ -10,7 +10,7 @@ and open the template in the editor.
         
     <body>
         
- <form  method="post" action="http://localhost:9090/gaming/index.php/programas/createDesafio" >
+        <form  method="post" action="../programas/createDesafio" >
 
         <!--container-->
         <div class="col-md-10  container-style ">
@@ -20,13 +20,13 @@ and open the template in the editor.
 
                     <div class="col-md-12">
                         <div class="col-sm-6 col-lg-5" >
-                            <div class="form-group">
+                          
                                 <label for="inputEmail" class="col-md-2 control-label">Desafio</label>
                                 <div class="col-md-8 pull-right">
                                     <input type="text" id="nome" name="nome" class="form-control " placeholder="">
                                     <br/>
                                 </div>
-                            </div>
+                          
                         </div>
                     </div>
 
@@ -43,7 +43,7 @@ and open the template in the editor.
                     <!--Linha da Agência -->
                     <div class="col-md-12">
                         <div class="col-sm-6 col-lg-10">
-                            <div class="form-group">
+                          
                                 <label for="inputEmail" class="col-md-2 control-label">Vigência</label>
                                 <div class="col-md-3">
                                     <input type="date" name="nascimento" id="datainicio" value=" " class= "textbox70"/>
@@ -71,7 +71,7 @@ and open the template in the editor.
                                     <input type="text" class="form-control " id="horatermino" name="horatermino" placeholder="00:00"> 
                                 </div>
 
-                            </div>
+                       
                         </div>
                     </div>
                     <!--FIM Linha da Agência -->
@@ -161,7 +161,7 @@ and open the template in the editor.
 
                     <div class="col-md-12">
                         <div class="col-sm-6 col-lg-9">
-                            <div class="form-group">
+                            
                                 <label for="inputEmail" class="col-md-2 control-label">Objetos</label>
                                 <div class="col-md-10 ">
                                     <div id="table-responsive" class="col-lg-12 pull-right tabelap">
@@ -179,8 +179,8 @@ and open the template in the editor.
                                     ?> <!--penultimo passo, para exexutar tudo com o Foreach-->
                                                 
                                                 <tr>
-                                                    <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipes['perguntas'];?></td>
-                                                    <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipes['categoria'];?></td>
+                                                    <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objetos['perguntas'];?></td>
+                                                    <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objetos['categoria'];?></td>
                                             <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html"/checked> </center></td>
                                             </tr>
                                              <?php }?> <!penultimo passo>
@@ -189,13 +189,13 @@ and open the template in the editor.
                                         </table>
                                     </div>
                                 </div>
-                            </div>
+                          
                         </div>
                     </div>
                     
                      <div class="col-md-12">
                         <div class="col-sm-6 col-lg-5" >
-                            <div class="form-group">
+                           
                                 <label for="inputEmail" class="col-md-2 control-label">Interação</label>
                                 <div class="col-md-8 pull-right">
                                     <input type="radio"  value="0" name="identificada" name="identificada" checked> Identificada
@@ -206,11 +206,11 @@ and open the template in the editor.
                                 <div class="col-md-8 pull-right">
                                     <input type="radio"  value="0" id="desafiadoescolhe" name="desafiadoescolhe"> Deixar Desafiado(s) escolher(em)
                                 </div>
-                            </div>
+                          
                         </div>
                          
                             <div class="col-sm-6 col-lg-5" >
-                            <div class="form-group">
+                           
                                 <label for="inputEmail" class="col-md-2 control-label">Obrigatório</label>
                                 <div class="col-md-8 pull-right">
                                     <input type="radio"  value="0" id="obrigatorio" name="obrigatorio"> Sim
@@ -219,41 +219,41 @@ and open the template in the editor.
                                      <input type="radio"  value="1" id="obrigatorio" name="obrigatorio"> Não
                                 </div>
                             </div>
-                        </div>
+                     
                     </div> 
                     
                      <div class="col-md-12"> <br/>
                         <div class="col-sm-6 col-lg-10" >
-                            <div class="form-group">
+                            
                                 <label for="inputEmail" class="col-md-2 control-label"> Pontuação </br>Extra para</br>Desafiante</label>
                                 <div class="col-md-10 pull-right">
                                     <input type="checkbox"  value="0" id="" name="pontuacaoextra" checked> Recebe os pontos das respostas/Interações erradas
                                 </div>
                                 <div class="col-md-2">
-                                     <form action="demo_form.asp">  Perde </form>
+                                     Perde 
                                 </div>
                                  <div class="col-md-7 verbocx">
                                      <input type="number" name="perde" size="10" maxlength="8" id="perde" placeholder=""> pontos se não receber nenhuma interação
                                 </div>
                                
                                 <div class="col-md-2">
-                                     <form action="demo_form.asp">Ganha</form>
+                                     Ganha
                                 </div>
                                  <div class="col-md-7 verbocx">
                                      <input type="number" name="ganha" size="10" maxlength="8" id="ganha" placeholder=""> pontos se receber interação
                                 </div>
-                            </div>
+                           
                         </div> 
 
                       <div class="col-md-12"> <br/>
                         <div class="col-sm-6 col-lg-5" >
-                            <div class="form-group">
+                           
                                 <label for="inputEmail" class="col-md-3 control-label">Dica de tela</label>
                                 <div class="col-md-8 pull-right">
                                     <input type="text" id="dicatela" name="dicatela" class="form-control " placeholder="">
                                     <br/>
                                 </div>
-                            </div>
+                           
                         </div>
                     </div>
 

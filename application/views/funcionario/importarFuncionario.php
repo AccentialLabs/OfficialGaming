@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
         <link href="../../assets/css/importarF.css" rel="stylesheet"/>
         
-        <form  method="post" action="http://localhost:9090/gaming/index.php/funcionario/createImportarfuncionarios">
+        <form  method="post" action="../funcionario/createImportarfuncionarios">
        
     <!--container-->
            <div class="col-md-10  container-style">
@@ -95,9 +95,9 @@ and open the template in the editor.
                             <div  class="col-md-10">
 
                                 <div class="col-md-5"> 
-                                    <form>
+                                    
                                         <input type="checkbox" id="definirequipes" name="definirequipes" value="1"> Definir Equipes(automaticamente)
-                                    </form>
+                                    
                                 </div>
 
                                 <div class = "checbox checboxcontainer">

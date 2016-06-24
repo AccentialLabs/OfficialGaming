@@ -11,7 +11,7 @@ and open the template in the editor.
         
     <body>
         
-<form method="post" action="http://localhost:9090/gaming/index.php/reconhecimento/createConquista">      
+        <form method="post" action="../reconhecimento/createConquista">      
 
         <!--container-->
         <div class="col-md-10  container-style ">
@@ -20,7 +20,7 @@ and open the template in the editor.
                 <div class="col-md-12" >
 
                     <div class="col-sm-6 col-lg-7" >
-                        <div class="form-group">
+                        
                             <label for="inputEmail" class="col-md-2 control-label">Tipo</label>
                             <div class="col-md-9 pull-right">
                                 <select class="col-md-" id="tipo" name="tipo">
@@ -35,7 +35,7 @@ and open the template in the editor.
                                     <option value="8">Bebida/Enogastronomia</option>
                                 </select>
                             </div>
-                        </div>
+                      
                     </div>
 
                     <div class="col-md-1 pull-right celular" >
@@ -49,17 +49,17 @@ and open the template in the editor.
                     </div> 
 
                     <div class="col-sm-6 col-lg-7" > <br/>
-                        <div class="form-group">
+                     
                             <label for="inputEmail" class="col-md-2 control-label">Reconhecimento</br>/Conquista</label>
                             <div class="col-md-9 pull-right">
                                 <input type="text" class="form-control " value=" " id="conquista" name="conquista" placeholder="">
                                 <br/>
                             </div>
-                        </div>
+                   
                     </div>
 
                     <div class="col-sm-6 col-lg-7" > <br/>
-                        <div class="form-group">
+                        
                             <label for="inputEmail" class="col-md-3 control-label">Modo de aferiação</label>
                             <div class="col-md-4 ">
                                 <input type="radio" id="modoafericao" name="modoafericao" value="nome"> Por Pontos
@@ -68,23 +68,23 @@ and open the template in the editor.
 
                             <div class="col-md-5">
                                 <div class="col-sm-6 col-lg-12">
-                                    <div class="form-group">
+                                  
 
                                         <div class="col-md-7">
-                                            <form action="demo_form.asp">Quantidade de Pontos
-                                             </form>
+                                            Quantidade de Pontos
+                                         
                                         </div>
                                         <div class="col-md-2 ">
                                             <input type="number"id="quantidadeponto" name="quantidadeponto"  size="15" maxlength="8"  placeholder=""> 
                                         </div>
-                                    </div>
+                                
                                 </div>
                             </div>
 
                             <div class="col-md-9 pull-right">
                                 <input type="radio" id="modoafericao" name="modoafericao" value="1"> Por Ações(não sequencias)
                             </div>
-                        </div>
+                     
                     </div>
 
 
@@ -184,19 +184,19 @@ and open the template in the editor.
 
                     <div class="col-md-12">
                         <div class="col-sm-6 col-lg-7" > <br/>
-                            <div class="form-group">
+                           
                                 <label for="inputEmail" class="col-md-2 control-label">Sobre o</br>/reconhecimento</label>
                                 <div class="col-md-9 pull-right">
                                     <input type="text" class="form-control " id="reconhecimento" name="reconhecimento" placeholder="">
                                     <br/>
                                 </div>
-                            </div>
+                           
                         </div>
                     </div>
 
                     <div class="col-md-12" >
                         <div class="col-sm-6 col-lg-10 ">
-                            <div class="form-group">
+                         
                                 <label for="inputEmail" class="col-md-2 control-label">Bagde/Imagem</label>
                                 <div class="col-md-6 ">
                                     <a href="#" class="ico-search">clique aqui para importar outra imagem</a>
@@ -209,36 +209,36 @@ and open the template in the editor.
                                 <div class="col-md-1">
                                     <input name="nascimento" type="date"  id="month" value=" " class= "textbox70"/>
                                 </div>   
-                            </div>
+                      
                         </div>
                     </div>   
 
                     <div class="col-md-12">
                         <div class="col-sm-6 col-lg-7" > <br/>
-                            <div class="form-group">
+                           
                                 <label for="inputEmail" class="col-md-2 control-label">Mensagem</br>Parabéns</label>
                                 <div class="col-md-9 pull-right">
                                     <input type="text" class="form-control " id="parabens" name="parabens" placeholder="">
                                     <br/>
                                 </div>
-                            </div>
+                          
                         </div>
                     </div>
 
                     <div class="col-md-12" >
                         <div class="col-sm-6 col-lg-10 ">
-                            <div class="form-group">
+                          
                                 <label for="inputEmail" class="col-md-3 control-label">Conteudo destravado</label>
                                 <div class="col-md-6 ">
                                     <a href="#" class="ico-search">clique aqui para importar outra imagem</a>
                                 </div>
 
-                            </div>
+                           
                         </div>
                     </div> 
 
                     <div class="col-sm-6 col-lg-7" ><br/>
-                        <div class="form-group">
+                       
                             <label for="inputEmail" class="col-md-2 control-label">Premiação</label>
                             <div class="col-md-9 pull-right">
                                 <select class="col-md-6" id="premiacao" name="premiacao">
@@ -253,12 +253,12 @@ and open the template in the editor.
                                     <option value="9">Bebida/Enogastronomia</option>
                                 </select>
                             </div>
-                        </div>
+                   
                     </div>
                     
                     <div class="col-md-12"> <br/>
                         <div class="col-sm-6 col-lg-10">
-                            <div class="form-group">
+                           
                                 <label for="inputEmail" class="col-md-2 control-label">Pontos extras</label>
                                 <div class="col-md-2">
                                <input type="text" name="pontosextras" id="pontosextras" size="8" maxlength="8"  placeholder="">
@@ -266,23 +266,23 @@ and open the template in the editor.
                                 <div class = "col-md-6"> 
                                     <input type="checkbox" id="pontuaequipe" name="pontuaequipe" value="nome"> Pontua também a(s) Equipes(s) que o usuário/jogador faz parte<br/>
                             </div> 
-                            </div>
+                            
                         </div>
                     </div>
 
                      <div class="col-md-12"> <br/>
                         <div class="col-sm-6 col-lg-10">
-                            <div class="form-group">
+                           
                                 <label for="inputEmail" class="col-md-2 control-label">Texto p/Log</label>
                                 <div class="col-md-3">
-                                <form action="demo_form.asp">O usuário/jogador"Fulano"
-                            </form>
+                               O usuário/jogador"Fulano"
+                           
                                     </div>
                                 <div class="col-md-5 verbocx">
                                     <input type="text" name="textologin" id="textologin" size="15" maxlength="8"  placeholder="entre com um verbo"> "Reconhecimento/Conquistas"
                                 </div>
                             </div>
-                        </div>
+                       
                     </div>
 
                 </div>

@@ -6,7 +6,7 @@
      
         <link href="../../assets/css/enviar-email-convite3.css" rel="stylesheet"/>
         
-        <form  method="post" action="http://localhost:9090/gaming/index.php/funcionario/createFuncionario2" >
+        <form  method="post" action="../funcionario/createFuncionario2" >
       
         <!--container-->
         <div id="elemento1" class="col-md-10  container-style ">

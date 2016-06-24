@@ -11,7 +11,7 @@ and open the template in the editor.
          <script src="../../assets/js/views/ajax/premiosAjax.js"></script>
     
         <!--antepenultimo passo para mostrar na tela se funciona-->
-        <form  method="post" action="http://localhost:9090/gaming/index.php/premio/createGanharpremio" >      
+        <form  method="post" action="../premio/createGanharpremio" >      
           
             <!--container-->
             <div class="col-md-10  container-style">

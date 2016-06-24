@@ -35,7 +35,7 @@ $(function () {
     $(".excluirMissao").click(function () {
 
         handle = $(this);
-        caoParaExcluir = $(this).attr("id");
+        acaoParaExcluir = $(this).attr("id");
 
         $("#openModalDelete").click();
 

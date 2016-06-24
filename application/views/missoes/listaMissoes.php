@@ -31,12 +31,12 @@
                             <!-- Data Show Row-->
 
                             <?php
-                            foreach ($missoes as $missoestab) {
+                            foreach ($missoestab as $missoestab) {
                                 if ($missoestab['status'] != 2) {
                                     ?> <!--penultimo passo, para exexutar tudo com o Foreach--> 
 
                                     <tr class="listas"> 
-                                        <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $missoestab['missao']; ?></td>
+                                        <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $missoestab['tipomissoes']; ?></td>
                                         <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" class="statusCheckbox" id="<?php echo $missoestab['id'] ?>" value="<?php echo $missoestab['status']; ?>" <?php
                                     if ($missoestab['status'] == 1) {
                                         echo "checked";

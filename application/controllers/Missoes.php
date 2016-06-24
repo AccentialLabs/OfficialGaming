@@ -14,6 +14,7 @@ class Missoes extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('missoes_model');
+        $this->load->model('missoestab_model');
         $this->load->helper('url_helper');
     }
 
@@ -40,7 +41,7 @@ class Missoes extends CI_Controller {
         ///// *****
         
         
-        $data['missoes'] = $this->missoes_model->get_missoes();
+        $data['missoestab'] = $this->missoestab_model->get_missoestab();
 
         /**
          * 
@@ -74,7 +75,7 @@ class Missoes extends CI_Controller {
 
         $this->db->where('id', $this->input->post('id'));
 
-        if ($this->db->update('missoes', $data)) {
+        if ($this->db->update('missoestab', $data)) {
             echo "sucesso";
         } else {
             echo "error";
@@ -93,7 +94,7 @@ class Missoes extends CI_Controller {
 
         $this->db->where('id', $this->input->post('id'));
 
-        if ($this->db->update('missoes', $data)) {
+        if ($this->db->update('missoestab', $data)) {
             echo "sucesso";
         } else {
             echo "error";

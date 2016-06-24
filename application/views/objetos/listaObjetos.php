@@ -10,7 +10,7 @@ and open the template in the editor.
 
 <script src="../../assets/js/views/ajax/objetosAjax.js"></script>
 
-<form  method="post" action="http://localhost:9090/gaming/index.php/objetos/createObjetos">
+<form  method="post" action="../objetos/createObjetos">
 
     <!--container-->
     <div class="col-md-10  container-style">
@@ -19,17 +19,17 @@ and open the template in the editor.
             <div id="elemento1" class="col-md-12 pull-left">
                 <div class="col-md-12">
                     <ol class="breadcrumb">
-                        <li><a href="#">Home</a> </li>
-                        <li><a href="#">Products </a> </li>
-                        <li><a href="#">Xyz </a> </li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Xyz</a> </li>
                         <li class="active">Features</li>
                     </ol>
                 </div>
             </div>
 
-            <div class="col-md-12" >
+            <div class="col-md-12">
 
-                <div class="col-md-8 ">
+                <div class="col-md-8">
                 </div>
 
                 <div class="col-md-3 ">  <!--nesse codigo aqui colocamos ata tabela cadsatrar objetos,-->
@@ -56,26 +56,31 @@ and open the template in the editor.
                         </tr>
                         </thead>
 
-                        <tbody ng-repeat="membro in membroSede">
+                        <tbody ng-repeat="membro in membroSede"> 
                             <!-- Data Show Row-->
+                            
+                            <?php
+                            foreach ($obj as $objeto) {
+                                if ($objeto['status'] != 2) {
+                                    ?> 
 
-                            <?php foreach ($objetos as $objetos) {
-                                ?>
+                                    <tr class="listas">  
+                                        <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objeto['objeto']; ?></td>
+                                        <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objeto['categoria']; ?></td>
+                                        <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" class="statusCheckbox" id="<?php echo $objeto['id']; ?>" value="<?php echo $objeto['status']; ?>" <?php
+                                    if ($objeto['status'] == 1) {
+                                        echo "checked";
+                                    }
+                                    ?>/> </center></td>  
+                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><span class = "glyphicon glyphicon-ban-circle excluirObjeto" id="<?php echo $objeto['id']; ?>"></span></center>
+                                </tr>
 
-                                <tr class="listas">
-                                    <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objetos['objeto']; ?></td>
-                                    <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objetos['categoria']; ?></td>
-                                    <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" class="statusCheckbox" id="<?php echo $objetos['id']; ?>" value="<?php echo $objetos['status']; ?>" <?php
-                                if ($objetos['status'] == 1) {
-                                    echo "checked";
-                                }
-                                ?>/> </center></td>
-                            <td style="border-width: thin; border-style: solid; border-color: black;"><center><span  class = "glyphicon glyphicon-ban-circle excluirObjeto" id="<?php echo $objetos['id']; ?>"></span></center> </td>
-                            </tr>
-
-                        <?php } ?>
-                        </tbody>
-                    </table>
+                            <?php
+                            }
+                        }
+                        ?>
+                        </tbody> 
+                    </table> 
                 </div>
             </div>
 
@@ -87,7 +92,7 @@ and open the template in the editor.
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title"><center>ATENÇÃO!</center></h4>
-                            </div>
+                            </div> 
                             <div class="modal-body">
                                 <p>Este Ação está sendo usada em </br>Reconhecimento e Programas!</br>
                                     Confirme se deseja mesmo excluí-la.</p>
@@ -98,12 +103,12 @@ and open the template in the editor.
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> 
             </div>
             <button type="button" data-toggle="modal" data-target="#myModalDeleteAcao" id="openModalDelete">Open Modal</button>
             <!-- rodape -->
 
-            <!-- Trigger the modal with a button -->
+            <!-- Trigger the modal with a button -->  
             <div>
                 <a href="../objetos/cadastrarObjetos">   <button type="button" class="btn btn-primary pull-right btnazul" data-toggle="modal" data-target="#myModal">Adicionar Objeto</button> </a>
                 <button type="submit" class="btn btn-deafult pull-right">Importar Planilha de Objetos</button> 
