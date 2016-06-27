@@ -19,7 +19,7 @@ and open the template in the editor.
         <script src="../../assets/js/views/cadastraPremio.js"></script> 
     </head>
     <body> 
-        <form  method="post" action="http://localhost:9090/gaming/index.php/configuracoes/createPremio" >
+        <form  method="post" action="../configuracoes/createPremio" >
         <!--cabeçãlho-->
 
         <div class="col-md-12 header-style">

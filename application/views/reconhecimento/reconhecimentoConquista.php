@@ -18,7 +18,7 @@ and open the template in the editor.
 <body>
 
     <!--estou criando essa linha de comandos agora para somente a parte da opção de filtragem-->
-    <form  method="post" action="http://localhost:9090/gaming/index.php/reconhecimento/createFiltrareconhecimmento">
+    <form  method="post" action="../reconhecimento/createFiltrareconhecimmento">
 
 
         <!--container-->

@@ -28,8 +28,8 @@ class Objetos extends CI_Controller {
         $data['empresa'] = $this->session->userdata('empresalogada');
         /* tela padrão cabeçalho e rodapé */
 
-        $data['objetos'] = $this->objetos_model->get_objetos();  //codigo para a tabela da tela (listaObjetos)
-        $data['cadastraobjetos'] = $this->cadastraobjetos_model->get_cadastraobjetos();  //codigo para a tela (listaobjetos)
+        $data['obj'] = $this->objetos_model->get_objetos();  //codigo para a tabela da tela (listaObjetos)
+       
 
         $this->load->view('templates/gaming_default');
         $this->load->view('objetos/listaObjetos', $data);
@@ -85,7 +85,7 @@ class Objetos extends CI_Controller {
      * 1 - ATIVO
      * 2 - EXCLUIDO
      */
-    public function deleteObjeto() {
+    public function deleteObjetos() {
 
         $data['status'] = 2;
 
@@ -114,6 +114,10 @@ class Objetos extends CI_Controller {
             $this->respostasobjeto_model->insert_respostaobjeto($resposta);
         } */
 
+<<<<<<< HEAD
+=======
+        print_r($respostas);  
+>>>>>>> origin/master
     }
 
 }

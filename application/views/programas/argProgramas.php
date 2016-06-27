@@ -42,25 +42,27 @@ and open the template in the editor.
                                 <!-- Data Show Row-->
 
                                 <?php
-                                foreach ($programas as $programa) {
-                                    $dtInicio = explode(' ', $programa['datainicio']);
-                                    $dtTermino = explode(' ', $programa['datatermino']);
+                                foreach ($programas as $programas) {
+                                    if ($programas['status'] != 2) {
+                                    $dtInicio = explode(' ', $programas['datainicio']);
+                                    $dtTermino = explode(' ', $programas['datatermino']);
                                     ?> <!--penultimo passo, para exexutar tudo com o Foreach-->
 
                                     <tr class="listas">
-                                        <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $programa['nome']; ?></td>
+                                        <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $programas['nome']; ?></td>
 
                                         <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo date('d/m/Y', strtotime($dtInicio[0])); ?></td>
                                         <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo date('d/m/Y', strtotime($dtTermino[0])); ?></td>
-                                        <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes"  class="statusCheckbox" id="<?php echo $programa['id']; ?>" value="<?php echo $programa['status']; ?>" <?php
-                                    if ($programa['status'] == 1) { 
+                                        <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes"  class="statusCheckbox" id="<?php echo $programas['id']; ?>" value="<?php echo $programas['status']; ?>" <?php
+                                    if ($programas['status'] == 1) { 
                                         echo "checked";
                                     }
                                     ?>  /> </center></td>
-                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><span  class = "glyphicon glyphicon-ban-circle excluirPrograma" id="<?php echo $programa['id']; ?>" ></span></center> </td>
+                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><span  class = "glyphicon glyphicon-ban-circle excluirPrograma" id="<?php echo $programas['id']; ?>" ></span></center> </td>
                                 </tr>
 
-                            <?php } ?> <!penultimo passo>
+                             <?php }
+                               } ?> <!penultimo passo>
 
                             </tbody>
                         </table>

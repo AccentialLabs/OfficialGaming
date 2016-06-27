@@ -4,53 +4,91 @@
  * and open the template in the editor.
  */
 
-$(function() {
+$(function () {
 
     $("#openModalDelete").fadeOut(0);
      var acaoParaExcluir = '';
      var handle = '';
-     
+
+// //MUDANÇA DE STATUS DA TELA CADASTRAR DESAFIO (TABELA 1 E 2)
+    $(".statusCheckbox").click(function() {
+
+        
+        var statusAtual = $(this).attr("value");
+        var id = $(this).attr("id");
+
+        $.ajax({
+            url: '../Programas/mudaStatusProgramas1',
+            type: 'POST',
+            data: { 
+                id: id,
+                statusAtual: statusAtual
+            },
+              sucesso: function(msg) {
+                alert(sucesso);
+            }
+        });
+    });
+    
     //muda status
     $(".statusCheckbox").click(function() {
-        
-        alert(id);
+
+      
+        var statusAtual = $(this).attr("value");
+        var id = $(this).attr("id");
+
+        $.ajax({
+            url: '../Programas/mudaStatusProgramas2',
+            type: 'POST',
+            data: { 
+                id: id,
+                statusAtual: statusAtual
+            },
+              sucesso: function(msg) {
+                alert(sucesso);
+            }
+        });
+    }); //FIM MUDANÇA DE STATUS DA TELA CADASTRAR DESAFIO (TABELA 1 E 2)
+
+    //muda status
+    $(".statusCheckbox").click(function() {
+
+      
         var statusAtual = $(this).attr("value");
         var id = $(this).attr("id");
 
         $.ajax({
             url: '../Programas/mudaStatusProgramas',
             type: 'POST',
-            data: {
+            data: { 
                 id: id,
                 statusAtual: statusAtual
             },
-            success: function(msg) {
-                //s]alert();
-
+              sucesso: function(msg) {
+                alert(sucesso);
             }
         });
-
     });
 
     //exclui programa
     $(".excluirPrograma").click(function() {
-        alert ('dad');
+        //alert('dad');
         handle = $(this);
         acaoParaExcluir = $(this).attr("id");
 
         $("#openModalDelete").click();
     });
-    
-    
-    $("#confirmExcluirAcao").click(function() {
-  alert ('dad');
-        $.ajax({ 
+
+
+    $("#confirmExcluirAcao").click(function () {
+        alert('dad');
+        $.ajax({
             url: '../Programas/deleteProgramas',
-            type: 'POST',
+           type: 'POST',
             data: {
-                  id: acaoParaExcluir
+                id: acaoParaExcluir
             },
-           success: function(msg) {
+            success: function(msg) {
 
               var tr = $(handle).closest('tr');
                 tr.fadeOut(600, function() {

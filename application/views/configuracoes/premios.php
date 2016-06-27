@@ -76,18 +76,18 @@ and open the template in the editor.
                                                 <tbody ng-repeat="membro in membroSede">
 
                                                     <?php
-                                                    foreach ($premios as $premio) {
-                                                        if ($premio['status'] != 2) {
+                                                    foreach ($tipopremio as $tipopremio) {
+                                                        if ($tipopremio['status'] != 2) {
                                                             ?> 
 
                                                             <tr class="listas">
-                                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $premio['descricao']; ?></td>
-                                                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox"  name="status" class="statusCheckbox" id="<?php echo $premio['id']; ?>" value="<?php echo $premio['status']; ?>" <?php
-                                                                if ($premio['status'] == 1) {
+                                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $tipopremio['descricao']; ?></td>
+                                                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox"  name="status" class="statusCheckbox" id="<?php echo $tipopremio['id']; ?>" value="<?php echo $tipopremio['status']; ?>" <?php
+                                                                if ($tipopremio['status'] == 1) {
                                                                     echo "checked";
                                                                 }
                                                                 ?> /> </center></td>
-                                                        <td style="border-width: thin; border-style: solid; border-color: black;"><center><span  class = "glyphicon glyphicon-ban-circle excluirPremio" id="<?php echo $premio['id']; ?>"  ></span> </center></td>
+                                                        <td style="border-width: thin; border-style: solid; border-color: black;"><center><span  class = "glyphicon glyphicon-ban-circle excluirPremio" id="<?php echo $tipopremio['id']; ?>"  ></span> </center></td>
                                                         </tr>
                                                     <?php }
                                                     }

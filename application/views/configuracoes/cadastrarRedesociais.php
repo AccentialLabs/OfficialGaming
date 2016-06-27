@@ -16,7 +16,7 @@ and open the template in the editor.
     </head>
     <body>
         
-     <form  method="post" action="http://localhost:9090/gaming/index.php/configuracoes/createFacebook">   <!--link da tela sucess-->
+     <form  method="post" action="../configuracoes/createFacebook">   <!--link da tela sucess-->
  <!--Continuidade do Código da tela "rede social"  segue o "Twitter" e o "Instagran"  (tentativa de aparecer na tela) -->
  <!--    <form  method="post" action="http://localhost:9090/gaming/index.php/configuracoes/createTwitter">   -->
  <!--    <form  method="post" action="http://localhost:9090/gaming/index.php/configuracoes/createInstagran">   -->
@@ -232,8 +232,8 @@ and open the template in the editor.
         </div>
         
       </form>
-     </form>
-    </form>
+    </body>  
+  
         
 
 

@@ -4,6 +4,49 @@
  * and open the template in the editor.
  */
 $(function() {
+    
+     //muda status da tabela (tela : CADASTRAR ACOES).
+    $(".statusCheckbox").click(function() {
+        
+        //alert(id);
+        var statusAtual = $(this).attr("value");
+        var id = $(this).attr("id");
+
+        $.ajax({
+            url: '../Acoes/mudaStatusCadastraracao',
+            type: 'POST',
+            data: {
+                id: id,
+                statusAtual: statusAtual
+            },
+            success: function(msg) {
+                alert(sucesso);
+            }
+        });
+
+    });
+     //Fim muda status da tabela (tela : CADASTRAR ACOES).
+     //muda status da segunda tabela (tela : CADASTRAR ACOES)
+     $(".statusCheckbox").click(function() {
+        
+        //alert(id);
+        var statusAtual = $(this).attr("value");
+        var id = $(this).attr("id");
+
+        $.ajax({
+            url: '../Acoes/mudaStatusCadastraracao2',
+            type: 'POST',
+            data: {
+                id: id,
+                statusAtual: statusAtual
+            },
+            success: function(msg) {
+                alert(sucesso);
+            }
+        });
+
+    });
+    // fim muda status da segunda tabela (tela : CADASTRAR ACOES
 
     $("#openModalDelete").fadeOut(0);
     var acaoParaExcluir = '';

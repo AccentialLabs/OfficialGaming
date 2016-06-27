@@ -107,7 +107,7 @@ class Configuracoes extends CI_Controller {
         /* tela padrão cabeçalho e rodapé */
 
 
-        $data['conteudos'] = $this->conteudo_model->get_conteudo();
+        $data['conteudo'] = $this->conteudo_model->get_conteudo();
 
         $this->load->view('templates/gaming_default');
         $this->load->view('configuracoes/conteudo', $data);
@@ -147,7 +147,7 @@ class Configuracoes extends CI_Controller {
         $data['empresa'] = $this->session->userdata('empresaLogada');
         /* tela padrão cabeçalho e rodapé */
 
-        $data['premios'] = $this->tipopremio_model->get_tipopremio();
+        $data['tipopremio'] = $this->tipopremio_model->get_tipopremio();
 
         $this->load->view('templates/gaming_default');
         $this->load->view('configuracoes/premios', $data);
@@ -198,25 +198,7 @@ class Configuracoes extends CI_Controller {
         echo"sucesso";
     }
 
-    public function mudaStatusConteudo() {
-
-        $statusAtual = $this->input->post('statusAtual');
-
-        $data = '';
-        if ($statusAtual == 0) {
-            $data['status'] = 1;
-        } else {
-            $data['status'] = 0;
-        }
-
-        $this->db->where('id', $this->input->post('id'));
-
-        if ($this->db->update('conteudo', $data)) {
-            echo "sucesso";
-        } else {
-            echo "error";
-        }
-    }
+   
 
     /**
      * Status:
@@ -224,7 +206,7 @@ class Configuracoes extends CI_Controller {
      * 1 - ATIVO
      * 2 - EXCLUIDO
      */
-    public function deleteConteudos() {
+    public function deleteConteudo() {
 
         $data['status'] = 2;
 
@@ -256,7 +238,7 @@ class Configuracoes extends CI_Controller {
 
         $this->db->where('id', $this->input->post('id'));
 
-        if ($this->db->update('premio', $data)) {
+        if ($this->db->update('tipopremio', $data)) {
             echo "sucesso";
         } else {
             echo "error";
@@ -275,7 +257,7 @@ class Configuracoes extends CI_Controller {
 
         $this->db->where('id', $this->input->post('id'));
 
-        if ($this->db->update('premio', $data)) {
+        if ($this->db->update('tipopremio', $data)) {
             echo "sucesso";
         } else {
             echo "error";

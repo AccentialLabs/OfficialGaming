@@ -17,6 +17,7 @@ class Equipes extends CI_Controller {
         parent::__construct();
         $this->load->model('equipes_model');
         $this->load->model('equipestab_model');
+         $this->load->model('usuariotb_model');
          
         $this->load->helper('url_helper');
     }
@@ -29,7 +30,7 @@ class Equipes extends CI_Controller {
         $data['empresa'] = $this->session->userdata('empresaLogada');
         /*tela padrão cabeçalho e rodapé*/
         
-        $data['equipes'] = $this->equipes_model->get_equipes();  //codigo dos dados da tela
+        $data['usuariotb'] = $this->usuariotb_model->get_usuariotb();  //codigo dos dados da tela
        
          $this->load->view('templates/gaming_default');
         $this->load->view('equipes/cadastrarEquipes',$data);
@@ -49,6 +50,37 @@ class Equipes extends CI_Controller {
         $this->load->view('templates/gaming_default');
         $this->load->view('equipes/listaEquipes',$data); /*fazendo a parte final desta pagina acrescentamos o ,$data*/
     }  
+    
+       public function createEquipes() {
+        $this->equipes_model->insert_equipes;
+        echo "sucesso";
+    }
+    
+     /**
+ * Status:
+ * 0 - INATIVO
+ * 1 - ATIVO
+ * 2 - EXCLUIDO
+ */
+public function mudaStatusCadastrarequipes() {
+
+    $statusAtual = $this->input->post('statusAtual');
+
+    $data = '';
+    if ($statusAtual == 0) {
+        $data['status'] = 1;
+    } else {
+        $data['status'] = 0;
+    }
+
+    $this->db->where('id', $this->input->post('id'));
+
+    if ($this->db->update('$usuariotb', $data)) {
+        echo "sucesso";
+    } else {
+        echo "error";
+    }
+}
     
  /**
  * Status:

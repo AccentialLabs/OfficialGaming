@@ -9,7 +9,7 @@ and open the template in the editor.
 
           <script src="../../assets/js/views/cadastrarEmpresa.js"></script> 
           
-        <form  method="post" action="http://localhost:9090/gaming/index.php/configuracoes/createEmpresa" >       
+          <form  method="post" action="../configuracoes/createEmpresa" >       
 
             <!--container-->
             <div class="col-md-10  container-style">

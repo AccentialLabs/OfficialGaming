@@ -6,6 +6,10 @@
 
 $(function() {
 
+$("#openModalDelete").fadeOut(0);
+    var acaoParaExcluir = '';
+    var handle = '';
+
     //muda status
     $(".statusCheckbox").click(function() {
 
@@ -30,21 +34,31 @@ $(function() {
     //exclui usuario
     $(".excluirUsuario").click(function() {
 
-        var handle = $(this);
-        var id = $(this).attr("id");
+         handle = $(this);
+         acaoParaExcluir = $(this).attr("id");
+
+          $("#openModalDelete").click();
+    });
+    
+    $("#confirmExcluirAcao").click(function() {
 
         $.ajax({
             url: '../Jogadores/deleteUser',
             type: 'POST',
             data: {
-                id: id
+                id: acaoParaExcluir
             },
             success: function(msg) {
 
-                var tr = $(handle).closest('tr');
+              var tr = $(handle).closest('tr');
                 tr.fadeOut(600, function() {
                     tr.remove();
                 });
+
+            $('#myModalDeleteAcao').modal('toggle');
+            $('#myModalDeleteAcao').modal('hide');
+
+              
 
             }
         });

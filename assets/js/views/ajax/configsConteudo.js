@@ -3,34 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-$(function(){
+$(function() {
    
     $("#openModalDelete").fadeOut(0);
      var acaoParaExcluir = '';
      var handle = '';
 
-    //muda status
-    $(".statusCheckbox").click(function() {
-        
-        alert(id);
-        var statusAtual = $(this).attr("value");
-        var id = $(this).attr("id");
-
-        $.ajax({
-            url: '../Configuracoes/mudaStatusConteudo',
-            type: 'POST',
-            data: { 
-                id: id,
-                statusAtual: statusAtual
-            },
-              sucesso: function(msg) {
-                alert(sucesso);
-            }
-        });
-
-    });
+     //muda status
+  
    
-    //exclui usuario
+    //exclui conteudo
     $(".excluirConteudo").click(function() {
          //alert('dad');
         handle = $(this);
@@ -40,10 +22,10 @@ $(function(){
 
     });
     
-     $("#confirmaExcluirAcao").click(function() {
+     $("#confirmExcluirAcao").click(function() {
 
         $.ajax({
-            url: '../Configuracoes/deleteConteudos',
+            url: '../Configuracoes/deleteConteudo',  
             type: 'POST',
             data: {
                 id: acaoParaExcluir

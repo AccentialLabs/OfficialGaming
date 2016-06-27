@@ -14,7 +14,7 @@ $(function() {
      
     //muda status
     $(".statusCheckbox").click(function(){
-        alert(id);
+       
         var statusAtual = $(this).attr("value");
         var id = $(this).attr("id");
         
@@ -31,10 +31,11 @@ $(function() {
         });
     });
     
+     
    
     //exclui usuario
     $(".excluirReconhecimento").click(function() {
-        //alert('dad');
+        
         handle = $(this);
         acaoParaExcluir = $(this).attr("id");
 

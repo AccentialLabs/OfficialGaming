@@ -58,6 +58,18 @@ and open the template in the editor.
 }
 /*ermina aqui onoffswitch do celular*/
 
+/*aqui é o codigo da altura da tabela*/
+.corpotabobjetos{
+    height: 9.4em;
+    overflow: auto;
+}
+
+.corpotabequipes{
+    height: 11em;
+    overflow: auto;
+}
+/*Fim do codigo da altura da tabela*/
+
 .margembranca{
     padding: 15px;
 }

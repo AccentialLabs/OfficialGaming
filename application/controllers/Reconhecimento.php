@@ -17,6 +17,7 @@ class Reconhecimento extends CI_Controller {
         $this->load->model('reconhecimento_model');
         $this->load->model('tiporeconhecimento_model');
         $this->load->model('filtrareconhecimento_model');
+         $this->load->model('acoestable_model');
          
         $this->load->helper('url_helper');
     }
@@ -30,7 +31,8 @@ class Reconhecimento extends CI_Controller {
         /*tela padrão cabeçalho e rodapé*/
     
          $data['tiporeconhecimento'] = $this->tiporeconhecimento_model->get_tiporeconhecimento();
-        
+         $data['acoestable'] = $this->acoestable_model->get_acoestable();
+         
          $this->load->view('templates/gaming_default'); 
          $this->load->view('reconhecimento/cadastrarConquista',$data);
     }  
@@ -58,6 +60,32 @@ class Reconhecimento extends CI_Controller {
         $this->filtrareconhecimento_model->insert_filtrareconhecimento();
         echo "sucesso"; //codigo apenas para mostrar na tela Reconhecimento/conquista a partede opções de filtrar
     }
+    
+      /**
+     * Status:
+     * 0 - INATIVO
+     * 1 - ATIVO
+     * 2 - EXCLUIDO
+     */                      //muda status da tela cadastrar conquista.
+    public function mudaStatusCadastrarconquista() {
+     
+        $statusAtual = $this->input->post('statusAtual');
+
+        $data = '';
+        if ($statusAtual == 0) {
+            $data['status'] = 1;
+        } else {
+            $data['status'] = 0;
+        }
+
+        $this->db->where('id', $this->input->post('id'));
+
+        if ($this->db->update('acoestable', $data)) {            
+            echo "sucesso";
+        } else {
+            echo "error";
+        }
+    } //FIM, muda status da tela cadastrar conquista.
     
      /**
      * Status:
