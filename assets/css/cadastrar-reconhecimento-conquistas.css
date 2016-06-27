@@ -58,8 +58,12 @@ and open the template in the editor.
     right: 0px; 
 }
 /*ermina aqui onoffswitch do celular*/
-
-
+/*aqui é o codigo da altura da tabela*/
+.corpotabacoes{
+    height: 11.3em;
+    overflow: auto;
+}
+/*Fim do codigo da altura da tabela*/
 .margembranca{
     padding: 15px;
 }

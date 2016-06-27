@@ -14,7 +14,9 @@ class Missoes extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('missoes_model');
-        $this->load->model('missoestab_model');
+        $this->load->model('missoestab_model'); 
+        $this->load->model('equipestab_model'); 
+        $this->load->model('objetos_model'); 
         $this->load->helper('url_helper');
     }
 
@@ -25,8 +27,9 @@ class Missoes extends CI_Controller {
         $this->load->library('session');
         $data['empresa'] = $this->session->userdata('empresaLogada');
         
-        $data['missoes'] = $this->missoes_model->get_missoes();
-
+        $data['equipestab'] = $this->equipestab_model->get_equipestab();
+        $data['objetos'] = $this->objetos_model->get_objetos();
+        
         $this->load->view('templates/gaming_default');
         $this->load->view('missoes/cadastrarMissoes', $data);
     }
@@ -55,6 +58,32 @@ class Missoes extends CI_Controller {
         $this->missoes_model->insert_missoes();
         echo "sucesso";
     }
+    
+    /**
+     * Status:
+     * 0 - INATIVO
+     * 1 - ATIVO
+     * 2 - EXCLUIDO
+     */             //MUDA STATUS DA TELA CADASTRAR MISSOES
+    public function mudaStatusCadastrarmissoes() {
+
+        $statusAtual = $this->input->post('statusAtual');
+
+        $data = '';
+        if ($statusAtual == 0) {
+            $data['status'] = 1;
+        } else {
+            $data['status'] = 0;
+        }
+
+        $this->db->where('id', $this->input->post('id'));
+
+        if ($this->db->update('equipestab', $data)) {
+            echo "sucesso";
+        } else {
+            echo "error";
+        }
+    }       //MUDA STATUS DA TELA CADASTRAR MISSOES
 
     /**
      * Status:

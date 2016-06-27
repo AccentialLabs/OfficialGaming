@@ -94,27 +94,28 @@ and open the template in the editor.
         </div>
 
         <!--MODAL-->
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title"> <center>ATENÇÃO!</center></h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>Excluir o Funcionário também o</br>exclui das Equipes que ele participa.</br> Confirme se deseja excluí-lo.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Sim</button>
+        <div class="container">
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModalDeleteAcao" role="dialog">     <!--.fade = desvanecer o modal de dentro pra fora-->
+                        <div class="modal-dialog modal-sm"><!--diálogo-.modal=define a largura adequada e margem do modal"tamanho".modal-lg-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title"><center>ATENÇÃO!</center></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Este Ação está sendo usada em </br>Reconhecimento e Programas!</br>
+                                        Confirme se deseja mesmo excluí-la.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal" id="confirmExcluirAcao">Sim</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!--FIM MODAL-->            
-
-
+        <button type="button" data-toggle="modal" data-target="#myModalDeleteAcao" id="openModalDelete">Open Modal</button>
         <!-- rodape -->
         <div>
             <!-- Trigger the modal with a button -->

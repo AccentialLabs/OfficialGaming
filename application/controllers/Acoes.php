@@ -15,7 +15,7 @@ class Acoes extends CI_Controller {
         parent::__construct();
         $this->load->model('empresa_model');
         $this->load->model('objetos_model');
-        $this->load->model('equipes_model');
+        $this->load->model('equipestab_model');
         $this->load->model('acoes_model'); //esse  codigo é da tela  (cadastrar acao)
         $this->load->model('acoestable_model'); //esse codigo é da tabela
         $this->load->model('periodofiltra_model'); //codigo da tela acoes é a parte da filtragem!.
@@ -44,7 +44,7 @@ class Acoes extends CI_Controller {
          $data['empresa'] = $this->session->userdata('empresaLogada');
 
         $data['objetos'] = $this->objetos_model->get_objetos();
-        $data['equipes'] = $this->equipes_model->get_equipes();
+        $data['equipestab'] = $this->equipestab_model->get_equipestab();
         $data['acoes'] = $this->acoes_model->get_acoes();
 
         $this->load->view('templates/gaming_default');
@@ -57,6 +57,58 @@ class Acoes extends CI_Controller {
         echo "sucesso";
     }
 
+    /**
+     * Status:
+     * 0 - INATIVO
+     * 1 - ATIVO
+     * 2 - EXCLUIDO
+     */
+    public function mudaStatusCadastraracao() {
+
+        $statusAtual = $this->input->post('statusAtual');
+
+        $data = '';
+        if ($statusAtual == 0) {
+            $data['status'] = 1;
+        } else {
+            $data['status'] = 0;
+        }
+
+        $this->db->where('id', $this->input->post('id'));
+
+        if ($this->db->update('objetos', $data)) {
+            echo "sucesso";
+        } else {
+            echo "error";
+        }
+    }
+    
+     /**
+     * Status:
+     * 0 - INATIVO
+     * 1 - ATIVO
+     * 2 - EXCLUIDO
+     */
+    public function mudaStatusCadastraracao2() {
+
+        $statusAtual = $this->input->post('statusAtual');
+
+        $data = '';
+        if ($statusAtual == 0) {
+            $data['status'] = 1;
+        } else {
+            $data['status'] = 0;
+        }
+
+        $this->db->where('id', $this->input->post('id'));
+
+        if ($this->db->update('equipestab', $data)) {
+            echo "sucesso";
+        } else {
+            echo "error";
+        }
+    }
+    
     /**
      * Status:
      * 0 - INATIVO

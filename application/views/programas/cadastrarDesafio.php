@@ -7,7 +7,7 @@ and open the template in the editor.
 
         <link href="../../assets/css/cadastrar-desafio.css" rel="stylesheet"/>
         <script src="../../assets/js/views/cadastrarDesafio.js"></script> 
-        
+        <script src="../../assets/js/views/ajax/programasAjax.js"></script>
     <body>
         
         <form  method="post" action="../programas/createDesafio" >
@@ -120,7 +120,7 @@ and open the template in the editor.
                         </div>
                     </div>
 
-                    <div class="col-md-10 " >
+                    <div class="col-md-10 corpotabequipes">
                         <div id="table-responsive" class="col-lg-10 pull-right tabelap">
 
                             <div class="table-responsive">
@@ -133,12 +133,16 @@ and open the template in the editor.
                                     </thead>
                                     <tbody>
             
-                                <?php foreach ($equipes as $equipes) {     
+                                <?php foreach ($equipestab as $equipestab) {     
                                     ?> <!--penultimo passo, para exexutar tudo com o Foreach-->
                                         
                                     <tr>
-                                         <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipes['descricao'];?></td>
-                                         <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html" checked /> </center></td>
+                                         <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipestab['equipes'];?></td>
+                                         <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="cep" class="statusCheckbox" id="<?php echo $equipestab['id']; ?>" value="<?php echo $equipestab['status']; ?>" <?php
+                                         if ($equipestab['status'] == 1) {
+                                    echo "checked";
+                                }
+                                ?> /> </center> </td>
                                     </tr>
                                 <?php }?> <!penultimo passo>
                                     
@@ -159,11 +163,11 @@ and open the template in the editor.
                         </div>
                     </div>
 
-                    <div class="col-md-12">
-                        <div class="col-sm-6 col-lg-9">
+                    <div class="col-md-12 ">    <br/>
+                        <div class="col-sm-6 col-lg-9 ">
                             
                                 <label for="inputEmail" class="col-md-2 control-label">Objetos</label>
-                                <div class="col-md-10 ">
+                                <div class="col-md-10 corpotabobjetos">
                                     <div id="table-responsive" class="col-lg-12 pull-right tabelap">
                                         <table class="tablesorter">
                                             <thead>
@@ -181,7 +185,11 @@ and open the template in the editor.
                                                 <tr>
                                                     <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objetos['perguntas'];?></td>
                                                     <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objetos['categoria'];?></td>
-                                            <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html"/checked> </center></td>
+                                            <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="cep" class="statusCheckbox" id="<?php echo $objetos['id']; ?>" value="<?php echo $objetos['status']; ?>" <?php
+                                         if ($objetos['status'] == 1) {
+                                    echo "checked";
+                                }
+                                ?> /> </center></td>
                                             </tr>
                                              <?php }?> <!penultimo passo>
                          

@@ -8,6 +8,7 @@ and open the template in the editor.
         <link href="../../assets/css/cadastrar-reconhecimento-conquistas.css" rel="stylesheet"/>
 
         <script src="../../assets/js/views/cadastrarConquista.js"></script> 
+        <script src="../../assets/js/views/ajax/reconhecimentoConquistaAjax.js"></script>
         
     <body>
         
@@ -89,7 +90,7 @@ and open the template in the editor.
 
 
 
-                    <div class="col-md-10 " >
+                    <div class="col-md-10 corpotabacoes">
                         <div id="table-responsive" class="col-lg-10 pull-right tabelap">
 
                             <table class="tablesorter">
@@ -100,19 +101,27 @@ and open the template in the editor.
                                 </tr>
                                 </thead>
                                 <tbody>
-                               
-                              
+                                
+                               <?php  foreach ($acoestable as $acoestable) {
+                                      
+                                    ?> <!--penultimo passo, para exexutar tudo com o Foreach-->
                                     
-                                <tr>
-                                   <td style="border-width: thin; border-style: solid; border-color: black;"></td>	
-                                   <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html" checked /> </center></td>			
+                                    <tr>
+                                        <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $acoestable['acoes']; ?></td> <!--ultimo passo , já conferindo no BD-->
+                                        <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="cep" class="statusCheckbox" id="<?php echo $acoestable['id']; ?>" value="<?php echo $acoestable['status']; ?>" <?php
+                                         if ($acoestable['status'] == 1) {
+                                    echo "checked";
+                                }
+                                ?> /> </center></td>
                                 </tr>
-                               
-                                </tbody>
+
+                            <?php }?> <!penultimo passo>
+                            </tbody>
                             </table>
                         </div>
                     </div>
-
+                  
+                       
                     <!-- Linha do checkbox com opções-->
 
                     <div class="col-sm-6 col-lg-5" >

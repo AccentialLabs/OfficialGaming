@@ -10,10 +10,50 @@ $(function () {
      var acaoParaExcluir = '';
      var handle = '';
 
+// //MUDANÇA DE STATUS DA TELA CADASTRAR DESAFIO (TABELA 1 E 2)
+    $(".statusCheckbox").click(function() {
+
+        
+        var statusAtual = $(this).attr("value");
+        var id = $(this).attr("id");
+
+        $.ajax({
+            url: '../Programas/mudaStatusProgramas1',
+            type: 'POST',
+            data: { 
+                id: id,
+                statusAtual: statusAtual
+            },
+              sucesso: function(msg) {
+                alert(sucesso);
+            }
+        });
+    });
+    
     //muda status
     $(".statusCheckbox").click(function() {
 
-        alert(id);
+      
+        var statusAtual = $(this).attr("value");
+        var id = $(this).attr("id");
+
+        $.ajax({
+            url: '../Programas/mudaStatusProgramas2',
+            type: 'POST',
+            data: { 
+                id: id,
+                statusAtual: statusAtual
+            },
+              sucesso: function(msg) {
+                alert(sucesso);
+            }
+        });
+    }); //FIM MUDANÇA DE STATUS DA TELA CADASTRAR DESAFIO (TABELA 1 E 2)
+
+    //muda status
+    $(".statusCheckbox").click(function() {
+
+      
         var statusAtual = $(this).attr("value");
         var id = $(this).attr("id");
 

@@ -99,4 +99,24 @@ class Funcionario extends CI_Controller {
         echo "sucesso";
     }
 
+     public function mudaStatusEnviaremailconvite() {
+
+        $statusAtual = $this->input->post('statusAtual');
+
+        $data = '';
+        if ($statusAtual == 0) {
+            $data['status'] = 1;
+        } else {
+            $data['status'] = 0;
+        }
+
+        $this->db->where('id', $this->input->post('id'));
+
+        if ($this->db->update('equipestab', $data)) {
+            echo "sucesso";
+        } else {
+            echo "error";
+        }
+    }
+    
 }

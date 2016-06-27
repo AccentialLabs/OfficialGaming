@@ -11,8 +11,6 @@ and open the template in the editor.
         <script src="../../assets/js/views/ajax/usuariosGestores.js"></script>
     <body>
   
-
-
         <!--container-->
         <div class="col-md-10  container-style">
             <div id="page-content" class="margembranca"> 

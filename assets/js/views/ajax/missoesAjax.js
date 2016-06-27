@@ -10,6 +10,27 @@ $(function () {
     var acaoParaExcluir = '';
     var handle = '';
     
+    //muda status da tela CADASTRAR MISSOES
+    $(".statusCheckbox").click(function () {
+        
+         alert(id);
+        var statusAtual = $(this).attr("value");
+        var id = $(this).attr("id");
+
+        $.ajax({
+            url: '../Missoes/mudaStatusCadastrarmissoes',
+            type: 'POST',
+            data: {
+                id: id,
+                statusAtual: statusAtual
+            },
+            success: function (msg) {
+                 
+            }
+        });
+
+    });// fIMmuda status da tela CADASTRAR MISSOES
+    
     //muda status
     $(".statusCheckbox").click(function () {
         

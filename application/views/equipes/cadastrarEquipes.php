@@ -8,10 +8,8 @@ and open the template in the editor.
 
         <!--configurações do Gantt-->
         <link href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="tablesorter/css/blue/style.css">
         <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../assets/css/jogadores-usuarios.css" rel="stylesheet">
-        <link href="../../assets/css/cadastrar-equipes.css" rel="stylesheet">
+
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script src="../../assets/js/cadastrar-equipes.js"></script>
@@ -23,7 +21,9 @@ and open the template in the editor.
         <link href="../../assets/css/cadastrar-equipes.css" rel="stylesheet"/>
         <script src="../../assets/js/cadastrar-equipes2.js"></script> 
         
-        <form  method="post" action="../equipes/createEquipes" >
+        <script src="../../assets/js/views/ajax/cadastrarEquipesAjax.js"></script>
+        
+        <form  method="post" action="../equipes/createEquipes">
     <body>
      
         <!--container-->
@@ -120,13 +120,11 @@ and open the template in the editor.
 
 
 
-
-                    <div  class="col-md-12 parabaixotab">	<!--esse aqui muda a lagura da tabela toda-->														
+                    <div  class="col-md-12 ">	<!--esse aqui muda a lagura da tabela toda-->														
                         <div class="tabbable tabs-left">  
 
                             <div class="col-md-10"> <!--esse aqui muda a lagura de dentro da tabela-->
                                 <div class="tab-content">
-
 
 
                                     <!--aqui começa o restante da tabela-->
@@ -145,20 +143,24 @@ and open the template in the editor.
                                                         <th style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html"/> </center></th>
                                                 </tr>
                                                 </thead>
-                                                <tbody>
+                                                <tbody ng-repeat="membro in membroSede">
                                                     
-                                            <?php foreach ($equipes as $equipes) {     
+                                            <?php foreach ($usuariotb as $usuariotb) {     
                                               ?> 
                                                     
                                               <tr>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipes['Marcos Pereira'];?></td>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipes['Analista Financeiro'];?></td>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipes['Finaceiro'];?></td>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><?php echo $equipes['SP1'];?></center></td>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipes['São Paulo'];?></td>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipes['SP'];?></td>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipes['Brasil'];?></td>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html"/></center></td>
+                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $usuariotb['nome'];?></td>
+                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $usuariotb['cargo'];?></td>
+                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $usuariotb['departamento'];?></td>
+                                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><?php echo $usuariotb['unidade'];?></center></td>
+                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $usuariotb['cidade'];?></td>
+                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $usuariotb['estado'];?></td>
+                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $usuariotb['pais'];?></td>
+                                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="cep" class="statusCheckbox" id="<?php echo $usuariotb['id']; ?>" value="<?php echo $usuariotb['status']; ?>" <?php
+                                         if ($usuariotb['status'] == 1) {
+                                    echo "checked";
+                                }
+                                ?> /> </center></td>
                                               </tr>
                                              
                                             <?php }?> 

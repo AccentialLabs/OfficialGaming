@@ -30,6 +30,26 @@ $(function () {
         });
 
     });
+    
+     //muda status da tela cadastrar conquista.
+    $(".statusCheckbox").click(function(){
+        alert(id);
+        var statusAtual = $(this).attr("value");
+        var id = $(this).attr("id");
+        
+        $.ajax({
+            url: '../Reconhecimento/mudaStatusCadastrarconquista',
+            type: 'POST',  
+            data:{
+                id: id, 
+                statusAtual: statusAtual
+            }, 
+           success: function(msg){
+                alert(msg);
+           } 
+        });
+    });
+    //FIM, muda status da tela cadastrar conquista.
 
     //exclui Reconhecimento
     $(".excluirReconhecimento").click(function () {

@@ -52,17 +52,7 @@ and open the template in the editor.
     }   
     /* Fim configurações da navbar*/
     
-                /*Posicção da tabela tanta da primeira parte quanta a segunda */
-                .table-responsive{
-                    height: 12em;
-                }
-               
-                .positiontab{
-                      margin-top: -132px;
-	             /*FIM Posicção da tabela */
-                     
-                }
-                /*configurações da posiçisão do checkbox da primeira linha  */
+              
                 .checboxx {
                     padding-left: 1em;
                 }

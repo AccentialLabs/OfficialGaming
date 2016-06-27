@@ -58,6 +58,15 @@ and open the template in the editor.
 }
 /*ermina aqui onoffswitch do celular*/
 
+    .corpotabobjetos{
+    height: 11.3em;
+    overflow: auto;
+    }
+    
+    .corpotabequipes{
+    height: 11.3em;
+    overflow: auto;
+    }
 
 .margembranca{
     padding: 15px;

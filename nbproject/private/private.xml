@@ -3,7 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/OfficialGaming/application/views/objetos/cadastrarObjetos.php</file>
             <file>file:/C:/xampp/htdocs/OfficialGaming/application/views/configuracoes/cadastrarPremio.php</file>
+            <file>file:/C:/xampp/htdocs/OfficialGaming/application/views/funcionario/cadastrarFuncionario.php</file>
+            <file>file:/C:/xampp/htdocs/OfficialGaming/application/views/configuracoes/usuariosGestores.php</file>
         </group>
     </open-files>
 </project-private>

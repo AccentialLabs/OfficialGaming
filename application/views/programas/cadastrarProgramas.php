@@ -329,9 +329,9 @@ and open the template in the editor.
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            
 
-                                            <div class="col-md-12">
+                                            <div class="col-md-12 ">
                                                 <div class="col-sm-6 col-lg-9" >
                                                     <div class = "checbox checboxcontainer col-md-5" >
                                                         <input type="radio"  value="nome" checked> Objetos específicos
@@ -340,7 +340,7 @@ and open the template in the editor.
                                             </div> 
                                             <!--Aqui começa a tabela dentro da Panel-->
                                             <div class="col-md-12">
-                                                <div class="col-sm-6 col-lg-12" >
+                                                <div class="col-sm-6 col-lg-12 ">
                                                     <div class="table-responsive">
                                                         <table class="tablesorter">
                                                             <thead>
@@ -361,10 +361,10 @@ and open the template in the editor.
                                                                  ?> <!--penultimo passo, para exexutar tudo com o Foreach-->
                                                                      
                                                            <tr>
-                                                             <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipe['objetos'];?></td>
-                                                             <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipe['categoria'];?></td>
-                                                            <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipe['ponto'];?></td>
-                                                            <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipe['personagem'];?></td>
+                                                             <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objetos['objeto'];?></td>
+                                                             <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objetos['categoria'];?></td>
+                                                            <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objetos['pontos'];?></td>
+                                                            <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objetos['personagem'];?></td>
                                                             <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html" /> </center></td>
                                                           </tr>
                                                           
@@ -374,7 +374,7 @@ and open the template in the editor.
                                                         </table>
                                                     </div>
                                                 </div>				<!--Aqui termina a tabela dentro da Panel-->
-
+                                                
                                                 <div class="col-md-12">
                                                     <div class="col-sm-6 col-lg-9" >
                                                         <div class = "checbox checboxcontainer col-md-5" >
@@ -400,10 +400,10 @@ and open the template in the editor.
                                                  
                                                     </div>
                                                 </div>
-
+                                                </div>
                                             </div>
-                                        </div>
-
+                                        
+                                    
                                         <!-- começa a parte final do painel-->
                                         <table id="playlistTable" class="panel-footer" >
                                             <div class="panel-footer" >Etapa 2 (aparece se estiver selecionado "Rodadas diferentes")
@@ -411,7 +411,7 @@ and open the template in the editor.
                                         </table>
                                     </div>
                                     <!--aqui termina o paineeeeeeeeeeeeeeeeeeeeeel -->
-
+                                    </div>
                                 </div>
                            
                         </div>

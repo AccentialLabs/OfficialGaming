@@ -4,92 +4,91 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-        <link href="../../assets/css/cadastrar-acoes.css" rel="stylesheet"/>
+<link href="../../assets/css/cadastrar-acoes.css" rel="stylesheet"/>
 
-        <script src="../../assets/js/views/cadastrarAcoes.js"></script> 
+<script src="../../assets/js/views/cadastrarAcoes.js"></script> 
 
-    <body> 
-          <!--antepenultimo passo para mostrar na tela se funciona-->
-        <form  method="post" action="http://localhost:9090/gaming/index.php/acoes/createAcoes" >
-        
+<body> 
+    <!--antepenultimo passo para mostrar na tela se funciona-->
+    <form  method="post" action="../../acoes/createAcoes" >
+        <script src="../../assets/js/views/ajax/AcaoAjax.js"></script> 
         <!--container-->
-        <div class="col-md-10  container-style ">
+        <div class="col-md-10" >
             <div id="page-content" class="margembranca "> 
 
                 <div class="col-md-12" >
 
                     <div class="col-md-12">
                         <div class="col-sm-6 col-lg-5" >
-                            <div class="form-group">
-                                <label for="inputEmail" class="col-md-2 control-label">Ação</label>
-                                <div class="col-md-8 pull-right">
-                                    <input type="text" id="acoes" name="acoes" class="form-control " placeholder="">
-                                    <br/>
-                                </div>
+
+                            <label for="inputEmail" class="col-md-2 control-label">Ação</label>
+                            <div class="col-md-8 pull-right">
+                                <input type="text" id="acoes" name="acoes" class="form-control " placeholder="">
+                                <br/>
                             </div>
+
                         </div>
                     </div>
 
-                 <div class="celular col-md-3 pull-right">
-                    <div class="onoffswitch">
-                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked="true" >
-                        <label class="onoffswitch-label" for="myonoffswitch">
-                            <span class="onoffswitch-inner"></span>
-                            <span class="onoffswitch-switch"></span>
-                        </label>
-                    </div> 
-                  </div>
-                    
+                    <div class="celular col-md-3 pull-right">
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked="true" >
+                            <label class="onoffswitch-label" for="myonoffswitch">
+                                <span class="onoffswitch-inner"></span>
+                                <span class="onoffswitch-switch"></span>
+                            </label>
+                        </div> 
+                    </div>
+
                     <!--Linha da Agência -->
                     <div class="col-md-12">
                         <div class="col-sm-6 col-lg-10">
-                            <div class="form-group">
-                                <label for="inputEmail" class="col-md-2 control-label">Vigência</label>
-                                <div class="col-md-3">
-                                    <input type="date"  id="datainicio" name="datainicio" value="" class= "textbox70"/>
 
-                                    <div class="col-md-1 textpos">
-                                        <p>a</p>
-                                    </div>
+                            <label for="inputEmail" class="col-md-2 control-label">Vigência</label>
+                            <div class="col-md-3">
+                                <input type="date"  id="datainicio" name="datainicio" value="" class= "textbox70"/>
+
+                                <div class="col-md-1 textpos">
+                                    <p>a</p>
                                 </div>
-
-                                <div class="col-md-3 ">
-                                    <input type="date"  id="datatermino" name="datatermino" value=" " class= "textbox70"/>
-                                    <div class="col-md-1 textpos">
-                                        <p>das</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-2 ">
-                                    <input type="text" class="form-control " id="horainicio" name="horainicio" placeholder="00:00">
-                                    <div class="col-md-4 textpos1">
-                                        <p>ás</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-2 mudar">
-                                    <input type="text" class="form-control " id="horatermino" name="horatermino" placeholder="00:00"> 
-                                </div>
-
                             </div>
+
+                            <div class="col-md-3 ">
+                                <input type="date"  id="datatermino" name="datatermino" value=" " class= "textbox70"/>
+                                <div class="col-md-1 textpos">
+                                    <p>das</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2 ">
+                                <input type="text" class="form-control " id="horainicio" name="horainicio" placeholder="00:00">
+                                <div class="col-md-4 textpos1">
+                                    <p>ás</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2 mudar">
+                                <input type="text" class="form-control " id="horatermino" name="horatermino" placeholder="00:00"> 
+                            </div>
+
                         </div>
                     </div>
                     <!--FIM Linha da Agência -->
 
                     <div class="col-md-12" >
                         <div class="col-sm-6 col-lg-5" >
-                            <div class="form-group">
-                                <label for="inputEmail" class="col-md-2 control1-labe">Objetos</label>
-                                <div class="col-md-8 pull-right ">
-                                    <div class = "checbox checboxcontainer" >
-                                        <input type="radio" id="selecobjetos" name="selecobjetos" value="1"> Selecione o(s) Objetos(s)
-                                    </div> 
-                                </div>
+
+                            <label for="inputEmail" class="col-md-2 control1-labe">Objetos</label>
+                            <div class="col-md-8 pull-right ">
+                                <div class = "checbox checboxcontainer" >
+                                    <input type="radio" id="selecobjetos" name="selecobjetos" value="1"> Selecione o(s) Objetos(s)
+                                </div> 
                             </div>
+
                         </div>
                     </div>
 
-                    <div class="col-md-10 " >
+                    <div class="col-md-10 corpotabobjetos">
                         <div id="table-responsive" class="col-lg-10 pull-right tabelap">
 
                             <table class="tablesorter">
@@ -102,17 +101,25 @@ and open the template in the editor.
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    
-                                    <?php foreach ($objetos as $objetos) {     
-                 ?> <!--penultimo passo, para exexutar tudo com o Foreach-->
-                 
-                                    <tr>
-                                        <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipe['objetos'];?></td>
-                                        <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipe['categoria'];?></td>
-                                        <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html"/> </center></td>
-                                        <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html"checked /> </center></td>
-                                </tr
-                                <?php }?> <!penultimo passo>
+
+                                    <?php foreach ($objetos as $objetos) {
+                                        ?> <!--penultimo passo, para exexutar tudo com o Foreach-->
+
+                                        <tr>
+                                            <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objetos['objeto']; ?></td>
+                                            <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objetos['categoria']; ?></td>
+                                            <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="cep" class="statusCheckbox" id="<?php echo $objetos['id']; ?>" value="<?php echo $objetos['status']; ?>" <?php
+                                        if ($objetos['status'] == 1) {
+                                            echo "checked";
+                                        }
+                                        ?> /> </center></td>
+                                    <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="cep" class="statusCheckbox" id="<?php echo $objetos['id']; ?>" value="<?php echo $objetos['status']; ?>" <?php
+                                        if ($objetos['status'] == 1) {
+                                            echo "checked";
+                                        }
+                                        ?> /> </center></td>
+                                    </tr
+                                <?php } ?> <!penultimo passo>
 
                                 </tbody>
                             </table>
@@ -169,40 +176,39 @@ and open the template in the editor.
 
                     <div class="col-md-12"> <br/>
                         <div class="col-sm-6 col-lg-10">
-                            <div class="form-group">
-                                <label for="inputEmail" class="col-md-2 control-label">Qtd.vezes</label>
-                                <div class="col-md-4">
-                                    <input type="number" id="quantidadevezes" name="quantidadevezes" size="4" maxlength="8"  placeholder=""/> por Jogador,limitado a um total de
-                                </div>
-                                <div class="col-md-4">
-                                    <input type="number" id="quantidadevezes" name="totalvezes" size="4" maxlength="8"  placeholder=""/> vezes
-                                </div>    
+
+                            <label for="inputEmail" class="col-md-2 control-label">Qtd.vezes</label>
+                            <div class="col-md-4">
+                                <input type="number" id="quantidadevezes" name="quantidadevezes" size="4" maxlength="8"  placeholder=""/> por Jogador,limitado a um total de
                             </div>
+                            <div class="col-md-4">
+                                <input type="number" id="quantidadevezes" name="totalvezes" size="4" maxlength="8"  placeholder=""/> vezes
+                            </div>    
+
                         </div>
                     </div>
 
                     <div class="col-md-12"> <br/>
                         <div class="col-sm-6 col-lg-10">
-                            <div class="form-group">
-                                <label for="inputEmail" class="col-md-2 control-label">Frequencia</label>
-                                <div class="col-md-4">
-                                    <input type="number" id="frequecia" name="frequencia" size="4" maxlength="8"  placeholder=""> vez a cada
-                                </div>
-                                <div class="col-md-4">
-                                    <input type="text" id="cadahora" name="cadahora" size="4" maxlength="8"  placeholder=""> hora
-                                </div>    
+
+                            <label for="inputEmail" class="col-md-2 control-label">Frequencia</label>
+                            <div class="col-md-4">
+                                <input type="number" id="frequecia" name="frequencia" size="4" maxlength="8"  placeholder=""> vez a cada
                             </div>
+                            <div class="col-md-4">
+                                <input type="text" id="cadahora" name="cadahora" size="4" maxlength="8"  placeholder=""> hora
+                            </div>    
                         </div>
+
                     </div>
 
                     <div class="col-md-12"> <br/>
                         <div class="col-sm-6 col-lg-10">
-                            <div class="form-group">
-                                <label for="inputEmail" class="col-md-2 control-label">Para quem</label>
-                                <div class = "checbox checboxcontainer">
-                                    <input type="radio" id="todousuario" name="todousuario"  value="1"> Todos os Usuários/Jogadores cadastrado
-                                </div> 
-                            </div>
+
+                            <label for="inputEmail" class="col-md-2 control-label">Para quem</label>
+                            <div class = "checbox checboxcontainer">
+                                <input type="radio" id="todousuario" name="todousuario"  value="1"> Todos os Usuários/Jogadores cadastrado
+                            </div> 
                         </div>
                     </div>
 
@@ -217,7 +223,7 @@ and open the template in the editor.
                     </div>
 
 
-                    <div class="col-md-10 " >
+                    <div class="col-md-10 corpotabequipes">
                         <div id="table-responsive" class="col-lg-10 pull-right tabelap">
                             <table class="tablesorter">
                                 <thead>
@@ -227,17 +233,21 @@ and open the template in the editor.
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    
-                                    <?php foreach ($equipes as $equipe) {     
-                                              ?> <!--penultimo passo, para exexutar tudo com o Foreach-->
-                                    <tr>
-                                        <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipe['descricao'];?></td>
-                                        <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html"/checked> </center></td>
 
-                                </tr>
+                                    <?php foreach ($equipestab as $equipestab) {
+                                        ?> <!--penultimo passo, para exexutar tudo com o Foreach-->
+                                        <tr>
+                                            <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipestab['equipes']; ?></td>
+                                            <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="cep" class="statusCheckbox" id="<?php echo $equipestab['id']; ?>" value="<?php echo $equipestab['status']; ?>" <?php
+                                        if ($equipestab['status'] == 1) {
+                                            echo "checked";
+                                        }
+                                        ?> /> </center></td>
 
-                         <?php }?> <!penultimo passo>
-                               
+                                    </tr>
+
+                                <?php } ?> <!penultimo passo>
+
                                 </tbody>
                             </table>
                         </div>
@@ -266,37 +276,37 @@ and open the template in the editor.
 
                     <div class="col-md-12">
                         <div class="col-sm-6 col-lg-6" >
-                            <div class="form-group">
-                                <label for="inputEmail" class="col-md-2 control-label">Dica de tela</label>
-                                <div class="col-md-8 pull-right">
-                                    <input type="text" id="dicatela" name="dicatela" class="form-control" placeholder="">
-                                    <br/>
-                                </div>
+
+                            <label for="inputEmail" class="col-md-2 control-label">Dica de tela</label>
+                            <div class="col-md-8 pull-right">
+                                <input type="text" id="dicatela" name="dicatela" class="form-control" placeholder="">
+                                <br/>
                             </div>
+
                         </div>
                     </div>
 
                     <div class="col-md-12"> <br/>
                         <div class="col-sm-6 col-lg-10">
-                            <div class="form-group">
-                                <label for="inputEmail" class="col-md-2 control-label">Texto p/Log</label>
-                                <div class="col-md-3">
-                                    <form action="demo_form.asp">O usuário/jogador"Fulano"
-                                    </form>
-                                </div>
-                                <div class="col-md-4 verbocx">
-                                    <input type="text" id="textlog" name="textlog" size="15" maxlength="8" placeholder="entre com um verbo"> a "Ação"
-                                </div>
+
+                            <label for="inputEmail" class="col-md-2 control-label">Texto p/Log</label>
+                            <div class="col-md-3">
+                                O usuário/jogador"Fulano"
+
                             </div>
+                            <div class="col-md-4 verbocx">
+                                <input type="text" id="textlog" name="textlog" size="15" maxlength="8" placeholder="entre com um verbo"> a "Ação"
+                            </div>
+
                         </div>
                     </div>
 
                 </div>
             </div>
 
-            
+
             <!--codigo faz parte da chamada para o código (cadastrarprograma.js)-->
-             <input type="hidden" name="status" id="status" status="checked" />
+            <input type="hidden" name="status" id="status" status="checked" />
             <!--fim do codigo da chamada de java script-->
 
             <!-- rodape -->
@@ -307,9 +317,9 @@ and open the template in the editor.
             </div> 
 
         </div>
- 
-    </form>
-</body>
 
+
+</body>
+</form>
 
 <!--FIM container-->

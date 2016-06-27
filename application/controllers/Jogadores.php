@@ -65,6 +65,7 @@ class Jogadores extends CI_Controller {
      */
     public function deleteUser() {
         $data['status'] = 2;
+        
         $this->db->where('id', $this->input->post('id'));
 
         if ($this->db->update('funcionario', $data)) {
