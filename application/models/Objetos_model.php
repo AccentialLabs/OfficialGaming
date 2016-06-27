@@ -47,21 +47,30 @@ class Objetos_model extends CI_Model {
         $objetosEntity->setPersonagem($this->input->post('personagem'));
         $objetosEntity->setOrdem($this->input->post('ordem'));
         
-        
         $slug = url_title($this->input->post('title'), 'dash', TRUE);
 
         $data = array(
-            'objetos' => $this->input->post('objetos'),
+            'descricao' => $this->input->post('descricao'),
             'categoria' => $this->input->post('categoria'),
-            'obrigacao' => $this->input->post('obrigacao'),
-            'status' => $this->input->post('status'),
-            'ativo' => $this->input->post('ativo'),
-            'perguntas' => $this->input->post('perguntas'),
-            'pontos' => $this->input->post('pontos'),
-            'personagem' => $this->input->post('personagem'),
-            'ordem' => $this->input->post('ordem'),
+            'tipo_resposta' => $this->input->post('tipo_resposta'),
+            'descritiva_min_caracter' => $this->input->post('descritiva_min_caracter'),
+            'descritiva_pontos' => $this->input->post('descritiva_pontos'),
+            'numero_tentativa' => $this->input->post('numero_tentativa'),
+            'limite_tempo' => $this->input->post('limite_tempo'),
+            'mostrar_resposta_correta' => $this->input->post('mostrar_resposta_correta'),
+            'escala' => $this->input->post('escala'),
+            'escala_valor_inicial' => $this->input->post('escala_valor_inicial'),
+            'escala_incremento' => $this->input->post('escala_incremento'),
+            'escala_valor_final' => $this->input->post('escala_valor_final'),
+            'pontuacao_ponto_medio' => $this->input->post('pontuacao_ponto_medio'),
+            'pontuacao_ponto_medio_abaixo' => $this->input->post('pontuacao_ponto_medio_abaixo'),
+            'pontuacao_ponto_medio_acima' => $this->input->post('pontuacao_ponto_medio_acima'),
+            'intersecao_fisica' => $this->input->post('intersecao_fisica'),
+            'intersecao_fisica_pontos' => $this->input->post('intersecao_fisica_pontos'),
+            'habilita_qrcode' => $this->input->post('habilita_qrcode')
         ); 
 
+        
         return $this->db->insert('objetos', $data);
     }
     //put your code here

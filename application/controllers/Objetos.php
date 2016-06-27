@@ -102,15 +102,18 @@ class Objetos extends CI_Controller {
 
         $respostas = $this->input->post('respostas');
 
-        foreach ($respostas as $resposta) {
+        $data  = $this->objetos_model->insert_objetos();
+        
+        print_r($data);
+        
+        /* foreach ($respostas as $resposta) {
 
             $resposta['status'] = 1;
             $resposta['objeto_id'] = 1;
 
             $this->respostasobjeto_model->insert_respostaobjeto($resposta);
-        }
+        } */
 
-        print_r($respostas);
     }
 
 }

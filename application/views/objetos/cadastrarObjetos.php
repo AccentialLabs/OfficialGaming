@@ -54,7 +54,7 @@ and open the template in the editor.
                         <div class="form-group">
                             <label for="inputEmail" class="col-md-2 control-label"id="elemento1">Pergunta</label>
                             <div class="col-md-8">
-                                <input type="text" id="pergunta" name="pergunta" class="form-control "placeholder="">
+                                <input type="text" id="pergunta" name="descricao" class="form-control "placeholder="">
                                 <br/>
                             </div>
                         </div>
@@ -65,7 +65,7 @@ and open the template in the editor.
                             <label for="inputEmail" class="col-md-2 control1-labe" id="elemento1">Resposta</label>
                             <div class="col-md-8">
                                 <div class = "checbox checboxcontainer" >
-                                    <input type="radio" id="respdescritiva" name="respdescritiva" value="1"> Descritiva
+                                    <input type="radio" id="respdescritiva" name="tipo_resposta" value="DESCRITIVA"> Descritiva
                                 </div> 
                             </div>
                         </div>
@@ -75,7 +75,7 @@ and open the template in the editor.
                         <div class="col-md-10 pull-right" id="divQtdMinCaracteres" >
                             <label for="inputEmail" class="col-md-3 control1-labe" id="elemento1">Qtd. min. caracteres </label>
                             <div class="col-md-2" id="elemento1">
-                                <input type="number" id="qtdcaracteres" name="qtdcaracteres" class="form-control "placeholder="">  
+                                <input type="number" id="qtdcaracteres" name="descritiva_min_caracter" class="form-control "placeholder="">  
                             </div>
                             <label for="inputEmail" class="col-md-3 text-center control1-labe"><small>Deixe em branco se não houver mínimo</small></label>
                         </div>
@@ -85,7 +85,7 @@ and open the template in the editor.
                         <div class="col-md-10 pull-right" id="divQtdPontos">
                             <label for="inputEmail" class="col-md-3 control1-labe" id="elemento1">Pontos</label>
                             <div class="col-md-2" id="elemento1">
-                                <input type="number" id="qtdpontos" name="qtdpontos" class="form-control "placeholder="">  
+                                <input type="number" id="qtdpontos" name="descritiva_pontos" class="form-control "placeholder="">  
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,7 @@ and open the template in the editor.
                         <div class="col-md-2">
                         </div>
                         <div class = "checbox checboxcontainer col-md-3">
-                            <input type="radio" id="alternativas" name="alternativas" value="1"> Alternativas
+                            <input type="radio" id="alternativas" name="tipo_resposta" value="ALTERNATIVA"> Alternativas
                         </div> 
                     </div>
 
@@ -145,7 +145,7 @@ and open the template in the editor.
                          <br/> <br/>
                         <div class="col-md-10 pull-right" id="elemento1"
                              <div class = "checbox checboxcontainer col-md-2" id="elemento1" >
-                                <input type="checkbox" id="respcorreta" name="respcorreta" value="1"> Mostrar resposta(s) correta(s) 
+                                <input type="checkbox" id="respcorreta" name="mostrar_resposta_correta" value="1"> Mostrar resposta(s) correta(s) 
                             </div> 
                         </div>
 
@@ -153,7 +153,7 @@ and open the template in the editor.
                             <div class="col-md-10 pull-right" id="divAlternativasNumTentativas">
                                 <label for="inputEmail" class="col-md-3 control1-labe" id="elemento1">Numero de tentativas</label>
                                 <div class="col-md-2" id="elemento1">
-                                    <input type="number" id="numtentativas" name="numtentativas" class="form-control "placeholder="">  
+                                    <input type="number" id="numtentativas" name="numero_tentativa" class="form-control "placeholder="">  
                                 </div>
                                 <label for="inputEmail" class="col-md-3 text-center control1-labe"><small>Mínimo1 vez</small></label>
                             </div>
@@ -163,7 +163,7 @@ and open the template in the editor.
                             <div class="col-md-10 pull-right" id="divAlternativasLimitTempo">
                                 <label for="inputEmail" class="col-md-3 control1-labe" id="elemento1">Limite de tempo (seg.)</label>
                                 <div class="col-md-2" id="elemento1">
-                                    <input type="number" id="limittempo" name="limittempo" class="form-control "placeholder="">  
+                                    <input type="number" id="limittempo" name="limite_tempo" class="form-control "placeholder="">  
                                 </div>
                                 <label for="inputEmail" class="col-md-3 text-center control1-labe"><small>Deixe em branco se não houver limite</small></label>
                             </div>
@@ -185,21 +185,21 @@ and open the template in the editor.
                                 <div class="col-md-4" id="elemento1">
                                     <label for="inputEmail" class="col-md-6 control1-labe" id="elemento1">Valor inicial/min.</label>
                                     <div class="col-md-5" id="elemento1">
-                                        <input type="number" id="valorinicial" name="valorinicial" class="form-control "placeholder="">  
+                                        <input type="number" id="valorinicial" name="escala_valor_inicial" class="form-control "placeholder="">  
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <label for="inputEmail" class="col-md-6 control1-labe">Incremento</label>
                                     <div class="col-md-4" id="elemento1">
-                                        <input type="number" id="incremento" name="incremento" class="form-control "placeholder="">  
+                                        <input type="number" id="incremento" name="escala_incremento" class="form-control "placeholder="">  
                                     </div>
                                 </div>
 
                                 <div class="col-md-4" id="elemento1" >
                                     <label for="inputEmail" class="col-md-6 control1-labe" id="elemento1">Valor final/máx.</label>
                                     <div class="col-md-5" id="elemento1">
-                                        <input type="number" id="valorfinal" name="valorfinal" class="form-control "placeholder="">  
+                                        <input type="number" id="valorfinal" name="escala_valor_final" class="form-control "placeholder="">  
                                     </div>
                                 </div>
 
@@ -225,13 +225,13 @@ and open the template in the editor.
                             <div class="col-md-2">
                             </div>
                             <div class = "checbox checboxcontainer col-md-4" id="elemento1">
-                                <input type="radio" id="pontmedio" name="pontmedio"  value="1"> Pontuação por Ponto Médio 
+                                <input type="radio" id="pontmedio" name="pontuacao_ponto_medio"  value="1"> Pontuação por Ponto Médio 
                             </div> 
 
                             <div class="col-md-3" id="elemento1">
                                 <label for="inputEmail" class="col-md-5 control1-labe" id="elemento1">Abaixo</label>
                                 <div class="col-md-5" id="elemento1">
-                                    <input type="number" id="qtd." name="qtd." class="form-control "placeholder="">  
+                                    <input type="number" id="qtd." name="pontuacao_ponto_medio_abaixo" class="form-control "placeholder="">  
                                 </div>
                                 <div class="pull-right">
                                   <big><big> <big>  | </big> </big> </big>
@@ -240,7 +240,7 @@ and open the template in the editor.
 
                             <div class="col-md-3"id="elemento1">
                                 <div class="col-md-6" >
-                                    <input type="number" id="qtd." name="qtd." class="form-control "placeholder="">  
+                                    <input type="number" id="qtd." name="pontuacao_ponto_medio_acima" class="form-control "placeholder="">  
                                 </div>
                                 <label for="inputEmail" class="col-md-6 control1-labe pull-right" id="elemento1">Acima</label>
                             </div>
@@ -250,7 +250,7 @@ and open the template in the editor.
                             <div class="col-md-2">
                             </div>
                             <div class = "checbox checboxcontainer col-md-4" id="elemento1">
-                                <input type="radio" id="pontescala" name="pontescala" value="1"> Pontuação conforme Escala 
+                                <input type="radio" id="pontescala" name="pontuacao_conforme_escala" value="1"> Pontuação conforme Escala 
                             </div> 
                         </div>
                     </div>
@@ -259,7 +259,7 @@ and open the template in the editor.
                         <div class="col-md-2">
                         </div>
                         <div class = "checbox checboxcontainer col-md-3">
-                            <input type="radio" id="interacaofisicareal" name="interacaofisicareal" value="1">  Interção física/real
+                            <input type="radio" id="interacaofisicareal" name="intersecao_fisica" value="1">  Interção física/real
                         </div> 
                     </div>
 
@@ -267,7 +267,7 @@ and open the template in the editor.
                         <div class="col-md-10 pull-right" id="elemento1">
                             <label for="inputEmail" class="col-md-1 control1-labe" id="elemento1">Resposta</label>
                             <div class="col-md-7" >
-                                <input type="varchar" id="resposta" name="resposta" class="form-control " placeholder=""> 
+                                <input type="varchar" id="resposta" name="intersecao_fisica_resposta" class="form-control " placeholder=""> 
                             </div>
                         </div>
                     </div>
@@ -276,7 +276,7 @@ and open the template in the editor.
                         <div class="col-md-10 pull-right" id="elemento1">
                             <label for="inputEmail" class="col-md-1 control1-labe" id="elemento1">Pontos</label>
                             <div class="col-md-2" >
-                                <input type="number" d="pontos" name="pontos" class="form-control " placeholder=""> 
+                                <input type="number" d="pontos" name="intersecao_fisica_pontos" class="form-control " placeholder=""> 
                             </div>
                         </div>
                     </div>
@@ -286,7 +286,7 @@ and open the template in the editor.
                         <div class="col-md-2">
                         </div>
                         <div class = "checbox checboxcontainer col-md-4" id="elemento1">
-                            <input type="checkbox" idid="habiiitaqr" name="habilitaqr" value="1"> Habilita QR-Code Reader
+                            <input type="checkbox" idid="habiiitaqr" name="habilita_qrcode" value="1"> Habilita QR-Code Reader
                         </div> 
                     </div>
                 </div>
