@@ -114,10 +114,7 @@ class Objetos extends CI_Controller {
             $this->respostasobjeto_model->insert_respostaobjeto($resposta);
         } */
 
-<<<<<<< HEAD
-=======
-        print_r($respostas);  
->>>>>>> origin/master
+
     }
 
 }

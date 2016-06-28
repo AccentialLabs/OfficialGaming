@@ -340,7 +340,7 @@ and open the template in the editor.
                                             </div> 
                                             <!--Aqui começa a tabela dentro da Panel-->
                                             <div class="col-md-12">
-                                                <div class="col-sm-6 col-lg-12 ">
+                                                <div class="col-sm-6 col-lg-12 corpotabobjetos">
                                                     <div class="table-responsive">
                                                         <table class="tablesorter">
                                                             <thead>

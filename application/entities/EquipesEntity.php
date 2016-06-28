@@ -19,11 +19,13 @@ class EquipesEntity {
     private $cidade_id;
     private $estado_id;
     private $pais_id;
-    private $quantidade;
-    private $datacadastro;
-    private $datainicio;
-    private $datafim;
-    private $tema_id;
+    private $aleatorio;
+    private $equipeqtd;
+    private $equipeprefixo;
+    private $manual;
+    private $equipenome;
+    private $temaequipe;
+    private $cadastro;
     
     function getId() {
         return $this->id;
@@ -53,24 +55,32 @@ class EquipesEntity {
         return $this->pais_id;
     }
 
-    function getQuantidade() {
-        return $this->quantidade;
+    function getAleatorio() {
+        return $this->aleatorio;
     }
 
-    function getDatacadastro() {
-        return $this->datacadastro;
+    function getEquipeqtd() {
+        return $this->equipeqtd;
     }
 
-    function getDatainicio() {
-        return $this->datainicio;
+    function getEquipeprefixo() {
+        return $this->equipeprefixo;
     }
 
-    function getDatafim() {
-        return $this->datafim;
+    function getManual() {
+        return $this->manual;
     }
 
-    function getTema_id() {
-        return $this->tema_id;
+    function getEquipenome() {
+        return $this->equipenome;
+    }
+
+    function getTemaequipe() {
+        return $this->temaequipe;
+    }
+
+    function getCadastro() {
+        return $this->cadastro;
     }
 
     function setId($id) {
@@ -101,24 +111,33 @@ class EquipesEntity {
         $this->pais_id = $pais_id;
     }
 
-    function setQuantidade($quantidade) {
-        $this->quantidade = $quantidade;
+    function setAleatorio($aleatorio) {
+        $this->aleatorio = $aleatorio;
     }
 
-    function setDatacadastro($datacadastro) {
-        $this->datacadastro = $datacadastro;
+    function setEquipeqtd($equipeqtd) {
+        $this->equipeqtd = $equipeqtd;
     }
 
-    function setDatainicio($datainicio) {
-        $this->datainicio = $datainicio;
+    function setEquipeprefixo($equipeprefixo) {
+        $this->equipeprefixo = $equipeprefixo;
     }
 
-    function setDatafim($datafim) {
-        $this->datafim = $datafim;
+    function setManual($manual) {
+        $this->manual = $manual;
     }
 
-    function setTema_id($tema_id) {
-        $this->tema_id = $tema_id;
+    function setEquipenome($equipenome) {
+        $this->equipenome = $equipenome;
     }
-    
+
+    function setTemaequipe($temaequipe) {
+        $this->temaequipe = $temaequipe;
+    }
+
+    function setCadastro($cadastro) {
+        $this->cadastro = $cadastro;
+    }
+
+
 }

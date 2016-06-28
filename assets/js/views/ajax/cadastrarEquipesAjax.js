@@ -8,26 +8,26 @@
 $(function() {
     
      //muda status
+/* Aqui muda o status da tela CADASTRAR EQUIPES*/
     $(".statusCheckbox").click(function() {
         
-        alert('id');
-        
+        alert(id);
         var statusAtual = $(this).attr("value");
         var id = $(this).attr("id");
 
         $.ajax({
-            url: '../Equipes/mudaStatusCadastrarequipes',
+            url: '../Equipes/mudaStatusEquipes2',
             type: 'POST',
             data: {
                 id: id,
                 statusAtual: statusAtual
             },
-            success: function(msg) { 
+            success: function(msg) {
                 alert(msg);
-
             }
         });
 
     });
+    /* Fim do código status da tela CADASTRAR EQUIPES*/
   });
 

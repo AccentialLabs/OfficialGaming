@@ -5,10 +5,34 @@
  */
 $(function(){
     
+    
+    
      $("#openModalDelete").fadeOut(0);
-    var acaoParaExcluir = '';
-    var handle = '';
+     var acaoParaExcluir = '';
+     var handle = ''; 
+    
+    /* Aqui muda o status da tela CADASTRAR EQUIPES*/
+    $(".statusCheckbox").click(function() {
+        
+        alert(id);
+        var statusAtual = $(this).attr("value");
+        var id = $(this).attr("id");
 
+        $.ajax({
+            url: '../Equipes/mudaStatusEquipes2',
+            type: 'POST',
+            data: {
+                id: id,
+                statusAtual: statusAtual
+            },
+            success: function(msg) {
+                alert(msg);
+            }
+        });
+
+    });
+    /* Fim do código status da tela CADASTRAR EQUIPES*/
+    
     //muda status
     $(".statusCheckbox").click(function() {
         
@@ -24,32 +48,32 @@ $(function(){
                 statusAtual: statusAtual
             },
             success: function(msg) {
-                alert(sucesso);
+                alert(msg);
             }
         });
 
     });
     
     //exclui usuario
-    $(".excluirEquipes").click(function() {
-        
+     $(".excluirEquipes").click(function() {
+         //alert('dad');
         handle = $(this);
         acaoParaExcluir = $(this).attr("id");
-        
+
         $("#openModalDelete").click();
 
     });
     
     
-    $("#confirmaExcluirAcao").click(function() {
-
-        $.ajax({
+   $("#confirmExcluirAcao").click(function() {
+ 
+        $.ajax({ 
             url: '../Equipes/deleteEquipes',
             type: 'POST',
             data: {
                 id: acaoParaExcluir
             },
-            sucesso: function(msg) {
+            success: function(msg) {
 
               var tr = $(handle).closest('tr');
                 tr.fadeOut(600, function() {
@@ -59,7 +83,6 @@ $(function(){
             $('#myModalDeleteAcao').modal('toggle');
             $('#myModalDeleteAcao').modal('hide');
 
-              
 
             }
         });
