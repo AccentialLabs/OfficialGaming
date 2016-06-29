@@ -7,11 +7,11 @@ and open the template in the editor.
 <link href="../../assets/css/cadastrar-acoes.css" rel="stylesheet"/>
 
 <script src="../../assets/js/views/cadastrarAcoes.js"></script> 
-
+        <script src="../../assets/js/views/ajax/CadastrarAcaoAjax.js"></script> 
 <body> 
     <!--antepenultimo passo para mostrar na tela se funciona-->
-    <form  method="post" action="../../acoes/createAcoes" >
-        <script src="../../assets/js/views/ajax/AcaoAjax.js"></script> 
+    <form  method="post" action="../acoes/createAcoes" >
+
         <!--container-->
         <div class="col-md-10" >
             <div id="page-content" class="margembranca "> 
@@ -102,31 +102,27 @@ and open the template in the editor.
                                 </thead>
                                 <tbody>
 
-                                    <?php foreach ($objetos as $objetos) {
+                                    
+                                    <?php
+                                        foreach ($objetos as $objetos) {
                                         ?> <!--penultimo passo, para exexutar tudo com o Foreach-->
 
                                         <tr>
-                                            <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objetos['objeto']; ?></td>
-                                            <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objetos['categoria']; ?></td>
-                                            <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="cep" class="statusCheckbox" id="<?php echo $objetos['id']; ?>" value="<?php echo $objetos['status']; ?>" <?php
-                                        if ($objetos['status'] == 1) {
-                                            echo "checked";
-                                        }
-                                        ?> /> </center></td>
-                                    <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="cep" class="statusCheckbox" id="<?php echo $objetos['id']; ?>" value="<?php echo $objetos['status']; ?>" <?php
-                                        if ($objetos['status'] == 1) {
-                                            echo "checked";
-                                        }
-                                        ?> /> </center></td>
+                                            <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objetos['objDescricao']; ?></td>
+                                            <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objetos['categoriaDescricao']; ?></td>
+                                            <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox"  class="selectCheckObj" index="" id="<?php echo $objetos['objId']; ?>"/> </center></td>
+                                    <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" class="statusCheckbox" name="objsAcoes[]" value="<?php echo $objetos['objId']; ?>"/> </center></td>
                                     </tr
                                 <?php } ?> <!penultimo passo>
 
                                 </tbody>
                             </table>
                         </div>
+                       
                     </div>
 
                     <div class="col-md-12">
+                         <br />
                         <div class="col-sm-6 col-lg-5">
                             <div class="col-md-8 pull-right ">
                                 <div class = "checbox checboxcontainer" >
@@ -238,11 +234,7 @@ and open the template in the editor.
                                         ?> <!--penultimo passo, para exexutar tudo com o Foreach-->
                                         <tr>
                                             <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $equipestab['equipes']; ?></td>
-                                            <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="cep" class="statusCheckbox" id="<?php echo $equipestab['id']; ?>" value="<?php echo $equipestab['status']; ?>" <?php
-                                        if ($equipestab['status'] == 1) {
-                                            echo "checked";
-                                        }
-                                        ?> /> </center></td>
+                                            <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox"  class="statusCheckbox" name="equipesAcoes[]" value="<?php echo $equipestab['id']; ?>" /> </center></td>
 
                                     </tr>
 

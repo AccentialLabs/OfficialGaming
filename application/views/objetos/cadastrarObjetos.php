@@ -27,7 +27,14 @@ and open the template in the editor.
         <div class="col-md-10  container-style" id="elemento1">
             <div id="page-content" class="margembranca"> 
 
-
+                <?php if (!empty($this->session->flashdata('cadSucesso'))) { ?>
+                    <span>
+                        <div class="alert alert-success" role="alert">
+                            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                            <?php echo $this->session->flashdata('cadSucesso'); ?>
+                        </div>
+                    </span>
+                <?php } ?>
 
                 <div class="col-md-12" id="elemento1">
 
@@ -115,19 +122,19 @@ and open the template in the editor.
 
 
                                 <!--  <?php foreach ($objetoss as $objetoss) {
-   ?>  -->
+                    ?>  -->
 
-                                <tbody>
-                                    <tr>
-                                        <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objetos['pontos']; ?></td>
-                                        <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objetos['resposta']; ?></td>
-                                        <th style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html"checked /></center></th>
-                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objetos['ganharperder']; ?></td>
-                                <td style="border-width: thin; border-style: solid; border-color: black;"></td>
-                                <td style="border-width: thin; border-style: solid; border-color: black;"><center> <span  class = "glyphicon glyphicon-ban-circle"= oculto-ária "true"> </center></span> </td>
-                                </tr>  
+                                    <tbody>
+                                        <tr>
+                                            <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objetos['pontos']; ?></td>
+                                            <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objetos['resposta']; ?></td>
+                                            <th style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html"checked /></center></th>
+                                    <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objetos['ganharperder']; ?></td>
+                                    <td style="border-width: thin; border-style: solid; border-color: black;"></td>
+                                    <td style="border-width: thin; border-style: solid; border-color: black;"><center> <span  class = "glyphicon glyphicon-ban-circle"= oculto-ária "true"> </center></span> </td>
+                                    </tr>  
 
-                                <!--      <?php } ?>      -->
+                                    <!--      <?php } ?>      -->
 
                                 </tbody>
                             </table>
@@ -139,10 +146,10 @@ and open the template in the editor.
                             <!--FIM esse aqui é o botãoque adiciona linhas--> <br/>
                         </div>
                     </div> 
-                   
+
 
                     <div class="col-sm-6 col-lg-10" id="divAlternativasShowRespostas">
-                         <br/> <br/>
+                        <br/> <br/>
                         <div class="col-md-10 pull-right" id="elemento1"
                              <div class = "checbox checboxcontainer col-md-2" id="elemento1" >
                                 <input type="checkbox" id="respcorreta" name="mostrar_resposta_correta" value="1"> Mostrar resposta(s) correta(s) 
@@ -234,7 +241,7 @@ and open the template in the editor.
                                     <input type="number" id="qtd." name="pontuacao_ponto_medio_abaixo" class="form-control "placeholder="">  
                                 </div>
                                 <div class="pull-right">
-                                  <big><big> <big>  | </big> </big> </big>
+                                    <big><big> <big>  | </big> </big> </big>
                                 </div>
                             </div>
 
@@ -300,7 +307,7 @@ and open the template in the editor.
                         <br/>
                     </div>
                 </div>
-                
+
                 <input type="hidden" name="contadorRespostas" id="contadorRespostas" />
 
                 <div class="col-md-11">

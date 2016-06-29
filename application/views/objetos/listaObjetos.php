@@ -58,21 +58,21 @@ and open the template in the editor.
 
                         <tbody ng-repeat="membro in membroSede"> 
                             <!-- Data Show Row-->
-                            
                             <?php
+                      
                             foreach ($obj as $objeto) {
-                                if ($objeto['status'] != 2) {
+                                if ($objeto['objStatus'] != 2) {
                                     ?> 
 
                                     <tr class="listas">  
-                                        <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objeto['objeto']; ?></td>
-                                        <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objeto['categoria']; ?></td>
-                                        <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" class="statusCheckbox" id="<?php echo $objeto['id']; ?>" value="<?php echo $objeto['status']; ?>" <?php
-                                    if ($objeto['status'] == 1) {
+                                        <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objeto['objDescricao']; ?></td>
+                                        <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $objeto['categoriaDescricao']; ?></td>
+                                        <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" class="statusCheckbox" id="<?php echo $objeto['objId']; ?>" value="<?php echo $objeto['objStatus']; ?>" <?php
+                                    if ($objeto['objStatus'] == 1) {
                                         echo "checked";
                                     }
                                     ?>/> </center></td>  
-                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><span class = "glyphicon glyphicon-ban-circle excluirObjeto" id="<?php echo $objeto['id']; ?>"></span></center>
+                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><span class = "glyphicon glyphicon-ban-circle excluirObjeto" id="<?php echo $objeto['objId']; ?>"></span></center>
                                 </tr>
 
                             <?php

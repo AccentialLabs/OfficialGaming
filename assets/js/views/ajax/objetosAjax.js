@@ -44,6 +44,7 @@ $(function () {
 
     $("#confirmExcluirAcao").click(function () {
 
+        alert(acaoParaExcluir);
         $.ajax({
             url: '../Objetos/deleteObjetos',
             type: 'POST',

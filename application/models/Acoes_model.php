@@ -1,4 +1,5 @@
 <?php
+
 include("/../entities/AcoesEntity.php");
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -11,32 +12,32 @@ include("/../entities/AcoesEntity.php");
  *
  * @author Raphael Pizzo
  */
+class Acoes_model extends CI_Model {
 
-class Acoes_model extends CI_Model{
     //put your code here
-    
+
     public function __construct() {
         $this->load->database();
     }
-    
-     public function get_acoes($slug = FALSE) {
+
+    public function get_acoes($slug = FALSE) {
         if ($slug === FALSE) {
             $query = $this->db->get('acoes');
             return $query->result_array();
         }
 
         $query = $this->db->get_where('acoes', array('id' => $slug));
-        
-        
-        $acoesEntity = new AcoesEntity();  
-        
-        
+
+
+        $acoesEntity = new AcoesEntity();
+
+
         return $query->row_array();
     }
-    
-    public function insert_acoes(){
+
+    public function insert_acoes() {
         $this->load->helper('url');
-        
+
         $acoesEntity = new AcoesEntity();
         $acoesEntity->setAcoes($this->input->post('acoes'));
         $acoesEntity->setStatus($this->input->post('status'));
@@ -60,7 +61,7 @@ class Acoes_model extends CI_Model{
         $acoesEntity->setDicatela($this->input->post('dicatela'));
         $acoesEntity->setTextlog($this->input->post('textlog'));
 
-        $alug = url_title ($this->input->post ('title'), 'dash', TRUE);
+        $alug = url_title($this->input->post('title'), 'dash', TRUE);
 
         $data = array(
             'acoes' => $this->input->post('acoes'),
@@ -86,8 +87,13 @@ class Acoes_model extends CI_Model{
             'dicatela' => $this->input->post('dicatela'),
             'textlog' => $this->input->post('textlog')
         );
-        
-    return $this->db->insert('acoes', $data);
+
+        $this->db->insert('acoes', $data);
+
+        $insert_id = $this->db->insert_id();
+
+        return $insert_id;
     }
+
     //put your code here
 }
