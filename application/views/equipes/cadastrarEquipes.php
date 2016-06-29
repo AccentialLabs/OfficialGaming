@@ -5,208 +5,188 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 
+<!--configurações do Gantt-->
+<link href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="tablesorter/css/blue/style.css">
+<link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
 
-        <!--configurações do Gantt-->
-        <link href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css" rel="stylesheet" type="text/css">
-        <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../assets/css/cadastrar-equipes.css" rel="stylesheet">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="../../assets/js/cadastrar-equipes.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="../../assets/js/jquery.fn.gantt.js"></script>
+<!--fim das configurações do Gantt-->
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-        <script src="../../assets/js/cadastrar-equipes.js"></script>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-        <script src="../../assets/js/jquery.fn.gantt.js"></script>
+<link href="../../assets/css/cadastrar-equipes.css" rel="stylesheet"/>
+<script src="../../assets/js/cadastrar-equipes2.js"></script> 
 
-        <!--fim das configurações do Gantt-->
+<script src="../../assets/js/jquery.min.js"></script> <!--O checkbox esta salvando, não mudar de posição esse codigo nem retirar-->
 
-        <link href="../../assets/css/cadastrar-equipes.css" rel="stylesheet"/>
-        <script src="../../assets/js/cadastrar-equipes2.js"></script> 
-        
-        <script src="../../assets/js/views/ajax/cadastrarEquipesAjax.js"></script>
-        
-        <form  method="post" action="../equipes/createEquipes">
-    <body>
-     
-        <!--container-->
-        <div class="col-md-10  container-style">
-            <div id="page-content" class="margembranca"> 
+<form  method="post" action="../equipes/createEquipes">
+    <script src="../../assets/js/views/ajax/cadastrarEquipesAjax.js"></script>
 
-                <div class="col-md-12" >
+    <!--container-->
+    <div class="col-md-10  container-style" id="elemento1">
+        <br/>
+        <div id="page-content" class="margembranca"> 
 
-                    <div  class="col-md-12">
+            <div  class="col-md-12" id="elemento1">
+
+                <div  class="col-md-12">
+
+                    <div class = "checbox checboxcontainer">
+                        <label><input id="cadastro" name="cadastro" type="radio"  VALUE="" checked> Campo do Cadastro </label>
+                    </div> 
+
+                    <div class="col-md-2 checboxx " >
 
                         <div class = "checbox checboxcontainer">
-                            <label><input type="checkbox"  VALUE="" checked> Campo do Cadastro </label>
+                            <label><input id="cargo_id" name="cargo_id" type="checkbox"  VALUE="" checked> Cargo </label>
                         </div> 
 
-                        <div class="col-md-2 checboxx " >
-
-                            <div class = "checbox checboxcontainer">
-                                <label><input type="checkbox"  VALUE="" checked> Cargo </label>
-                            </div> 
-
-                            <div class = "checbox checboxcontainer">
-                                <label><input type="checkbox"  VALUE="" checked> Departamento</label>
-                            </div> 
-                            <div class = "checbox disabled checboxcontainer">
-                                <label><input type="checkbox"  VALUE="" checked> Unidade</label>
-                            </div> 
-
-                        </div>
-
-
-                        <div  class="col-md-3 " >
-
-                            <div class = "checbox checboxcontainer">
-                                <label><input type="checkbox"  VALUE="" checked> Cidade </label>
-                            </div>  
-                            <div class = "checbox checboxcontainer">
-                                <label><input type="checkbox"  VALUE="" checked> Estado</label>
-                            </div> 
-                            <div class = "checbox disabled checboxcontainer">
-                                <label><input type="checkbox"  VALUE="" checked > País</label>
-                            </div> 
-                        </div>
+                        <div class = "checbox checboxcontainer">
+                            <label><input id="departamento_id" name="departamento_id" type="checkbox"  VALUE="" checked> Departamento</label>
+                        </div> 
+                        <div class = "checbox disabled checboxcontainer">
+                            <label><input id="unidade_id" name="unidade_id"type="checkbox"  VALUE="" checked> Unidade</label>
+                        </div> 
 
                     </div>
 
-                    <!--primeiro radiobox-->
-                    <div class="col-sm-6 col-lg-7" >
-                        <div class="col-md-5 ">
-                            <label>
-                                <input type="radio" name="todos" value="equipes"> 
-                                Aleatório
-                            </label>
-                        </div>
+
+                    <div  class="col-md-3">
+                        <div class = "checbox checboxcontainer">
+                            <label><input id="cidade_id" name="cidade_id" type="checkbox"  VALUE="" checked> Cidade </label>
+                        </div>  
+                        <div class = "checbox checboxcontainer">
+                            <label><input id="estado_id" name="estado_id" type="checkbox"  VALUE="" checked> Estado</label>
+                        </div> 
+                        <div class = "checbox disabled checboxcontainer">
+                            <label><input id="pais_id" name="pais_id" type="checkbox"  VALUE="" checked > País</label>
+                        </div>  
                     </div>
-                    <!--Fim doo primeiro radiobox-->
-
-                    <div class="col-md-12" >
-                        <div class="col-sm-1 col-lg-5"  >
-                            <div class="col-md-7">
-                                  Qtd.Equipes   
-                                    <input class="input-mini" type="text">
-                                                      
-                            </div>
-                        </div>
-
-                        <div class="col-sm-1 col-lg-7" >
-                            <div class="col-md-7 " >
-                                Nome das Equipes (prefixo)
-                                    <input class="input-mini pull-right" type="text"style="border: 1px solid blue;">  
-                                
-                            </div>
-
-                            <div class="col-sm-5 col-lg-5 pull-right" >
-                                <div class="col-md-1 " >
-                                     +Sequencial
-                                 
-                                    <br/>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!--segundo radiobox-->
-                    <div class="col-sm-6 col-lg-6" >
-                        <div class="col-md-5 ">
-                            <label>
-                                <input type="radio" checked name="todos" value="equipes"> 
-                                Manual
-                            </label>
-                        </div>
-                    </div>
-                    <!--Fim dosegundo radiobox-->
-
-
-
-                    <div  class="col-md-12 ">	<!--esse aqui muda a lagura da tabela toda-->														
-                        <div class="tabbable tabs-left">  
-
-                            <div class="col-md-10"> <!--esse aqui muda a lagura de dentro da tabela-->
-                                <div class="tab-content">
-
-
-                                    <!--aqui começa o restante da tabela-->
-                                    <div id="Layer1" class="positiontab">
-                                        <div class="table-responsive">
-                                            <table class="tablesorter">
-                                                <thead>
-                                                    <tr>
-                                                        <th style="border-width: thin; border-style: solid; border-color: black;">Nome</th>
-                                                        <th style="border-width: thin; border-style: solid; border-color: black;">Cargo</th>
-                                                        <th style="border-width: thin; border-style: solid; border-color: black;">Departamento</th>
-                                                        <th style="border-width: thin; border-style: solid; border-color: black;">Unidade</th>
-                                                        <th style="border-width: thin; border-style: solid; border-color: black;">Cidade</th>
-                                                        <th style="border-width: thin; border-style: solid; border-color: black;">Estado</th>
-                                                        <th style="border-width: thin; border-style: solid; border-color: black;">Pais</th>
-                                                        <th style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html"/> </center></th>
-                                                </tr>
-                                                </thead>
-                                                <tbody ng-repeat="membro in membroSede">
-                                                    
-                                            <?php foreach ($usuariotb as $usuariotb) {     
-                                              ?> 
-                                                    
-                                              <tr>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $usuariotb['nome'];?></td>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $usuariotb['cargo'];?></td>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $usuariotb['departamento'];?></td>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><?php echo $usuariotb['unidade'];?></center></td>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $usuariotb['cidade'];?></td>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $usuariotb['estado'];?></td>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $usuariotb['pais'];?></td>
-                                                <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="cep" class="statusCheckbox" id="<?php echo $usuariotb['id']; ?>" value="<?php echo $usuariotb['status']; ?>" <?php
-                                         if ($usuariotb['status'] == 1) {
-                                    echo "checked";
-                                }
-                                ?> /> </center></td>
-                                              </tr>
-                                             
-                                            <?php }?> 
-                                            
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div> <!--aqui termina a tabela-->
-
-                                    <!--ultima caixa-->
-                                    <div class="col-sm-1 col-lg-9"  >
-                                        <div class="col-md-7">
-                                              Nome da Equipe  
-                                                <input class="input-mini" type="text">
-                                                                
-                                        </div>
-                                    </div>
-                                    <!-- Fim da ultima caixa -->
-
-                                </div>
-                            </div>
-                        </div>							<!--Aqui termina a tab do lado esquerdo com tabela-->
-                    </div>
-
-     <!--DIV QUE CHAMA O GANTT => -->    <!--<div class="gantt"></div>-->
-
-                    <div class="col-md-12">
-                        <div class="col-sm-6 col-lg-6" >
-                            <div class="form-group">
-                                <label for="inputEmail" class="col-md-3 control-label">Tema para Equipe</label>
-                                <div class="col-md-8 pull-right">
-
-                                    <select class="span1">
-                                        <option>Selecione o Tema (MOD/Pack)</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+
+                <!--primeiro radiobox-->
+                <div class="col-sm-6 col-lg-7">
+                    <label>
+                        <input id="aleatorio" name="aleatorio" type="radio" name="todos" value="equipes"> 
+                        Aleatório
+                    </label>
+                </div>
+                <!--Fim doorimeiro radiobox-->
+
+                <div class="col-md-12">
+                    <label for="inputEmail" class="col-md-1 control-label">Qtd.Equipes </label>
+                    <div class="col-sm-1 col-md-2"  >
+                        <input id="equipeqtd" name="equipeqtd" class="input-mini" type="text" size="7">                        
+                    </div>
+
+                    <div class="col-sm-1 col-lg-7" id="elemento1">
+                        <label id="elemento1" for="inputEmail" class="col-md-6 control-label">Nome das Equipes (prefixo)</label>
+                        <div class="col-md-2" id="elemento1">
+                            <input id="equipeprefixo" name="equipeprefixo" class="input-mini pull-right" type="text">  
+                        </div>
+
+                        <div class="col-sm-5 col-lg-4 pull-right" id="elemento1">
+                            <label for="inputEmail" class="col-md-1 control-label">+Sequencial </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--segundo radiobox-->
+                <div class="col-sm-6 col-lg-6" > 
+                    <label>
+                        <input id="manual" name="manual" type="radio" checked name="todos" value="equipes"> 
+                        Manual
+                    </label>
+                </div>
+                <!--Fim dosegundo radiobox-->
+
+                <div  class="col-md-12">	<!--esse aqui muda a lagura da tabela toda-->														
+                    <div class="tabbable tabs-left">  
+
+                        <div class="col-md-11"> <!--esse aqui muda a lagura de dentro da tabela-->
+                            <div class="tab-content">
+
+
+                                <!--aqui começa o restante da tabela-->
+                             
+                                    <div id="elemento1"  class=" col-md-12 table-responsive corpotabusuariotb">
+                                        <table class="tablesorter">
+                                            <thead>
+                                                <tr>
+                                                    <th style="border-width: thin; border-style: solid; border-color: black;">Nome</th>
+                                                    <th style="border-width: thin; border-style: solid; border-color: black;">Cargo</th>
+                                                    <th style="border-width: thin; border-style: solid; border-color: black;">Departamento</th>
+                                                    <th style="border-width: thin; border-style: solid; border-color: black;">Unidade</th>
+                                                    <th style="border-width: thin; border-style: solid; border-color: black;">Cidade</th>
+                                                    <th style="border-width: thin; border-style: solid; border-color: black;">Estado</th>
+                                                    <th style="border-width: thin; border-style: solid; border-color: black;">Pais</th>
+                                                    <th style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="opcoes" value="html"/> </center></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <?php foreach ($usuariotb as $usuariotb) {
+                                                    ?> 
+
+                                                    <tr>
+                                                        <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $usuariotb['nome']; ?></td>
+                                                        <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $usuariotb['cargo']; ?></td>
+                                                        <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $usuariotb['departamento']; ?></td>
+                                                        <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $usuariotb['unidade']; ?></td>
+                                                        <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $usuariotb['cidade']; ?></td>
+                                                        <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $usuariotb['estado']; ?></td>
+                                                        <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $usuariotb['pais']; ?></td>
+                                                        <td style="border-width: thin; border-style: solid; border-color: black;"><center><input type="checkbox" name="cep" class="statusCheckbox" id="<?php echo $usuariotb['id']; ?>" value="<?php echo $usuariotb['status']; ?>" <?php
+                                                    if ($usuariotb['status'] == 1) {
+                                                        echo "checked";
+                                                    }
+                                                    ?> /> </center></td>
+                                                </tr>
+
+                                            <?php } ?> 
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                <!--aqui termina a tabela-->
+
+                                <!--ultima caixa-->
+                                <div class="col-sm-1 col-lg-8" id="elemento1" > <br/>
+                                    <label id="elemento1" for="inputEmail" class="col-md-3 control-label"> Nome da Equipe</label>
+                                    <div class="col-md-5" id="elemento1">
+                                        <input id="equipenome" name="equipenome" class="form-control" type="text">                  
+                                    </div>
+                                </div>
+                                <!-- Fim da ultima caixa -->
+
+                            </div>
+                        </div>
+                    </div>							<!--Aqui termina a tab do lado esquerdo com tabela-->
+                </div>  
+
+                <!--DIV QUE CHAMA O GANTT => -->    <!--<div class="gantt"></div>-->
+                <div class="col-md-8" id="elemento1"> <br/>
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-md-3 control-label">Tema para Equipe</label>
+                        <div class="col-md-5" id="elemento1">
+
+                            <select id="temaequipe" name="temaequipe" class="span1 form-control" >
+                                <option value="1">Selecione o Tema (MOD/Pack)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                 </div>
                 <!-- rodape -->
                 <div>
                     <button type="submit" class="btn btn-primary pull-right btnazul">Criar Equipes</button>
@@ -215,6 +195,7 @@ and open the template in the editor.
 
             </div>
         </div>
+
 </form>
 
 <!--FIM container-->

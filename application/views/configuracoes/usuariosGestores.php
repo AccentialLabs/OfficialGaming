@@ -61,7 +61,7 @@ and open the template in the editor.
                                             </div>
                                         </div>
 
-                                        <div class="col-md-11 ">
+                                        <div class="col-md-11 corpotabususuario">
                                             <div class="table-responsive">
                                                 <table class="tablesorter">
                                                     <thead>

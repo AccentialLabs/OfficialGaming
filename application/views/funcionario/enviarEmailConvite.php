@@ -70,7 +70,6 @@
                                             </tr>
                                         </thead>
                                     </table>
-                                </div>
 
                                 <!--aqui começa o restante da tabela-->
                                 <div id="Layer1" class="positiontab">

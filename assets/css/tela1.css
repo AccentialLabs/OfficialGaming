@@ -1,6 +1,20 @@
 .margembranca{
-    padding: 15px;
+    padding: 1em;
 }
+
+#elemento1{
+    padding: 0px;
+}
+
+/*Altura da tabela com scroll*/
+    .corpotabjogador{
+    height: 12.3em;
+    overflow: auto;
+    }
+    
+/* FIM Altura da tabela com scroll*/
+
+
 /*Aqui começa as configuraç~ões de cor tamanho do HEADER-MENU-CONTAINER*/
 .header-style{
     border: 1px solid #DCDCDC;
@@ -16,13 +30,25 @@
 }
 /*FIM das configuraç~ões de cor tamanho do HEADER-MENU-CONTAINER*/
 
-/* configurações da navbar*/
+/*configigurações do botn voltar e o cabelçalho*/       
+      .nav-stacked{
+          margin-left: -1em;
+          margin-right: -1em;
+      }
+      
+      .nab-branco{
+          margin-left: -2em;
+          margin-right: -1em;
+          margin-bottom: 0em;
+      }
+       /*FIM configigurações do botão voltar e a nav-bar*/
+       /* configurações da navbar*/
 .navbar.navbar-default.nab-branco{
     background: #FFFFFF;
 }
 .container-fluid{
     height: 4em;
-}
+}   
 /* Fim configurações da navbar*/
 
 .breadcrumb{

@@ -59,6 +59,14 @@ and open the template in the editor.
 }
 /*ermina aqui onoffswitch do celular*/
 
+/*Altura da tabela com scroll*/
+    .corpotabobjetos{
+    height: 11.3em;
+    overflow: auto;
+    }
+    
+/* FIM Altura da tabela com scroll*/
+
 .margembranca{
     padding: 15px;
 }

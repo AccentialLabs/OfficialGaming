@@ -10,8 +10,7 @@
 
 
 class Equipes extends CI_Controller {
-    //put your code here
-    
+
     /*acrescentamos o construct como primero passo*/
      public function __construct() {
         parent::__construct();
@@ -23,22 +22,23 @@ class Equipes extends CI_Controller {
     }
     /*Fim do construct*/
     
-    public function cadastrarEquipes(){
+    public function cadastrarEquipes(){ 
         
         /*tela padrão cabeçalho e rodapé*/
         $this->load->library('session');
         $data['empresa'] = $this->session->userdata('empresaLogada');
         /*tela padrão cabeçalho e rodapé*/
         
-        $data['usuariotb'] = $this->usuariotb_model->get_usuariotb();  //codigo dos dados da tela
+        $data['equipes'] = $this->equipes_model->get_equipes();
+        $data['usuariotb'] = $this->usuariotb_model->get_usuariotb(); //tabela //codigo dos dados da tela
        
          $this->load->view('templates/gaming_default');
-        $this->load->view('equipes/cadastrarEquipes',$data);
+         $this->load->view('equipes/cadastrarEquipes',$data);
         
-        //Comentario
+        //Comentario  
     } 
     
-     public function listaEquipes(){
+     public function listaEquipes(){ 
      /*tela padrão cabeçalho e rodapé*/
         $this->load->library('session');
         $data['empresa'] = $this->session->userdata('empresaLogada');
@@ -52,17 +52,18 @@ class Equipes extends CI_Controller {
     }  
     
        public function createEquipes() {
-        $this->equipes_model->insert_equipes;
+        $this->equipes_model->insert_equipes();
         echo "sucesso";
     }
     
-     /**
+            /* Aqui muda o status da tela CADASTRAR EQUIPES*/
+     /** 
  * Status:
  * 0 - INATIVO
  * 1 - ATIVO
  * 2 - EXCLUIDO
  */
-public function mudaStatusCadastrarequipes() {
+public function mudaStatusEquipes2() {
 
     $statusAtual = $this->input->post('statusAtual');
 
@@ -75,12 +76,13 @@ public function mudaStatusCadastrarequipes() {
 
     $this->db->where('id', $this->input->post('id'));
 
-    if ($this->db->update('$usuariotb', $data)) {
+    if ($this->db->update('usuariotb', $data)) {
         echo "sucesso";
     } else {
         echo "error";
     }
 }
+       /*fIM DO CÓDIGO que muda o status da tela CADASTRAR EQUIPES*/
     
  /**
  * Status:

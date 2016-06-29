@@ -1,21 +1,40 @@
 .margembranca{
     padding: 15px;
 }
+
+/*Altura da tabela com scroll*/
+    .corpotabususuario{
+    height: 14.9em;
+    overflow: auto;
+    }
+    
+/* FIM Altura da tabela com scroll*/
    
-    /*Aqui começa as configuraç~ões de cor tamanho do HEADER-MENU-CONTAINER*/
+      /*Aqui começa as configuraç~ões de cor tamanho do HEADER-MENU-CONTAINER*/
     .header-style{
         border: 1px solid #DCDCDC;
     }
     
     .menu-style{
         border: 1px solid #DCDCDC;
-        height: 100%;
+        height: 41em;
     }
     
     .container-style{
         height: 100%;
     }
     /*FIM das configuraç~ões de cor tamanho do HEADER-MENU-CONTAINER*/
+     /*configigurações do (BTN voltar e o NAVBAR-CABEÇALHO)*/ 
+      .nav-stacked{         
+          margin-left: -1em;
+          margin-right: -1em;
+      }
+      
+      .nab-branco{
+          margin-left: -2em;
+          margin-right: -1em;
+          margin-bottom: 0em;
+      }    /*FIM configigurações do (BTN voltar) e a (NAVBAR-CABEÇÃLHO)*/   
   
     /* configurações da navbar*/
     .navbar.navbar-default.nab-branco{

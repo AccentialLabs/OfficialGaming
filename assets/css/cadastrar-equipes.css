@@ -8,6 +8,20 @@ and open the template in the editor.
     Author     : Raphael Pizzo
 */
 
+/*retirando o espaçãmento com o padding de toda a tela*/
+        #elemento1{
+           padding: 0px;
+       }
+     /*retirando o espaçãmento com o padding de toda a tela*/
+
+/*Altura da tabela com scroll*/
+    .corpotabusuariotb{
+    height: 14.9em;
+    overflow: auto;
+    }
+    
+/* FIM Altura da tabela com scroll*/
+
    /*configigurações do botn voltar e o cabelçalho*/       
        .nav-stacked{
           margin-left: -1em;
@@ -21,10 +35,12 @@ and open the template in the editor.
       }
        /*FIM configigurações do botão voltar e a nav-bar*/
 
+    /*posição do botão*/
     .btnazul{
-        margin-right: 3em;
+        margin-right: 8em;
         margin-left: 1em;
     }
+    /* FIM da posição do botão*/
     
     /*Aqui começa as configuraç~ões de cor tamanho do HEADER-MENU-CONTAINER*/
     .header-style{
@@ -52,17 +68,7 @@ and open the template in the editor.
     }   
     /* Fim configurações da navbar*/
     
-              
-                .checboxx {
-                    padding-left: 1em;
-                }
-                 /* FIMconfigurações da posiçisão do checkbox da primeira linha */
-                 
-                 /*Posição da tabela*/
-                 .parabaixotab{
-                     padding-top: 9em;
-                 }
-                  /*Fim Posição da tabela*/
+
                   
        /*configigurações do (BTN voltar e o NAVBAR-CABEÇALHO)*/ 
       .nav-stacked{         
@@ -75,7 +81,6 @@ and open the template in the editor.
           margin-right: -1em;
           margin-bottom: 0em;
       }    /*FIM configigurações do (BTN voltar) e a (NAVBAR-CABEÇÃLHO)*/           
-                  
                   
                                  
    /*começa aqui o Gantt*/

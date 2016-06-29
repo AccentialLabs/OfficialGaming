@@ -7,28 +7,20 @@ and open the template in the editor.
 
 <html>
     <head>
-        <!-- Ativo para o botão+ add as tabelas-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="craftpip-jquery-confirm-524c959/dist/jquery-confirm.min.js"></script>
-        <!-- Ativo para o botão+ add as tabelas-->
-
-
-        <link href="http://localhost:9090/game/css/bootstrap.min.css" rel="stylesheet"/> <!--responsável por não deixara ocabeçãllho solto-->
+       
+        <link href="../../css/bootstrap.min.css" rel="stylesheet"/> <!--responsável por não deixara ocabeçãllho solto-->
 
         <link href="../../assets/css/tela1.css" rel="stylesheet"/> 
         <script src="../../assets/js/tela1.js"></script> 
 
-
-    
-
     <body>
     
         <!--container-->
-        <div class="col-md-10  container-style">
+        <div class="col-md-10  container-style" id="elemento1">
             <div id="page-content" class="margembranca"> 
 
-                <div id="elemento1" class="col-md-12 pull-left">
-                    <div class="col-md-12">
+                <div id="elemento1" class="col-md-12 pull-left" id="elemento1">
+                    <div class="col-md-12" id="elemento1">
                         <ol class="breadcrumb">
                             <li><a href="#">Home</a> </li>
                             <li><a href="#">Products </a> </li>
@@ -38,9 +30,9 @@ and open the template in the editor.
                     </div>
                 </div>
 
-                <div  class="col-md-12" >															
+                <div  class="col-md-12" id="elemento1">															
                     <div class="tabbable"> 
-                        <div class="col-md-12">      									<!--Aqui começa a tab do lado esquerdo com tabela-->
+                        <div class="col-md-12" id="elemento1">      									<!--Aqui começa a tab do lado esquerdo com tabela-->
                             <ul class ="nav nav-tabs">	
 
                                 <li class="active"><a href="#tab1" data-toggle="tab">Individual</a></li>
@@ -52,18 +44,20 @@ and open the template in the editor.
                                 <li><a href="#tab7" data-toggle="tab">País</a></li>
                             </ul>    														 <!--Aqui Termina o cabeçalho da tab-->
                         </div>
-                        <div class="tab-content">
+                      
+                        <div class="tab-content">    
                             <div class="tab-pane active" id="tab1">
 
                                 <!maregem a esquerda>
-                                <div class="col-md-12  container-style">
-                                    <div id="page-content" class="margembranca"> 
+                                <div class="col-md-12  container-style" id="elemento1">  <br/>
+                                    <div id="page-content" > 
 
                                         <!--Aqui estou chamando o script da btn/tabela que add linha-->
                                         <div class="AddTableRow"></div>
                                         <!--fim da chamada do script da tabela que add linha-->
-                                        <div class="col-md-4">
-                                            <div id="Layer1" class="col-md-11 pull-left altura">
+                                        
+                                        <div class="col-md-4" id="elemento1">
+                                            <div class="col-md-11 pull-left corpotabjogador" id="elemento1">
                                                 <div class="table-responsive"> <!--A classe responsive faz que tenhamos altura na tabela junto comm o height-->
                                                     <table class="tablesorter">
                                                         <thead>
@@ -76,14 +70,14 @@ and open the template in the editor.
                                                         </thead>
                                                         
                                                         <tbody ng-repeat="membro in membroSede">
-                                                              <?php foreach ($jogador as $equipe) {  
+                                                              <?php foreach ($jogador as $jogador) {  
                                                                  ?>  
                                                             <!--penultimo passo, para exexutar tudo com o Foreach-->
                                                             <!-- Data Show Row-->
                                                             <tr class="listas" style="border-width: thin; border-style: solid;">
 
-                                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $jogador['descricao'];?></td>
-                                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $jogador['descricao'];?></td>
+                                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $jogador['posicao'];?></td>
+                                                                <td style="border-width: thin; border-style: solid; border-color: black;"><?php echo $jogador['jogador'];?></td>
                                                             </tr> 
                                                             <?php }?> <!--penultimo passo-->
                                                         </tbody>
@@ -94,7 +88,7 @@ and open the template in the editor.
                                         </div>
 
 
-                                        <div class = "col-md-3" >
+                                        <div class = "col-md-3"id="elemento1">
                                             <fieldset class="scheduler-border">
                                                 <legend class="scheduler-border">Missões</legend>
                                                 <form class="form-horizontal"> 
@@ -124,14 +118,14 @@ and open the template in the editor.
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-4">
+                                     
                                                 <fieldset class="scheduler-border">
                                                     <legend class="scheduler-border">Programas</legend>
                                                     <form class="form-horizontal"> 
                                                         <!--escrever o texto aqui-->
                                                     </form>
                                                 </fieldset>
-                                            </div>
+                                        
                                         </div>
 
                                         <div class="col-md-2 pull-left">
@@ -221,7 +215,7 @@ and open the template in the editor.
                                                     new Chart(ctx).Pie(data);
                                                 </script>
                                             </canvas>
-                                            <label class="col-lg-1 pull-right canvasps" style="border: 1px solid red">Programas</label>
+                                            <label class="col-lg-1 pull-right canvasps">Programas</label>
                                         </div>                           
                                       </div>      
 
