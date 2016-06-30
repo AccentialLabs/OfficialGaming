@@ -71,7 +71,7 @@ and open the template in the editor.
                                             <tbody ng-repeat="membro in membroSede">
 
                                                 <?php
-                                                foreach ($conteudo as $conteudo) {
+                                                foreach ($conteudos as $conteudo) {
                                                     if ($conteudo['status'] != 2) {
                                                         ?>
 

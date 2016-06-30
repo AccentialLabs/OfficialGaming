@@ -4,44 +4,43 @@
  * and open the template in the editor.
  */
 $(function() {
-
-    var contador = 0;
-    
-    $("#openModalDelete").fadeOut(0);
+ var contador=0;
+ 
+     $("#openModalDelete5").fadeOut(0);
      var acaoParaExcluir = '';
-     var handle = ''; 
-     
-    //muda status
-    $(".statusCheckbox").click(function() {
-         alert(id);
+     var handle = '';
+    
+     //muda status
+   $(".statusCheckbox").click(function() {
+
         var statusAtual = $(this).attr("value");
         var id = $(this).attr("id");
-
+        
         $.ajax({
             url: '../Configuracoes/mudaStatusUsuarioFacilitador',
             type: 'POST',
-            data: {
+            data: { 
                 id: id,
                 statusAtual: statusAtual
             },
-            success: function(msg) {
+              sucesso: function(msg) {
                 alert(sucesso);
             }
-        });
+        }); 
+    }); 
+    
+    //exclui categoria
 
-    });
-
-    //exclui usuario
-    $(".excluirUsuarioFacilitador").click(function() {
-         //alert('dad');
+    $(".excluirUsuarioFacilitador").click(function() { //nome que esta na tabela
+          //alert('dad');
         handle = $(this);
         acaoParaExcluir = $(this).attr("id");
 
-        $("#openModalDelete").click();
+        $("#openModalDelete5").click();
 
     });
     
-    $("#confirmExcluirAcao").click(function() {
+ $("#confirmExcluirAcao5").click(function() { //quando muda o "ExcluirAcao"ele não exclui.
  
         $.ajax({ 
             url: '../Configuracoes/deleteUsuarioFacilitador',
@@ -56,8 +55,8 @@ $(function() {
                     tr.remove();
                 });
 
-            $('#myModalDeleteAcao').modal('toggle');
-            $('#myModalDeleteAcao').modal('hide');
+            $('#myModalDeleteAcao5').modal('toggle');
+            $('#myModalDeleteAcao5').modal('hide');
 
 
             }
@@ -65,7 +64,7 @@ $(function() {
 
     });
 
-    AddTableRow = function() {
+    AddTableRow4 = function() {
         var newRow = $("<tr class='listas'>");
         var cols = "";
 
@@ -78,7 +77,7 @@ $(function() {
             cols += '<td style="border-width: thin; border-style: solid; border-color: black;" class="text-center"><input type="checkbox" checked disabled="disabled"/></td>';
             cols += '<td style="border-width: thin; border-style: solid; border-color: black;">&nbsp;</td>';
             newRow.append(cols);
-            $("#imbatman").append(newRow);
+            $("#imbatman4").append(newRow);
 
             return false;
         } else {
@@ -97,7 +96,7 @@ $(function() {
             cols += '<td style="border-width: thin; border-style: solid; border-color: black;" class="text-center"><input type="checkbox" checked disabled="disabled"/></td>';
             cols += '<td style="border-width: thin; border-style: solid; border-color: black;">&nbsp;</td>';
             newRow.append(cols);
-            $("#imbatman").append(newRow);
+            $("#imbatman4").append(newRow);
 
             return false;
         }

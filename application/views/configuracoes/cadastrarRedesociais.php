@@ -60,7 +60,7 @@ and open the template in the editor.
                         </div>
                         <div class="tab-content">
 
-                            <div class="tab-pane active" id="tab2">
+                            <div class="tab-pane active" id="tab2"> <!--serve para ativar a tab pane-->
 
                                 <div class="col-md-5" >
                                     <div class="col-sm-6 col-lg-11">

@@ -30,7 +30,6 @@ and open the template in the editor.
                     <div class="table-responsive">
                         <table class="tablesorter">
                             <thead>
-
                                 <tr>
                                     <th style="border-width: thin; border-style: solid; border-color: black;">Equipes</th>
                                     <th style="border-width: thin; border-style: solid; border-color: black;"><center>Ativo</center></th>

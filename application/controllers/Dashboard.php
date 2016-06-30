@@ -11,7 +11,7 @@
  *
  * @author Raphael Pizzo
  */
-class Dashboard extends CI_Controller {
+class Dashboard extends CI_Controller { 
 
     //put your code here
 

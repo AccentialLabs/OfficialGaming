@@ -14,38 +14,38 @@ and open the template in the editor.
     margin-top: 0em;
     margin-left: 5em;
 }
-.onoffswitch {
+.onoffswitch5 {
     position: relative; width: 90px;
     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
 }
-.onoffswitch-checkbox {
+.onoffswitch5-checkbox {
     display: none;
 }
-.onoffswitch-label {
+.onoffswitch5-label {
     display: block; overflow: hidden; cursor: pointer;
     border: 2px solid #999999; border-radius: 20px;
 }
-.onoffswitch-inner {
+.onoffswitch5-inner {
     display: block; width: 200%; margin-left: -100%;
     transition: margin 0.3s ease-in 0s;
 }
-.onoffswitch-inner:before, .onoffswitch-inner:after {
+.onoffswitch5-inner:before, .onoffswitch5-inner:after {
     display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
     font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
     box-sizing: border-box;
 }
-.onoffswitch-inner:before {
+.onoffswitch5-inner:before {
     content: "ON";
     padding-left: 10px;
     background-color: #34A7C1; color: #FFFFFF;
 }
-.onoffswitch-inner:after {
+.onoffswitch5-inner:after {
     content: "OFF";
     padding-right: 10px;
     background-color: #EEEEEE; color: #999999;
     text-align: right;
 }
-.onoffswitch-switch {
+.onoffswitch5-switch {
     display: block; width: 18px; margin: 6px;
     background: #FFFFFF;
     position: absolute; top: 0; bottom: 0;
@@ -53,10 +53,10 @@ and open the template in the editor.
     border: 2px solid #999999; border-radius: 20px;
     transition: all 0.3s ease-in 0s; 
 }
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+.onoffswitch5-checkbox:checked + .onoffswitch5-label .onoffswitch5-inner {
     margin-left: 0;
 }
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+.onoffswitch5-checkbox:checked + .onoffswitch5-label .onoffswitch5-switch {
     right: 0px; 
 }				/*Aqui termina o ativo do iphone ou celular */
 
@@ -206,11 +206,30 @@ and open the template in the editor.
 }
 /*Fim do onoffswitch 4*/
 
-.margembranca{
-    padding: 15px;
-}
+  #elemento1{
+           padding: 0px;
+       }
+       
+        .secao{
+           margin-bottom: 9em;
+       }
+       
+       .onoff1{
+           margin-top: 1em;
+       }
+       
+       .onoff2{
+           margin-top: 1.4em;
+       }
    
-    /*Aqui começa as configuraç~ões de cor tamanho do HEADER-MENU-CONTAINER*/
+       /*botão do final da página*/
+    .btnazul1{
+        margin-right: 5em;
+        margin-left: 1em;
+    }
+     /*FIM botão do final da página*/
+     
+    /*Aqui começa as configurações de cor tamanho do HEADER-MENU-CONTAINER*/
     .header-style{
         border: 1px solid #DCDCDC;
     }
@@ -262,21 +281,15 @@ a:link {
 }            /*Termina aqui as configurações de cor do icone facebook,google,etc.*/
 
      
-
+/*altura dos botões das redes sociais*/
 .btnaltura{
     padding-top: 1.8em;
-
 }
+/*FIM altura dos botões das redes sociais*/
 
 .col-xs-3{
     height: 5%;
 }
-
-
-    .btnazul{
-        margin-right: 3em;
-        margin-left: 1em;
-    }
 
      /*configigurações do (BTN voltar e o NAVBAR-CABEÇALHO)*/ 
       .nav-stacked{         

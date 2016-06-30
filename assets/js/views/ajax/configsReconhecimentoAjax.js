@@ -8,12 +8,12 @@ $(function() {
   
     var contador = 0;
     
-    $("#openModalDelete").fadeOut(0);
+    $("#openModalDelete3").fadeOut(0);
      var acaoParaExcluir = '';
      var handle = '';
      
     //muda status
-    $(".statusCheckbox").click(function(){
+    $(".statusCheckbox").click(function() {
        
         var statusAtual = $(this).attr("value");
         var id = $(this).attr("id");
@@ -21,29 +21,27 @@ $(function() {
         $.ajax({
             url: '../Configuracoes/mudaStatusReconhecimento',
             type: 'POST',
-            data:{
+            data: {
                 id: id,
                 statusAtual: statusAtual
             },
-           success: function(msg){
+           success: function(msg) {
                 alert(msg);
            }
         });
     });
     
-     
-   
     //exclui usuario
     $(".excluirReconhecimento").click(function() {
         
         handle = $(this);
         acaoParaExcluir = $(this).attr("id");
 
-        $("#openModalDelete").click();
+        $("#openModalDelete3").click();
 
     });
     
-     $("#confirmExcluirAcao").click(function() { //quando muda o "ExcluirAcao"ele não exclui.
+     $("#confirmExcluirAcao3").click(function() { //quando muda o "ExcluirAcao"ele não exclui.
  
         $.ajax({ 
             url: '../Configuracoes/deleteReconhecimento',
@@ -53,21 +51,20 @@ $(function() {
             },
             success: function(msg) {
 
-              var tr = $(handle).closest('tr');
+               var tr = $(handle).closest('tr');
                 tr.fadeOut(600, function() {
                     tr.remove();
                 });
 
-            $('#myModalDeleteAcao').modal('toggle');
-            $('#myModalDeleteAcao').modal('hide');
-
+            $('#myModalDeleteAcao3').modal('toggle');
+            $('#myModalDeleteAcao3').modal('hide');
 
             }
         });
 
     });
     
-      AddTableRow = function(){
+      AddTableRow2 = function(){
         var newRow = $("<tr class='listas'>");
         var cols = "";
         
@@ -78,7 +75,7 @@ $(function() {
             cols += '<td style="border-width: thin; border-style: solid; border-color: black;" class="text-center"><input type="checkbox" checked disabled="disabled"/></td>';
             cols += '<td style="border-width: thin; border-style: solid; border-color: black;">&nbsp;</td>';
             newRow.append(cols);
-            $("#imbatman").append(newRow);
+            $("#imbatman2").append(newRow);
             return false;
         } else {
             var addDescricao = $("#addNome" + contador).val();
@@ -90,7 +87,7 @@ $(function() {
             cols += '<td style="border-width: thin; border-style: solid; border-color: black;" class="text-center"><input type="checkbox" checked disabled="disabled"/></td>';
             cols += '<td style="border-width: thin; border-style: solid; border-color: black;">&nbsp;</td>';
             newRow.append(cols);
-            $("#imbatman").append(newRow);
+            $("#imbatman2").append(newRow);
             return false;
         }
     };

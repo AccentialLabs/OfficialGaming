@@ -11,8 +11,6 @@ and open the template in the editor.
     
     <body>
       <form  method="post" action="http://localhost:9090/gaming/index.php/configuracoes/createJogo" > 
-        
-     
 
         <!--container-->
         <div class="col-md-10  container-style">

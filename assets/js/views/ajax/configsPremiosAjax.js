@@ -8,7 +8,7 @@ $(function() {
     var contador = 0;
     
     
-    $("#openModalDelete").fadeOut(0);
+    $("#openModalDelete4").fadeOut(0);
      var acaoParaExcluir = '';
      var handle = '';
      
@@ -35,16 +35,16 @@ $(function() {
     });
 
     //exclui usuario
-    $(".excluirPremio").click(function() {
+    $(".excluirPremio4").click(function() {
         //alert('dad');
         handle = $(this);
         acaoParaExcluir = $(this).attr("id");
 
-       $("#openModalDelete").click();
+       $("#openModalDelete4").click();
 
     });
     
-     $("#confirmExcluirAcao").click(function() { //quando muda o "ExcluirAcao"ele não exclui.
+     $("#confirmExcluirAcao4").click(function() { //quando muda o "ExcluirAcao"ele não exclui.
  
         $.ajax({ 
             url: '../Configuracoes/deleteTipoPremio',
@@ -59,8 +59,8 @@ $(function() {
                     tr.remove();
                 });
 
-            $('#myModalDeleteAcao').modal('toggle');
-            $('#myModalDeleteAcao').modal('hide');
+            $('#myModalDeleteAcao4').modal('toggle');
+            $('#myModalDeleteAcao4').modal('hide');
 
 
             }
@@ -68,7 +68,7 @@ $(function() {
 
     });
 
-    AddTableRow = function() {
+    AddTableRow3 = function() {
         var newRow = $("<tr class='listas'>");
         var cols = "";
 
@@ -79,7 +79,7 @@ $(function() {
             cols += '<td style="border-width: thin; border-style: solid; border-color: black;" class="text-center"><input type="checkbox" checked disabled="disabled"/></td>';
             cols += '<td style="border-width: thin; border-style: solid; border-color: black;">&nbsp;</td>';
             newRow.append(cols);
-            $("#imbatman").append(newRow);
+            $("#imbatman3").append(newRow);
             return false;
         } else {
 
@@ -92,7 +92,7 @@ $(function() {
             cols += '<td style="border-width: thin; border-style: solid; border-color: black;" class="text-center"><input type="checkbox" checked disabled="disabled"/></td>';
             cols += '<td style="border-width: thin; border-style: solid; border-color: black;">&nbsp;</td>';
             newRow.append(cols);
-            $("#imbatman").append(newRow);
+            $("#imbatman3").append(newRow);
             return false;
 
         }

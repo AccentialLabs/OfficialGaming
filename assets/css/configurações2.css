@@ -4,38 +4,39 @@
     margin-top: 0em;
     margin-left: 5em;
 }
-.onoffswitch {
+/*começa aqui o onoffswitch 8*/
+.onoffswitch8 {
     position: relative; width: 90px;
     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
 }
-.onoffswitch-checkbox {
+.onoffswitch8-checkbox {
     display: none;
 }
-.onoffswitch-label {
+.onoffswitch8-label {
     display: block; overflow: hidden; cursor: pointer;
     border: 2px solid #999999; border-radius: 20px;
 }
-.onoffswitch-inner {
+.onoffswitch8-inner {
     display: block; width: 200%; margin-left: -100%;
     transition: margin 0.3s ease-in 0s;
 }
-.onoffswitch-inner:before, .onoffswitch-inner:after {
+.onoffswitch8-inner:before, .onoffswitch8-inner:after {
     display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
     font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
     box-sizing: border-box;
 }
-.onoffswitch-inner:before {
-    content: "Ligado";
+.onoffswitch8-inner:before {
+    content: "ON";
     padding-left: 10px;
-    background-color: #C0C0C0; color: #FFFFFF;
+    background-color: #34A7C1; color: #FFFFFF;
 }
-.onoffswitch-inner:after {
-    content: "Desligado";
+.onoffswitch8-inner:after {
+    content: "OFF";
     padding-right: 10px;
     background-color: #EEEEEE; color: #999999;
     text-align: right;
 }
-.onoffswitch-switch {
+.onoffswitch8-switch {
     display: block; width: 18px; margin: 6px;
     background: #FFFFFF;
     position: absolute; top: 0; bottom: 0;
@@ -43,12 +44,13 @@
     border: 2px solid #999999; border-radius: 20px;
     transition: all 0.3s ease-in 0s; 
 }
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+.onoffswitch8-checkbox:checked + .onoffswitch8-label .onoffswitch8-inner {
     margin-left: 0;
 }
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+.onoffswitch8-checkbox:checked + .onoffswitch8-label .onoffswitch8-switch {
     right: 0px; 
-}				/*Aqui termina o ativo do iphone ou celular */
+}
+/*Fim do onoffswitch 8*/	
 
 
 
@@ -59,38 +61,39 @@
    margin-top: -35;
    margin-left: 640px;
 }            
-.onoffswitch2 {
+/*começa aqui o onoffswitch 7*/
+.onoffswitch7 {
     position: relative; width: 90px;
     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
 }
-.onoffswitch2-checkbox {
+.onoffswitch7-checkbox {
     display: none;
 }
-.onoffswitch2-label {
+.onoffswitch7-label {
     display: block; overflow: hidden; cursor: pointer;
     border: 2px solid #999999; border-radius: 20px;
 }
-.onoffswitch2-inner {
+.onoffswitch7-inner {
     display: block; width: 200%; margin-left: -100%;
     transition: margin 0.3s ease-in 0s;
 }
-.onoffswitch2-inner:before, .onoffswitch2-inner:after {
+.onoffswitch7-inner:before, .onoffswitch7-inner:after {
     display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
     font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
     box-sizing: border-box;
 }
-.onoffswitch2-inner:before {
-    content: "Ligado";
+.onoffswitch7-inner:before {
+    content: "ON";
     padding-left: 10px;
-    background-color: #C0C0C0; color: #FFFFFF;
+    background-color: #34A7C1; color: #FFFFFF;
 }
-.onoffswitch2-inner:after {
-    content: "Desligado";
+.onoffswitch7-inner:after {
+    content: "OFF";
     padding-right: 10px;
     background-color: #EEEEEE; color: #999999;
     text-align: right;
 }
-.onoffswitch2-switch {
+.onoffswitch7-switch {
     display: block; width: 18px; margin: 6px;
     background: #FFFFFF;
     position: absolute; top: 0; bottom: 0;
@@ -98,12 +101,13 @@
     border: 2px solid #999999; border-radius: 20px;
     transition: all 0.3s ease-in 0s; 
 }
-.onoffswitch2-checkbox:checked + .onoffswitch2-label .onoffswitch2-inner {
+.onoffswitch7-checkbox:checked + .onoffswitch7-label .onoffswitch7-inner {
     margin-left: 0;
 }
-.onoffswitch2-checkbox:checked + .onoffswitch2-label .onoffswitch2-switch {
+.onoffswitch7-checkbox:checked + .onoffswitch7-label .onoffswitch7-switch {
     right: 0px; 
-}	               /*Aqui termina o ativo iphone celular mais conhecido onoffswitch 2*/
+}
+/*Fim do onoffswitch 7*/	            
 
 	.margembranca{
     padding: 15px;
@@ -186,12 +190,5 @@
     </label>
 </div>
  
-						 
-	<div class="onoffswitch2-2">
-    <input type="checkbox" name="onoffswitch2" class="onoffswitch2-checkbox" id="myonoffswitch2" checked>
-    <label class="onoffswitch2-label" for="myonoffswitch2">
-        <span class="onoffswitch2-inner"></span>
-        <span class="onoffswitch2-switch"></span>
-    </label>
-</div>
+
 */

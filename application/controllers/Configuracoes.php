@@ -47,9 +47,15 @@ class Configuracoes extends CI_Controller {
         /* tela padrão cabeçalho e rodapé */
 
         $data['empresa'] = $this->empresa_model->get_empresa();
-
+        $data['conteudos'] = $this->conteudo_model->get_conteudo(); /*TELA DADOS CONTEUDO*/
+        $data['usuarios'] = $this->usuariotb_model->get_usuariotb(); /*TELA DADOS USUARIOGESTORES*/
+        $data['categoriatb'] = $this->categoriatb_model->get_categoriatb(); /*TELA DADOS EMPRESA*/
+        $data['reconhecimento'] = $this->reconhecimentotb_model->get_reconhecimentotb(); /*TELA DADOS RECONHECIMENTO*/
+        $data['tipopremio'] = $this->tipopremio_model->get_tipopremio(); /*TELA DADOS PREMIOS*/
+        $data['facilitadores'] = $this->facilitadores_model->get_facilitadores(); /*TELA DADOS USUARIOFACILITADORES*/
+        
         $this->load->view('templates/gaming_default');
-        $this->load->view('configuracoes/dadosEmpresa');
+        $this->load->view('configuracoes/dadosEmpresa', $data);
     }
 
     public function cadastrarRedesociais() {
@@ -106,8 +112,7 @@ class Configuracoes extends CI_Controller {
         $data['empresa'] = $this->session->userdata('empresaLogada');
         /* tela padrão cabeçalho e rodapé */
 
-
-        $data['conteudo'] = $this->conteudo_model->get_conteudo();
+       $data['conteudos'] = $this->conteudo_model->get_conteudo();
 
         $this->load->view('templates/gaming_default');
         $this->load->view('configuracoes/conteudo', $data);
@@ -199,8 +204,34 @@ class Configuracoes extends CI_Controller {
     }
 
    
-
+    
     /**
+     * Status:
+     * 0 - INATIVO
+     * 1 - ATIVO
+     * 2 - EXCLUIDO
+     */
+  public function mudaStatusUsuarioGestores() {
+
+        $statusAtual = $this->input->post('statusAtual');
+
+        $data = '';
+        if ($statusAtual == 0) {
+            $data['status'] = 1;
+        } else {
+            $data['status'] = 0;
+        }
+
+        $this->db->where('id', $this->input->post('id'));
+
+        if ($this->db->update('usuariotb', $data)) {
+            echo "sucesso";
+        } else {
+            echo "error";
+        }
+    }
+    
+  /**
      * Status:
      * 0 - INATIVO
      * 1 - ATIVO
@@ -218,6 +249,7 @@ class Configuracoes extends CI_Controller {
             echo "error";
         }
     }
+
 
     /**
      * Status:

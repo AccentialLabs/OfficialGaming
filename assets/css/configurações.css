@@ -11,7 +11,7 @@ and open the template in the editor.
 .celular{  /*Aqui é o ativo do iphone ou celular */
 
     margin-top: 0em;
-    margin-left: 5em;
+    margin-left: 4em;
 }
 .onoffswitch {
     position: relative; width: 90px;
@@ -61,9 +61,18 @@ and open the template in the editor.
 
 
 .margembranca{
-    padding: 15px;
+    padding: 1em;
 }
-   
+
+.secoes{
+    margin-bottom: 20em;
+}
+  /*tirando o espaçamento da tela com o padding*/
+       #elemento1{
+           padding: 0px;
+       }
+         /*FIm do codigo de retirando o espaçamento da tela com o padding*/
+
     /*Aqui começa as configuraç~ões de cor tamanho do HEADER-MENU-CONTAINER*/
     .header-style{
         border: 1px solid #DCDCDC;
@@ -101,13 +110,21 @@ and open the template in the editor.
      .direita{
         padding-left: 5.5em;    
      }
-     
+     /*aqui esta os botões do final da página*/
      .btnazul{
-       margin-left: 2em; 
-       margin-right: 3em;
+       margin-left: 1em;
      }
-     
-     
+     .btnazul{
+         margin-right: 13em;
+     }
+       /*Fim dos botões do final da página*/
+       
+       /*campo ramal para arrumar a posição*/
+       .ramal{
+           margin-left: -3em;
+       }
+        /*FIM campo ramal para arrumar a posição*/
+       
       /*configigurações do (BTN voltar e o NAVBAR-CABEÇALHO)*/ 
       .nav-stacked{         
           margin-left: -1em;
