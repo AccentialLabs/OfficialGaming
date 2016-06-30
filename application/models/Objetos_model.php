@@ -12,28 +12,35 @@ include("/../entities/ObjetosEntity.php");
  *
  * @author Raphael Pizzo
  */
-
 class Objetos_model extends CI_Model {
-    
+
     public function __construct() {
         $this->load->database();
     }
-    
-     public function get_objetos($slug = FALSE) {
+
+    public function get_objetos($slug = FALSE) {
         if ($slug === FALSE) {
-            $query = $this->db->get('objetos');
+            //$query = $this->db->get('objetos');
+            $query = $this->db->select('*, tipocategoria.descricao AS categoriaDescricao, objetos.descricao AS objDescricao, tipocategoria.id AS categoriaId, objetos.id AS objId, tipocategoria.status AS categoriaStatus, objetos.status AS objStatus')
+                    ->from('objetos')
+                    ->join('tipocategoria', 'tipocategoria.id = objetos.categoria', 'inner')
+                    ->get(); 
             return $query->result_array();
         }
 
-        $query = $this->db->get_where('objetos', array('id' => $slug));
-        
-        
-        $objetosEntity = new ObjetosEntity();
-        
+        //$query = $this->db->get_where('objetos', array('id' => $slug));  
+        $query = $this->db->select('objetos.* objetos, tipocategoria.* categoria, tipocategoria.id AS categoriaId, objetos.id AS objId')
+                ->from('objetos')
+                ->join('tipocategoria', 'tipocategoria.id = objetos.categoria', 'inner')
+                ->where('objetos.id', array('id' => $slug))
+                ->get();
+
+
         return $query->row_array();
     }
-    
+
     public function insert_objetos() {
+
         $this->load->helper('url');
 
         $objetosEntity = new ObjetosEntity();
@@ -46,7 +53,7 @@ class Objetos_model extends CI_Model {
         $objetosEntity->setPontos($this->input->post('pontos'));
         $objetosEntity->setPersonagem($this->input->post('personagem'));
         $objetosEntity->setOrdem($this->input->post('ordem'));
-        
+
         $slug = url_title($this->input->post('title'), 'dash', TRUE);
 
         $data = array(
@@ -68,10 +75,14 @@ class Objetos_model extends CI_Model {
             'intersecao_fisica' => $this->input->post('intersecao_fisica'),
             'intersecao_fisica_pontos' => $this->input->post('intersecao_fisica_pontos'),
             'habilita_qrcode' => $this->input->post('habilita_qrcode')
-        ); 
+        );
 
-        
-        return $this->db->insert('objetos', $data);
+        $this->db->insert('objetos', $data);
+
+        $insert_id = $this->db->insert_id();
+
+        return $insert_id;
     }
+
     //put your code here
 }

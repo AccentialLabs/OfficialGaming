@@ -16,6 +16,8 @@ class Acoes extends CI_Controller {
         $this->load->model('empresa_model');
         $this->load->model('objetos_model');
         $this->load->model('equipestab_model');
+        $this->load->model('objetosacoes_model');
+        $this->load->model('equipesacoes_model');
         $this->load->model('acoes_model'); //esse  codigo é da tela  (cadastrar acao)
         $this->load->model('acoestable_model'); //esse codigo é da tabela
         $this->load->model('periodofiltra_model'); //codigo da tela acoes é a parte da filtragem!.
@@ -27,21 +29,21 @@ class Acoes extends CI_Controller {
 
     public function listaAcoes() {
 
-         $this->load->library('session');
-         $data['empresa'] = $this->session->userdata('empresaLogada');
-         
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresaLogada');
+
         $data['acoes'] = $this->acoes_model->get_acoes();
-       
-     
+
+
 
         $this->load->view('templates/gaming_default');
         $this->load->view('acoes/listaAcoes', $data);
     }
 
     public function cadastrarAcoes() {
-        
+
         $this->load->library('session');
-         $data['empresa'] = $this->session->userdata('empresaLogada');
+        $data['empresa'] = $this->session->userdata('empresaLogada');
 
         $data['objetos'] = $this->objetos_model->get_objetos();
         $data['equipestab'] = $this->equipestab_model->get_equipestab();
@@ -52,9 +54,37 @@ class Acoes extends CI_Controller {
     }
 
     public function createAcoes() {
-        $this->acoestable_model->insert_acoestable();
+        $id = $this->acoes_model->insert_acoes();
+        
         $this->periodofiltra_model->insert_periodofiltra();
-        echo "sucesso";
+  
+        /**
+         * incluindo objetos
+         */
+        $objs = $this->input->post('objsAcoes');
+
+        foreach ($objs as $obj) {
+            $dadosObjsAcoes = '';
+
+            $dadosObjsAcoes['acao_id'] = $id;
+            $dadosObjsAcoes['objeto_id'] = $obj;
+
+            $this->objetosacoes_model->insert_objetos_acoes($dadosObjsAcoes);
+        }
+
+        /**
+         * incluindo equipes
+         */
+        $equipes = $this->input->post('equipesAcoes');
+
+        foreach ($equipes as $equipe) {
+            $dadosObjsAcoes = '';
+
+            $dadosObjsAcoes['acao_id'] = $id;
+            $dadosObjsAcoes['equipe_id'] = $equipe;
+
+            $this->equipesacoes_model->insert_equipes_acoes($dadosObjsAcoes);
+        }
     }
 
     /**
@@ -82,8 +112,8 @@ class Acoes extends CI_Controller {
             echo "error";
         }
     }
-    
-     /**
+
+    /**
      * Status:
      * 0 - INATIVO
      * 1 - ATIVO
@@ -108,7 +138,7 @@ class Acoes extends CI_Controller {
             echo "error";
         }
     }
-    
+
     /**
      * Status:
      * 0 - INATIVO

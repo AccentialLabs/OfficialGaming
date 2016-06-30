@@ -106,15 +106,22 @@ class Objetos extends CI_Controller {
         
         print_r($data);
         
-        /* foreach ($respostas as $resposta) {
+         foreach ($respostas as $resposta) {
 
             $resposta['status'] = 1;
-            $resposta['objeto_id'] = 1;
+            $resposta['objeto_id'] = $data;
 
             $this->respostasobjeto_model->insert_respostaobjeto($resposta);
-        } */
+        } 
+        
+         $this->load->library('session');
+        $this->session->set_flashdata("cadSucesso", "Cadastrado com sucesso!!!");
+        redirect('objetos/cadastrarObjetos', 'refresh');
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/master
     }
 
 }
