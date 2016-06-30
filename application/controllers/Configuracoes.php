@@ -27,6 +27,7 @@ class Configuracoes extends CI_Controller {
         $this->load->model('tiporeconhecimento_model');
         $this->load->model('usuariogestor_model');
         $this->load->model('usuariotb_model');
+        $this->load->model('tiporeconhecimento_model');
         //aqui comeca a inserção dos dados das redes sociais
         $this->load->model('facebookempresa_model');
         //Continuidade do Código da tela "rede social"  segue o "Twitter" e o "Instagran"  (tentativa de aparecer na tela)
@@ -50,7 +51,7 @@ class Configuracoes extends CI_Controller {
         $data['conteudos'] = $this->conteudo_model->get_conteudo(); /*TELA DADOS CONTEUDO*/
         $data['usuarios'] = $this->usuariotb_model->get_usuariotb(); /*TELA DADOS USUARIOGESTORES*/
         $data['categoriatb'] = $this->categoriatb_model->get_categoriatb(); /*TELA DADOS EMPRESA*/
-        $data['reconhecimento'] = $this->reconhecimentotb_model->get_reconhecimentotb(); /*TELA DADOS RECONHECIMENTO*/
+        $data['reconhecimento'] = $this->tiporeconhecimento_model->get_tiporeconhecimento(); /*TELA DADOS RECONHECIMENTO*/
         $data['tipopremio'] = $this->tipopremio_model->get_tipopremio(); /*TELA DADOS PREMIOS*/
         $data['facilitadores'] = $this->facilitadores_model->get_facilitadores(); /*TELA DADOS USUARIOFACILITADORES*/
         
