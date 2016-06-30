@@ -118,10 +118,6 @@ class Objetos extends CI_Controller {
         $this->session->set_flashdata("cadSucesso", "Cadastrado com sucesso!!!");
         redirect('objetos/cadastrarObjetos', 'refresh');
 
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
     }
 
 }

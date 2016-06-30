@@ -14,25 +14,25 @@ include("/../entities/TiporeconhecimentoEntity.php");
  * @author Raphael Pizzo
  */
 class Tiporeconhecimento_model extends CI_Model {
-    
-  public function __construct() {
+
+    public function __construct() {
         $this->load->database();
     }
-    
-     public function get_tiporeconhecimento($slug = FALSE) {
+
+    public function get_tiporeconhecimento($slug = FALSE) {
         if ($slug === FALSE) {
             $query = $this->db->get('Tiporeconhecimento');
             return $query->result_array();
         }
 
         $query = $this->db->get_where('Tiporeconhecimento', array('id' => $slug));
-        
-        
+
+
         $TiporeconhecimentoEntity = new TiporeconhecimentoEntity();
-        
+
         return $query->row_array();
     }
-    
+
     public function insert_tiporeconhecimento() {
         $this->load->helper('url');
 
@@ -50,10 +50,10 @@ class Tiporeconhecimento_model extends CI_Model {
         $tiporeconhecimentoEntity->setPontosextras($this->input->post('pontosextras'));
         $tiporeconhecimentoEntity->setTextologin($this->input->post('textologin'));
         $tiporeconhecimentoEntity->setStatus($this->input->post('status'));
-        
+
         $slug = url_title($this->input->post('title'), 'dash', TRUE);
 
-        $data = array( 
+        $data = array(
             'tipo' => $this->input->post('tipo'),
             'conquista' => $this->input->post('conquista'),
             'modoafericao' => $this->input->post('modoafericao'),
@@ -66,10 +66,14 @@ class Tiporeconhecimento_model extends CI_Model {
             'pontosextras' => $this->input->post('pontosextras'),
             'textologin' => $this->input->post('textologin'),
             'status' => $this->input->post('status')
-            
         );
 
-        return $this->db->insert('tiporeconhecimento', $data);
-    } 
+        $this->db->insert('tiporeconhecimento', $data);
+
+        $insert_id = $this->db->insert_id();
+
+        return $insert_id;
+    }
+
     //put your code here
 }

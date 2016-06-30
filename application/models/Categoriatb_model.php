@@ -21,11 +21,11 @@ class Categoriatb_model extends CI_Model{
     
      public function get_categoriatb($slug = FALSE) {
         if ($slug === FALSE) {
-            $query = $this->db->get('categoriatb');
+            $query = $this->db->get('tipocategoria');
             return $query->result_array();
         }
 
-        $query = $this->db->get_where('categoriatb', array('id' => $slug));
+        $query = $this->db->get_where('tipocategoria', array('id' => $slug));
         
         
         $categoriatbEntity = new CategoriatbEntity();  

@@ -32,6 +32,15 @@ and open the template in the editor.
                     <li class="active">Features</li>
                 </ol>
 
+                <?php if (!empty($this->session->flashdata('cadSucesso'))) { ?>
+                        <span>
+                            <div class="alert alert-success" role="alert">
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                <?php echo $this->session->flashdata('cadSucesso'); ?>
+                            </div>
+                        </span>
+                    <?php } ?>
+                
                 <div class="col-md-7 ">
                 </div>
                 <div class="col-lg-4">

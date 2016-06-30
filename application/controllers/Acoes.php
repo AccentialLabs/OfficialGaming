@@ -18,6 +18,7 @@ class Acoes extends CI_Controller {
         $this->load->model('equipestab_model');
         $this->load->model('objetosacoes_model');
         $this->load->model('equipesacoes_model');
+        $this->load->model('categoriatb_model');
         $this->load->model('acoes_model'); //esse  codigo é da tela  (cadastrar acao)
         $this->load->model('acoestable_model'); //esse codigo é da tabela
         $this->load->model('periodofiltra_model'); //codigo da tela acoes é a parte da filtragem!.
@@ -48,6 +49,7 @@ class Acoes extends CI_Controller {
         $data['objetos'] = $this->objetos_model->get_objetos();
         $data['equipestab'] = $this->equipestab_model->get_equipestab();
         $data['acoes'] = $this->acoes_model->get_acoes();
+        $data['categorias'] = $this->categoriatb_model->get_categoriatb();
 
         $this->load->view('templates/gaming_default');
         $this->load->view('acoes/cadastrarAcoes', $data);
@@ -55,9 +57,9 @@ class Acoes extends CI_Controller {
 
     public function createAcoes() {
         $id = $this->acoes_model->insert_acoes();
-        
+
         $this->periodofiltra_model->insert_periodofiltra();
-  
+
         /**
          * incluindo objetos
          */
@@ -85,6 +87,10 @@ class Acoes extends CI_Controller {
 
             $this->equipesacoes_model->insert_equipes_acoes($dadosObjsAcoes);
         }
+
+        $this->load->library('session');
+        $this->session->set_flashdata("cadSucesso", "Cadastrado com sucesso!!!");
+        redirect('Acoes/cadastrarAcoes', 'refresh');
     }
 
     /**

@@ -2,73 +2,96 @@
 
 //PODEMOS UTILIZAR ESSA TELA COMO EXEMPLO POIS AQUI ESTA EXECUTANDO DUAS TABELAS
 
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
 class Reconhecimento extends CI_Controller {
+
     //put your code here
-    
-    /*acrescentamos o construct como primero passo*/
-     public function __construct() {
+
+    /* acrescentamos o construct como primero passo */
+    public function __construct() {
         parent::__construct();
         $this->load->model('reconhecimento_model');
         $this->load->model('tiporeconhecimento_model');
         $this->load->model('filtrareconhecimento_model');
-         $this->load->model('acoestable_model');
-         
+        $this->load->model('acoestable_model');
+        $this->load->model('acoes_model');
+        $this->load->model('missoes_model');
+        $this->load->model('programas_model');
+        $this->load->model('reconhecimentoacoes_model');
+
         $this->load->helper('url_helper');
     }
-    /*Fim do construct*/
-    
-    public function cadastrarConquista(){
-        
-   /*tela padrão cabeçalho e rodapé*/
-        $this->load->library('session');
-        $data['empresa'] = $this->session->userdata('empresalogada');
-        /*tela padrão cabeçalho e rodapé*/
-    
-         $data['tiporeconhecimento'] = $this->tiporeconhecimento_model->get_tiporeconhecimento();
-         $data['acoestable'] = $this->acoestable_model->get_acoestable();
-         
-         $this->load->view('templates/gaming_default'); 
-         $this->load->view('reconhecimento/cadastrarConquista',$data);
-    }  
-   
-     public function reconhecimentoConquista(){
-         
-         /*tela padrão cabeçalho e rodapé*/
-        $this->load->library('session');
-        $data['empresa'] = $this->session->userdata('empresalogada');
-        /*tela padrão cabeçalho e rodapé*/
-         
-     //nesse codigo só precisei colocar a (model do reconhecimento) para mostrar a tabela ma tela.
-        $data['reconhecimento'] = $this->reconhecimento_model->get_reconhecimento();
-         
-        $this->load->view('templates/gaming_default');
-        $this->load->view('reconhecimento/reconhecimentoConquista',$data);
-    } 
 
-     public function createConquista() {
-        $this->tiporeconhecimento_model->insert_tiporeconhecimento();
-        echo "sucesso";
+    /* Fim do construct */
+
+    public function cadastrarConquista() {
+
+        /* tela padrão cabeçalho e rodapé */
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresalogada');
+        /* tela padrão cabeçalho e rodapé */
+
+        $data['tiporeconhecimento'] = $this->tiporeconhecimento_model->get_tiporeconhecimento();
+        $data['acoestable'] = $this->acoes_model->get_acoes();
+        $data['missoes'] = $this->missoes_model->get_missoes();
+        $data['programas'] =$this->programas_model->get_programas();
+
+        $this->load->view('templates/gaming_default');
+        $this->load->view('reconhecimento/cadastrarConquista', $data);
     }
-   
-     public function createFiltrareconhecimmento() { 
+
+    public function reconhecimentoConquista() {
+
+        /* tela padrão cabeçalho e rodapé */
+        $this->load->library('session');
+        $data['empresa'] = $this->session->userdata('empresalogada');
+        /* tela padrão cabeçalho e rodapé */
+
+        //nesse codigo só precisei colocar a (model do reconhecimento) para mostrar a tabela ma tela.
+        $data['reconhecimento'] = $this->reconhecimento_model->get_reconhecimento();
+
+        $this->load->view('templates/gaming_default');
+        $this->load->view('reconhecimento/reconhecimentoConquista', $data);
+    }
+
+    public function createConquista() {
+        $id = $this->tiporeconhecimento_model->insert_tiporeconhecimento();
+        
+        $acoes = $this->input->post('objsAcoes');
+        
+        foreach ($acoes as $acao) {
+            $data = '';
+            
+            $data['acao_id'] = $acao;
+            $data['reconhecimento_id'] = $id;
+            
+            $this->reconhecimentoacoes_model->insert_reconhecimentos_acoes($data);
+        }
+        
+         $this->load->library('session');
+        $this->session->set_flashdata("cadSucesso", "Cadastrado com sucesso!!!");
+        redirect('reconhecimento/reconhecimentoConquista', 'refresh');
+        
+    }
+
+    public function createFiltrareconhecimmento() {
         $this->filtrareconhecimento_model->insert_filtrareconhecimento();
         echo "sucesso"; //codigo apenas para mostrar na tela Reconhecimento/conquista a partede opções de filtrar
     }
-    
-      /**
+
+    /**
      * Status:
      * 0 - INATIVO
      * 1 - ATIVO
      * 2 - EXCLUIDO
      */                      //muda status da tela cadastrar conquista.
     public function mudaStatusCadastrarconquista() {
-     
+
         $statusAtual = $this->input->post('statusAtual');
 
         $data = '';
@@ -80,14 +103,16 @@ class Reconhecimento extends CI_Controller {
 
         $this->db->where('id', $this->input->post('id'));
 
-        if ($this->db->update('acoestable', $data)) {            
+        if ($this->db->update('acoestable', $data)) {
             echo "sucesso";
         } else {
             echo "error";
         }
-    } //FIM, muda status da tela cadastrar conquista.
-    
-     /**
+    }
+
+//FIM, muda status da tela cadastrar conquista.
+
+    /**
      * Status:
      * 0 - INATIVO
      * 1 - ATIVO
@@ -131,4 +156,5 @@ class Reconhecimento extends CI_Controller {
             echo "error";
         }
     }
-}  
+
+}

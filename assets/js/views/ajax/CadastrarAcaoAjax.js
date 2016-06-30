@@ -4,17 +4,91 @@
  * and open the template in the editor.
  */
 
-$(function(){
-    
+$(function() {
+
     var index = 1;
     var objsToSave = '';
-    
-    $(".selectCheckObj").click(function(){
-        
+
+    var allObjsSelected = false;
+    var allEquipesSelected = false;
+
+    $(".selectCheckObj").click(function() {
+
         var id = $(this).attr('id');
-               
+
         console.log(objsToSave);
-        
+
+    });
+
+    //ao clicar no check TODOS OS USUÁRIOS CADASTRADOS
+    $("#todousuario").change(function() {
+
+        if ($("#todousuario").is(':checked')) {
+
+            $("#divSelecionaUsuario").addClass("disabled-div");
+        } else {
+            $("#divSelecionaUsuario").removeClass("disabled-div");
+        }
+    });
+
+    //selecionar todas as de uma só vez
+    $("#masterObjCheck").click(function() {
+
+        if (allObjsSelected === false) {
+            $(".statusCheckboxObj").attr("checked", "checked");
+            allObjsSelected = true;
+        } else {
+            $(".statusCheckboxObj").removeAttr("checked");
+            allObjsSelected = false;
+        }
+    });
+
+
+    //selecionar todas as de uma só vez
+    $("#masterObjCheckEquipes").click(function() {
+
+        if (allEquipesSelected === false) {
+            $(".statusCheckboxEquipes").attr("checked", "checked");
+            allEquipesSelected = true;
+        } else {
+            $(".statusCheckboxEquipes").removeAttr("checked");
+            allEquipesSelected = false;
+        }
+    });
+
+    $("#modspacks").click(function() {
+
+        if ($("#modspacks").is(':checked')) {
+            $("#divSelecionaObj").addClass("disabled-div");
+            $("#divObjPorCategoria").addClass("disabled-div");
+        } else {
+            $("#divObjPorCategoria").removeClass("disabled-div");
+            $("#divSelecionaObj").removeClass("disabled-div");
+        }
+    });
+
+    $("#objetocategoria").click(function() {
+
+        if ($("#objetocategoria").is(':checked')) {
+            $("#divSelecionaObj").addClass("disabled-div");
+            $("#divObjPorMOD").addClass("disabled-div");
+        } else {
+            $("#divObjPorMOD").removeClass("disabled-div");
+            $("#divSelecionaObj").removeClass("disabled-div");
+        }
+
+    });
+    
+     $("#selecobjetos").click(function() {
+
+        if ($("#selecobjetos").is(':checked')) {
+            $("#divObjPorCategoria").addClass("disabled-div");
+            $("#divObjPorMOD").addClass("disabled-div");
+        } else {
+            $("#divObjPorMOD").removeClass("disabled-div");
+            $("#divObjPorCategoria").removeClass("disabled-div");
+        }
+
     });
     
 });

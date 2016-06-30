@@ -9,7 +9,7 @@ and open the template in the editor.
 */
 
 .celular{  /*Aqui é o ativo do iphone ou celular */
-   margin-top: -4em;
+    margin-top: -4em;
 }
 .onoffswitch {
     position: relative; width: 90px;
@@ -59,44 +59,44 @@ and open the template in the editor.
 /*ermina aqui onoffswitch do celular*/
 
 /*Altura da tabela com scroll*/
-    .corpotabobjetos{
+.corpotabobjetos{
     height: 11.3em;
     overflow: auto;
-    }
-    
-    .corpotabequipes{
+}
+
+.corpotabequipes{
     height: 11.3em;
     overflow: auto;
-    }
+}
 /* FIM Altura da tabela com scroll*/
 .margembranca{
     padding: 15px;
 }
 
- /*Aqui começa as configuraç~ões de cor tamanho do HEADER-MENU-CONTAINER*/ 
-    .header-style {
-        border: 1px solid #DCDCDC;
-    }
-    
-    .menu-style{
-        border: 1px solid #DCDCDC;
-        height: 100%;
-    }
-    
-    .container-style{
-        height: 100%;  
-    }
-  /*FIM das configuraç~ões de cor tamanho do HEADER-MENU-CONTAINER*/
-    
- /* configurações da navbar*/
-    .navbar.navbar-default.nab-branco{
-        background: #FFFFFF;
-    }
-    .container-fluid{
-        height: 4em;
-    }
-    /* Fim configurações da navbar*/
-    
+/*Aqui começa as configuraç~ões de cor tamanho do HEADER-MENU-CONTAINER*/ 
+.header-style {
+    border: 1px solid #DCDCDC;
+}
+
+.menu-style{
+    border: 1px solid #DCDCDC;
+    height: 100%;
+}
+
+.container-style{
+    height: 100%;  
+}
+/*FIM das configuraç~ões de cor tamanho do HEADER-MENU-CONTAINER*/
+
+/* configurações da navbar*/
+.navbar.navbar-default.nab-branco{
+    background: #FFFFFF;
+}
+.container-fluid{
+    height: 4em;
+}
+/* Fim configurações da navbar*/
+
 
 /*configurações do formulário*/
 .col-sm-9{
@@ -108,15 +108,15 @@ and open the template in the editor.
 .tamanho{
     width: 30em;
 } 
- 
+
 .tamanho2{
-      width: 47em;
+    width: 47em;
 }
 /*FIM do tamanho da caixa do fomulário*/
 
 /*Espaço entre a palavra  a caixa de texto*/
 .espaco{
- margin-left: 7px;
+    margin-left: 7px;
 }
 
 .incremento{
@@ -125,11 +125,11 @@ and open the template in the editor.
 /*FIM Espaço entre a palavra  a caixa de texto*/
 
 
-   /*Elemento do breadcrumb no começo do container*/
-     .elemento1{
-        padding-left: -6.1em; 
-     }
-   /*FIM de Elemento do breadcrumb no começo do container*/
+/*Elemento do breadcrumb no começo do container*/
+.elemento1{
+    padding-left: -6.1em; 
+}
+/*FIM de Elemento do breadcrumb no começo do container*/
 
 
 .largura{
@@ -145,13 +145,13 @@ and open the template in the editor.
 }
 /*posição da letra (á) depois da caixa de data*/
 .textpos{
-  margin-top: -9%;
-   margin-left: 13em;
+    margin-top: -9%;
+    margin-left: 13em;
 }
 
 .textpos1{
-  margin-top: -2em;
-   margin-left: 6em;
+    margin-top: -2em;
+
 }
 
 .mudar{
@@ -160,8 +160,8 @@ and open the template in the editor.
 /*termina a posição da letra a;das;ás */
 
 .tabelap{
-     margin-left: 6em;
-     padding-left: 1em;
+    margin-left: 6em;
+    padding-left: 1em;
 }
 
 .verbocx{
@@ -170,18 +170,60 @@ and open the template in the editor.
 
 .btnazul{
     margin-right: 5px;
-   margin-left: 1em;
+    margin-left: 1em;
 }
 
-      /*configigurações do (BTN voltar e o NAVBAR-CABEÇALHO)*/ 
-      .nav-stacked{         
-          margin-left: -1em;
-          margin-right: -1em;
-      }
-      
-      .nab-branco{
-          margin-left: -2em;
-          margin-right: -1em;
-          margin-bottom: 0em;
-      }     /*FIM configigurações do (BTN voltar) e a (NAVBAR-CABEÇÃLHO)*/
-      
+/*configigurações do (BTN voltar e o NAVBAR-CABEÇALHO)*/ 
+.nav-stacked{         
+    margin-left: -1em;
+    margin-right: -1em;
+}
+
+.nab-branco{
+    margin-left: -2em;
+    margin-right: -1em;
+    margin-bottom: 0em;
+}     /*FIM configigurações do (BTN voltar) e a (NAVBAR-CABEÇÃLHO)*/
+
+
+.disabled-div{
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.almos-form-control{
+    display: block;
+  
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.vigencia-linha{
+    padding-bottom: 10px;
+    padding-left: 4%;
+}
+
+.almos-form-control-text{
+    line-height: 250%;
+    text-align: center;
+}
+
+.linha-inputs{
+    margin: 0px;
+}
+
+.vigencia-title{
+ margin: 0px;   
+}
