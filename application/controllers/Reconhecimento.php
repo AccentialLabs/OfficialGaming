@@ -23,6 +23,7 @@ class Reconhecimento extends CI_Controller {
         $this->load->model('missoes_model');
         $this->load->model('programas_model');
         $this->load->model('reconhecimentoacoes_model');
+        $this->load->model('categoriatiporeconhecimento_model');
 
         $this->load->helper('url_helper');
     }
@@ -39,7 +40,8 @@ class Reconhecimento extends CI_Controller {
         $data['tiporeconhecimento'] = $this->tiporeconhecimento_model->get_tiporeconhecimento();
         $data['acoestable'] = $this->acoes_model->get_acoes();
         $data['missoes'] = $this->missoes_model->get_missoes();
-        $data['programas'] =$this->programas_model->get_programas();
+        $data['programas'] = $this->programas_model->get_programas();
+        $data['tiposReconhecimento'] = $this->categoriatiporeconhecimento_model->get_categorias_tipo_reconhecimento();
 
         $this->load->view('templates/gaming_default');
         $this->load->view('reconhecimento/cadastrarConquista', $data);
@@ -61,22 +63,21 @@ class Reconhecimento extends CI_Controller {
 
     public function createConquista() {
         $id = $this->tiporeconhecimento_model->insert_tiporeconhecimento();
-        
+
         $acoes = $this->input->post('objsAcoes');
-        
+
         foreach ($acoes as $acao) {
             $data = '';
-            
+
             $data['acao_id'] = $acao;
             $data['reconhecimento_id'] = $id;
-            
+
             $this->reconhecimentoacoes_model->insert_reconhecimentos_acoes($data);
         }
-        
-         $this->load->library('session');
+
+        $this->load->library('session');
         $this->session->set_flashdata("cadSucesso", "Cadastrado com sucesso!!!");
         redirect('reconhecimento/reconhecimentoConquista', 'refresh');
-        
     }
 
     public function createFiltrareconhecimmento() {

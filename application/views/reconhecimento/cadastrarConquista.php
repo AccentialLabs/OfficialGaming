@@ -24,15 +24,10 @@ and open the template in the editor.
                         <label for="inputEmail" class="col-md-2 control-label">Tipo</label>
                         <div class="col-md-9 pull-right">
                             <select class="form-control col-md-" id="tipo" name="tipo">
-                                <option value="1">Selecione o Período para filtrar</option>
-                                <option value="2">Viagem</option>
-                                <option value="3">Eletrodomésticos</option>
-                                <option value="3">Eletroeletrónico</option>
-                                <option value="4">Celular/Smartphone</option>
-                                <option value="5">Computador/Tablet</option>
-                                <option value="6">Show/Entretenimento</option>
-                                <option value="7">Comida/Gastronomia</option>
-                                <option value="8">Bebida/Enogastronomia</option>
+                                <option value='0'>Selecione</option>
+                                <?php foreach ($tiposReconhecimento as $reconhecimento) { ?>
+                                    <option value="<?php echo $reconhecimento['id']; ?>"><?php echo $reconhecimento['descricao']; ?></option>
+                                <?php } ?>
                             </select>
                         </div>
 
@@ -77,13 +72,13 @@ and open the template in the editor.
 
                                     </div>
                                     <div class="col-md-2 ">
-                                        <input type="number"id="quantidadeponto" name="quantidadeponto"  size="15" maxlength="8"  placeholder=""> 
+                                        <input type="number"id="quantidadeponto" name="quantidadeponto"  size="15" maxlength="8" class=''  placeholder=""> 
                                     </div>
 
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-9 pull-right">
                             <input type="checkbox" id="checkporacoes" value="Por Ações" name='modoaferiacao'> Por Ações(não sequencias)
                         </div>
@@ -207,7 +202,7 @@ and open the template in the editor.
                             </div>
 
                             <div class = "col-md-3" > 
-                                <input type="checkbox" id="expira" name="expira"  value="0"> Reconhecimento expira em<br/>
+                                <input type="checkbox" id="expira" name="expira"  value="0" class='almos-form-control'> Reconhecimento expira em<br/>
                             </div> 
 
                             <div class="col-md-1">
